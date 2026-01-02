@@ -1,0 +1,451 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.4",
+    "body": [
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "bleed": true,
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "verticalContentAlignment": "Center",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "https://img.icons8.com/fluency/48/combo-chart.png",
+                                    "size": "Small",
+                                    "altText": "Logo"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Status Report Semanal",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "isSubtle": true,
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${summary}",
+                                    "size": "Large",
+                                    "weight": "Bolder",
+                                    "wrap": true,
+                                    "maxLines": 2
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Oferta ${jirakey}",
+                                    "wrap": true,
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "horizontalAlignment": "Right",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Week ${semana}",
+                                    "weight": "Bolder",
+                                    "size": "Medium",
+                                    "wrap": true,
+                                    "horizontalAlignment": "Right"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${data_hora}",
+                                    "spacing": "None",
+                                    "size": "Medium",
+                                    "isSubtle": true,
+                                    "wrap": true,
+                                    "horizontalAlignment": "Right"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "separator": true,
+            "spacing": "Medium",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "verticalContentAlignment": "Top",
+                    "items": [
+                        {
+                            "type": "FactSet",
+                            "spacing": "None",
+                            "facts": [
+                                {
+                                    "title": "Cliente:",
+                                    "value": "${cliente}"
+                                },
+                                {
+                                    "title": "Valor (€):",
+                                    "value": "${valor_eur}"
+                                },
+                                {
+                                    "title": "Valor (R$):",
+                                    "value": "${valor_brl}"
+                                },
+                                {
+                                    "title": "Mercado:",
+                                    "value": "${mercado}"
+                                },
+                                {
+                                    "title": "Semana:",
+                                    "value": "${semana}"
+                                },
+                                {
+                                    "title": "Budget:",
+                                    "value": "${budget_alocado}h alocadas | ${budget_consumido}h consumidas (${budget_percentual}%)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "verticalContentAlignment": "Top",
+                    "items": [
+                        {
+                            "type": "Container",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Status",
+                                    "wrap": true,
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Right"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${status}",
+                                    "color": "${status_color}",
+                                    "spacing": "None",
+                                    "size": "Large",
+                                    "weight": "Bolder",
+                                    "wrap": true,
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Container",
+                            "spacing": "Medium",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Margem",
+                                    "wrap": true,
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Right"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${margem}",
+                                    "spacing": "None",
+                                    "size": "Large",
+                                    "weight": "Bolder",
+                                    "wrap": true,
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Large",
+            "style": "emphasis",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Por favor, atualize o status desta oferta:",
+                    "wrap": true,
+                    "size": "Small",
+                    "isSubtle": true
+                },
+                {
+                    "type": "Input.ChoiceSet",
+                    "id": "status_projeto",
+                    "label": "🚦 Status do Projeto",
+                    "style": "expanded",
+                    "isRequired": true,
+                    "errorMessage": "Selecione o status do projeto",
+                    "choices": [
+                        {
+                            "title": "🟢 Verde - Sem problemas",
+                            "value": "Verde"
+                        },
+                        {
+                            "title": "🟡 Amarelo - Atenção necessária",
+                            "value": "Amarelo"
+                        },
+                        {
+                            "title": "🔴 Vermelho - Crítico (requer observação)",
+                            "value": "Vermelho"
+                        }
+                    ]
+                },
+                {
+                    "type": "Input.ChoiceSet",
+                    "id": "status_atual",
+                    "label": "Status Atual da Oferta",
+                    "style": "compact",
+                    "isRequired": true,
+                    "errorMessage": "Selecione o status",
+                    "choices": [
+                        {
+                            "title": "🔵 Em Análise",
+                            "value": "em_analise"
+                        },
+                        {
+                            "title": "🛠️ Em Desenvolvimento",
+                            "value": "em_desenvolvimento"
+                        },
+                        {
+                            "title": "📤 Proposta Enviada",
+                            "value": "enviada"
+                        },
+                        {
+                            "title": "🤝 Em Negociação",
+                            "value": "negociacao"
+                        },
+                        {
+                            "title": "✅ Ganha (WON)",
+                            "value": "won"
+                        },
+                        {
+                            "title": "❌ Perdida (LOST)",
+                            "value": "lost"
+                        },
+                        {
+                            "title": "⏸️ Pausada",
+                            "value": "pausada"
+                        }
+                    ]
+                },
+                {
+                    "type": "Input.ChoiceSet",
+                    "id": "probabilidade_ganho",
+                    "label": "Probabilidade de Ganho",
+                    "style": "compact",
+                    "choices": [
+                        {
+                            "title": "25%",
+                            "value": "25"
+                        },
+                        {
+                            "title": "50%",
+                            "value": "50"
+                        },
+                        {
+                            "title": "75%",
+                            "value": "75"
+                        },
+                        {
+                            "title": "100%",
+                            "value": "100"
+                        }
+                    ]
+                },
+                {
+                    "type": "Input.Toggle",
+                    "id": "reuniao_cliente",
+                    "title": "Houve reunião com cliente esta semana?",
+                    "value": "false",
+                    "valueOn": "true",
+                    "valueOff": "false"
+                },
+                {
+                    "type": "Input.ChoiceSet",
+                    "id": "reuniao_tipo",
+                    "label": "Tipo de reunião (se marcou reunião)",
+                    "style": "expanded",
+                    "choices": [
+                        {
+                            "title": "Presencial",
+                            "value": "Presencial"
+                        },
+                        {
+                            "title": "Remoto",
+                            "value": "Remoto"
+                        }
+                    ]
+                },
+                {
+                    "type": "Input.Toggle",
+                    "id": "proposta_atualizada",
+                    "title": "Proposta foi atualizada esta semana?",
+                    "value": "false",
+                    "valueOn": "true",
+                    "valueOff": "false"
+                },
+                {
+                    "type": "Input.Toggle",
+                    "id": "bloqueio_existente",
+                    "title": "Existe algum bloqueio ou impedimento?",
+                    "value": "false",
+                    "valueOn": "true",
+                    "valueOff": "false"
+                },
+                {
+                    "type": "Input.Date",
+                    "id": "previsao_fechamento",
+                    "label": "📅 Previsão de Fechamento"
+                },
+                {
+                    "type": "Input.ChoiceSet",
+                    "id": "tipo_demanda",
+                    "label": "Tipo da oportunidade (RFP/RFI/RFQ/Oferta)",
+                    "style": "compact",
+                    "isRequired": true,
+                    "errorMessage": "Selecione o tipo da oportunidade",
+                    "choices": [
+                        {
+                            "title": "Oferta (regular)",
+                            "value": "Oferta"
+                        },
+                        {
+                            "title": "RFI",
+                            "value": "RFI"
+                        },
+                        {
+                            "title": "RFQ",
+                            "value": "RFQ"
+                        },
+                        {
+                            "title": "RFP",
+                            "value": "RFP"
+                        }
+                    ]
+                },
+                {
+                    "type": "Input.Text",
+                    "id": "rfp_relacionada",
+                    "label": "RFP relacionada (obrigatório se RFI/RFQ)",
+                    "placeholder": "Informe a futura RFP relacionada (ex.: chave JIRA, link ou ID)...",
+                    "isMultiline": false,
+                    "maxLength": 255
+                },
+                {
+                    "type": "Input.Text",
+                    "id": "observacoes",
+                    "label": "⚠️ Observações (pré-preenchido do JIRA; OBRIGATÓRIO se status Vermelho)",
+                    "value": "${observacoes_jira}",
+                    "placeholder": "Edite/complete as observações (JIRA + complemento semanal)...",
+                    "isMultiline": true,
+                    "maxLength": 1000
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "style": "emphasis",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Risks & Opportunities",
+                                    "weight": "Bolder",
+                                    "size": "Medium",
+                                    "wrap": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "ActionSet",
+                                    "actions": [
+                                        {
+                                            "type": "Action.ToggleVisibility",
+                                            "title": "Abrir / Editar",
+                                            "targetElements": [
+                                                "riscos_body"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "riscos_body",
+                    "isVisible": false,
+                    "items": [
+                        {
+                            "type": "Input.Text",
+                            "id": "riscos_oportunidades",
+                            "label": "⚠️ Riscos & Oportunidades",
+                            "placeholder": "Liste riscos principais e oportunidades (curto e objetivo)...",
+                            "isMultiline": true,
+                            "maxLength": 1000
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "📤 Enviar Status Report",
+            "style": "positive",
+            "data": {
+                "action": "submit_status",
+                "jirakey": "${jirakey}",
+                "oferta_id": "${oferta_id}",
+                "semana": "${semana}",
+                "arquiteto_email": "${arquiteto_email}",
+                "cardTypeId": "${cardTypeId}",
+                "arquiteto_nome": "${arquiteto_nome}",
+                "oferta_titulo": "${oferta_titulo}"
+            }
+        }
+    ],
+    "msteams": {
+        "width": "Full",
+        "cardTypeId": "${cardTypeId}"
+    }
+}

@@ -1,0 +1,681 @@
+[
+  {
+    "InternalName": "ContentTypeId",
+    "Title": "Id. de tipos de contenido",
+    "TypeAsString": "ContentTypeId",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{03e45e84-1992-4d42-9116-26f756012634}\" RowOrdinal=\"0\" Type=\"ContentTypeId\" Sealed=\"TRUE\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" DisplayName=\"Id. de tipos de contenido\" Name=\"ContentTypeId\" DisplaceOnUpgrade=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"ContentTypeId\" ColName=\"tp_ContentTypeId\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "Title",
+    "Title": "Título",
+    "TypeAsString": "Text",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{fa564e0f-0c70-4ab9-b863-0177e6ddd247}\" Type=\"Text\" Name=\"Title\" DisplayName=\"Título\" Required=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"Title\" FromBaseType=\"TRUE\" MaxLength=\"255\" ColName=\"nvarchar1\" RowOrdinal=\"0\" />"
+  },
+  {
+    "InternalName": "_ModerationComments",
+    "Title": "Comentarios del aprobador",
+    "TypeAsString": "Note",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{34ad21eb-75bd-4544-8c73-0e08330291fe}\" ReadOnly=\"TRUE\" Type=\"Note\" Name=\"_ModerationComments\" DisplayName=\"Comentarios del aprobador\" Hidden=\"TRUE\" CanToggleHidden=\"TRUE\" Filterable=\"FALSE\" Sortable=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_ModerationComments\" FromBaseType=\"TRUE\" ColName=\"ntext1\" />"
+  },
+  {
+    "InternalName": "LinkTitle",
+    "Title": "Título",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{82642ec8-ef9b-478f-acf9-31f7d45fbc31}\" DisplayName=\"Título\" Description=\"\" Name=\"LinkTitle\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"LinkTitle\" Type=\"Computed\" ReadOnly=\"TRUE\" FromBaseType=\"TRUE\" Width=\"150\" DisplayNameSrcField=\"Title\" Sealed=\"FALSE\" Version=\"2\"><FieldRefs><FieldRef Name=\"Title\" /><FieldRef Name=\"LinkTitleNoMenu\" /><FieldRef Name=\"_EditMenuTableStart2\" /><FieldRef Name=\"_EditMenuTableEnd\" /></FieldRefs><DisplayPattern><FieldSwitch><Expr><GetVar Name=\"FreeForm\" /></Expr><Case Value=\"TRUE\"><Field Name=\"LinkTitleNoMenu\" /></Case><Default><HTML><![CDATA[<div class=\"ms-vb itx\" onmouseover=\"OnItem(this)\" CTXName=\"ctx]]></HTML><Field Name=\"_EditMenuTableStart2\" /><HTML><![CDATA[\">]]></HTML><Field Name=\"LinkTitleNoMenu\" /><HTML><![CDATA[</div>]]></HTML><HTML><![CDATA[<div class=\"s4-ctx\" onmouseover=\"OnChildItem(this.parentNode); return false;\">]]></HTML><HTML><![CDATA[<span>&nbsp;</span>]]></HTML><HTML><![CDATA[<a onfocus=\"OnChildItem(this.parentNode.parentNode); return false;\" onclick=\"PopMenuFromChevron(event); return false;\" href=\"javascript:;\" title=\"Abrir menú\"></a>]]></HTML><HTML><![CDATA[<span>&nbsp;</span>]]></HTML><HTML><![CDATA[</div>]]></HTML></Default></FieldSwitch></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "File_x0020_Type",
+    "Title": "Tipo de archivo",
+    "TypeAsString": "Text",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{39360f11-34cf-4356-9945-25c44e68dade}\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" Type=\"Text\" Name=\"File_x0020_Type\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Tipo de archivo\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"File_x0020_Type\" FromBaseType=\"TRUE\" ColName=\"nvarchar2\" />"
+  },
+  {
+    "InternalName": "_ColorHex",
+    "Title": "Color",
+    "TypeAsString": "Text",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{3bdab9ac-9e5d-44d4-bde9-13b37e170618}\" Name=\"_ColorHex\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Text\" DisplayName=\"Color\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_ColorHex\" FromBaseType=\"TRUE\" ColName=\"nvarchar3\" />"
+  },
+  {
+    "InternalName": "_ColorTag",
+    "Title": "Etiqueta de color",
+    "TypeAsString": "Text",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{76d13cd2-1bae-45a5-8b74-545b87b65037}\" Name=\"_ColorTag\" DisplaceOnUpgrade=\"TRUE\" ShowInFileDlg=\"FALSE\" ReadOnly=\"TRUE\" Type=\"Text\" DisplayName=\"Etiqueta de color\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_ColorTag\" FromBaseType=\"TRUE\" ColName=\"nvarchar4\" />"
+  },
+  {
+    "InternalName": "_Emoji",
+    "Title": "Emoji",
+    "TypeAsString": "Text",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{d8a77d76-536b-45d2-8b9b-e4e9b00cf3dc}\" Name=\"_Emoji\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Text\" DisplayName=\"Emoji\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_Emoji\" FromBaseType=\"TRUE\" ColName=\"nvarchar5\" />"
+  },
+  {
+    "InternalName": "ComplianceAssetId",
+    "Title": "Id. de activo de cumplimiento normativo",
+    "TypeAsString": "Text",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{3a6b296c-3f50-445c-a13f-9c679ea9dda3}\" Hidden=\"FALSE\" ReadOnly=\"TRUE\" Required=\"FALSE\" Type=\"Text\" Name=\"ComplianceAssetId\" ShowInFileDlg=\"FALSE\" DisplayName=\"Id. de activo de cumplimiento normativo\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"ComplianceAssetId\" FromBaseType=\"TRUE\" ColName=\"nvarchar6\" />"
+  },
+  {
+    "InternalName": "QueueStatus",
+    "Title": "QueueStatus",
+    "TypeAsString": "Choice",
+    "Required": false,
+    "SchemaXml": "<Field CustomFormatter=\"{&quot;elmType&quot;:&quot;div&quot;,&quot;style&quot;:{&quot;flex-wrap&quot;:&quot;wrap&quot;,&quot;display&quot;:&quot;flex&quot;},&quot;children&quot;:[{&quot;elmType&quot;:&quot;div&quot;,&quot;style&quot;:{&quot;box-sizing&quot;:&quot;border-box&quot;,&quot;padding&quot;:&quot;4px 8px 5px 8px&quot;,&quot;overflow&quot;:&quot;hidden&quot;,&quot;text-overflow&quot;:&quot;ellipsis&quot;,&quot;display&quot;:&quot;flex&quot;,&quot;border-radius&quot;:&quot;16px&quot;,&quot;height&quot;:&quot;24px&quot;,&quot;align-items&quot;:&quot;center&quot;,&quot;white-space&quot;:&quot;nowrap&quot;,&quot;margin&quot;:&quot;4px 4px 4px 4px&quot;},&quot;attributes&quot;:{&quot;class&quot;:{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Pending&quot;]},&quot;sp-css-backgroundColor-BgCornflowerBlue sp-field-fontSizeSmall sp-css-color-CornflowerBlueFont sp-css-color-CornflowerBlueFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Sent&quot;]},&quot;sp-css-backgroundColor-BgMintGreen sp-field-fontSizeSmall sp-css-color-MintGreenFont sp-css-color-MintGreenFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Completed&quot;]},&quot;sp-css-backgroundColor-BgGold sp-field-fontSizeSmall sp-css-color-GoldFont sp-css-color-GoldFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;&quot;]},&quot;&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Error&quot;]},&quot;sp-css-backgroundColor-BgCoral sp-field-fontSizeSmall sp-css-color-CoralFont sp-css-color-CoralFont&quot;,&quot;sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-neutralSecondary&quot;]}]}]}]}]}},&quot;children&quot;:[{&quot;elmType&quot;:&quot;span&quot;,&quot;style&quot;:{&quot;overflow&quot;:&quot;hidden&quot;,&quot;text-overflow&quot;:&quot;ellipsis&quot;,&quot;padding&quot;:&quot;0 3px&quot;},&quot;txtContent&quot;:&quot;@currentField&quot;,&quot;attributes&quot;:{&quot;class&quot;:{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Pending&quot;]},&quot;sp-field-fontSizeSmall sp-css-color-CornflowerBlueFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Sent&quot;]},&quot;sp-field-fontSizeSmall sp-css-color-MintGreenFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Completed&quot;]},&quot;sp-field-fontSizeSmall sp-css-color-GoldFont&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;&quot;]},&quot;&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Error&quot;]},&quot;sp-field-fontSizeSmall sp-css-color-CoralFont&quot;,&quot;&quot;]}]}]}]}]}}}]}],&quot;templateId&quot;:&quot;BgColorChoicePill&quot;}\" DisplayName=\"QueueStatus\" FillInChoice=\"FALSE\" Format=\"Dropdown\" IsModern=\"TRUE\" Name=\"QueueStatus\" Title=\"QueueStatus\" Type=\"Choice\" ID=\"{cc559c71-9228-42a9-a988-385077004ad6}\" SourceID=\"{12197c6e-b5d4-4bcd-96d4-c8aafc426d0a}\" StaticName=\"QueueStatus\" ColName=\"nvarchar7\" RowOrdinal=\"0\"><CHOICES><CHOICE>Pending</CHOICE><CHOICE>Sent</CHOICE><CHOICE>Completed</CHOICE><CHOICE>Error</CHOICE></CHOICES><Default>Pending</Default></Field>"
+  },
+  {
+    "InternalName": "RecipientEmail",
+    "Title": "RecipientEmail",
+    "TypeAsString": "Text",
+    "Required": false,
+    "SchemaXml": "<Field Type=\"Text\" Name=\"RecipientEmail\" DisplayName=\"RecipientEmail\" ID=\"{c1a832cf-21f1-401d-b807-d6e769d9e1b5}\" Group=\"\" Required=\"FALSE\" SourceID=\"{12197c6e-b5d4-4bcd-96d4-c8aafc426d0a}\" StaticName=\"RecipientEmail\" ColName=\"nvarchar8\" RowOrdinal=\"0\" />"
+  },
+  {
+    "InternalName": "JiraKey",
+    "Title": "JiraKey",
+    "TypeAsString": "Text",
+    "Required": false,
+    "SchemaXml": "<Field Type=\"Text\" Name=\"JiraKey\" DisplayName=\"JiraKey\" ID=\"{f012a2df-ec7b-4105-bf0c-fff5f561c0e2}\" Group=\"\" Required=\"FALSE\" SourceID=\"{12197c6e-b5d4-4bcd-96d4-c8aafc426d0a}\" StaticName=\"JiraKey\" ColName=\"nvarchar9\" RowOrdinal=\"0\" />"
+  },
+  {
+    "InternalName": "OfertaId",
+    "Title": "OfertaId",
+    "TypeAsString": "Number",
+    "Required": false,
+    "SchemaXml": "<Field Type=\"Number\" Name=\"OfertaId\" DisplayName=\"OfertaId\" ID=\"{e3c48494-7f07-42af-8768-f0c209d7076b}\" Group=\"\" Required=\"FALSE\" SourceID=\"{12197c6e-b5d4-4bcd-96d4-c8aafc426d0a}\" StaticName=\"OfertaId\" ColName=\"float1\" RowOrdinal=\"0\" />"
+  },
+  {
+    "InternalName": "Semana",
+    "Title": "Semana",
+    "TypeAsString": "Text",
+    "Required": false,
+    "SchemaXml": "<Field Type=\"Text\" Name=\"Semana\" DisplayName=\"Semana\" ID=\"{eda33289-c603-4037-b4e4-34337dbdf1e4}\" Group=\"\" Required=\"FALSE\" SourceID=\"{12197c6e-b5d4-4bcd-96d4-c8aafc426d0a}\" StaticName=\"Semana\" ColName=\"nvarchar10\" RowOrdinal=\"0\" />"
+  },
+  {
+    "InternalName": "VersaoReport",
+    "Title": "VersaoReport",
+    "TypeAsString": "Number",
+    "Required": false,
+    "SchemaXml": "<Field Type=\"Number\" Name=\"VersaoReport\" DisplayName=\"VersaoReport\" ID=\"{042d5692-4019-4b2e-ab14-a060f46179a5}\" Group=\"\" Required=\"FALSE\" SourceID=\"{12197c6e-b5d4-4bcd-96d4-c8aafc426d0a}\" StaticName=\"VersaoReport\" ColName=\"float2\" RowOrdinal=\"0\" />"
+  },
+  {
+    "InternalName": "UniqueKey",
+    "Title": "UniqueKey",
+    "TypeAsString": "Text",
+    "Required": false,
+    "SchemaXml": "<Field Type=\"Text\" Name=\"UniqueKey\" DisplayName=\"UniqueKey\" ID=\"{08581029-4ce6-48f6-ace7-bc8716d49c4e}\" Group=\"\" Required=\"FALSE\" SourceID=\"{12197c6e-b5d4-4bcd-96d4-c8aafc426d0a}\" StaticName=\"UniqueKey\" ColName=\"nvarchar11\" RowOrdinal=\"0\" />"
+  },
+  {
+    "InternalName": "ResponseJson",
+    "Title": "ResponseJson",
+    "TypeAsString": "Note",
+    "Required": false,
+    "SchemaXml": "<Field Type=\"Note\" Name=\"ResponseJson\" DisplayName=\"ResponseJson\" ID=\"{2ae8faef-1411-4d93-8247-3cf78acdbe6c}\" Group=\"\" Required=\"FALSE\" SourceID=\"{12197c6e-b5d4-4bcd-96d4-c8aafc426d0a}\" StaticName=\"ResponseJson\" ColName=\"ntext2\" RowOrdinal=\"0\" />"
+  },
+  {
+    "InternalName": "SentAt",
+    "Title": "SentAt",
+    "TypeAsString": "DateTime",
+    "Required": false,
+    "SchemaXml": "<Field Type=\"DateTime\" Name=\"SentAt\" DisplayName=\"SentAt\" ID=\"{663af559-d7a2-4101-98e0-9390c625a403}\" Group=\"\" Required=\"FALSE\" SourceID=\"{12197c6e-b5d4-4bcd-96d4-c8aafc426d0a}\" StaticName=\"SentAt\" ColName=\"datetime1\" RowOrdinal=\"0\" />"
+  },
+  {
+    "InternalName": "CompletedAt",
+    "Title": "CompletedAt",
+    "TypeAsString": "DateTime",
+    "Required": false,
+    "SchemaXml": "<Field Type=\"DateTime\" Name=\"CompletedAt\" DisplayName=\"CompletedAt\" ID=\"{d7295dda-aeb2-4655-b3fb-9e88ff1d7249}\" Group=\"\" Required=\"FALSE\" SourceID=\"{12197c6e-b5d4-4bcd-96d4-c8aafc426d0a}\" StaticName=\"CompletedAt\" ColName=\"datetime2\" RowOrdinal=\"0\" />"
+  },
+  {
+    "InternalName": "AttemptCount",
+    "Title": "AttemptCount",
+    "TypeAsString": "Number",
+    "Required": false,
+    "SchemaXml": "<Field Type=\"Number\" Name=\"AttemptCount\" DisplayName=\"AttemptCount\" ID=\"{a25fdb71-2032-41dd-afbc-6d283add02c7}\" Group=\"\" Required=\"FALSE\" SourceID=\"{12197c6e-b5d4-4bcd-96d4-c8aafc426d0a}\" StaticName=\"AttemptCount\" ColName=\"float3\" RowOrdinal=\"0\" />"
+  },
+  {
+    "InternalName": "LastError",
+    "Title": "LastError",
+    "TypeAsString": "Note",
+    "Required": false,
+    "SchemaXml": "<Field Type=\"Note\" Name=\"LastError\" DisplayName=\"LastError\" ID=\"{6434dc54-7af4-4870-b00a-d91914d8671d}\" Group=\"\" Required=\"FALSE\" SourceID=\"{12197c6e-b5d4-4bcd-96d4-c8aafc426d0a}\" StaticName=\"LastError\" ColName=\"ntext3\" RowOrdinal=\"0\" />"
+  },
+  {
+    "InternalName": "ID",
+    "Title": "ID",
+    "TypeAsString": "Counter",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{1d22ea11-1e32-424e-89ab-9fedbadb6ce1}\" ColName=\"tp_ID\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Type=\"Counter\" Name=\"ID\" PrimaryKey=\"TRUE\" DisplayName=\"ID\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"ID\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "ContentType",
+    "Title": "Tipo de contenido",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{c042a256-787d-4a6f-8a8a-cf6ab767f12d}\" Type=\"Computed\" DisplayName=\"Tipo de contenido\" Name=\"ContentType\" DisplaceOnUpgrade=\"TRUE\" RenderXMLUsingPattern=\"TRUE\" Sortable=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"ContentType\" Group=\"_Hidden\" PITarget=\"MicrosoftWindowsSharePointServices\" PIAttribute=\"ContentTypeID\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"ContentTypeId\" /></FieldRefs><DisplayPattern><MapToContentType><Column Name=\"ContentTypeId\" /></MapToContentType></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "Modified",
+    "Title": "Modificado",
+    "TypeAsString": "DateTime",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{28cf69c5-fa48-462a-b5cd-27b6f9d2bd5f}\" ColName=\"tp_Modified\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Type=\"DateTime\" Name=\"Modified\" DisplayName=\"Modificado\" StorageTZ=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"Modified\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "Created",
+    "Title": "Creado",
+    "TypeAsString": "DateTime",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{8c06beca-0777-48f7-91c7-6da68bc07b69}\" ColName=\"tp_Created\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Type=\"DateTime\" Name=\"Created\" DisplayName=\"Creado\" StorageTZ=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"Created\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "Author",
+    "Title": "Creado por",
+    "TypeAsString": "User",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{1df5e554-ec7e-46a6-901d-d85a3881cb18}\" ColName=\"tp_Author\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Type=\"User\" List=\"UserInfo\" Name=\"Author\" DisplayName=\"Creado por\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"Author\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "Editor",
+    "Title": "Modificado por",
+    "TypeAsString": "User",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{d31655d1-1d5b-4511-95a1-7a09e9b75bf2}\" ColName=\"tp_Editor\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Type=\"User\" List=\"UserInfo\" Name=\"Editor\" DisplayName=\"Modificado por\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"Editor\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_HasCopyDestinations",
+    "Title": "Tiene destinos de copia",
+    "TypeAsString": "Boolean",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{26d0756c-986a-48a7-af35-bf18ab85ff4a}\" ColName=\"tp_HasCopyDestinations\" RowOrdinal=\"0\" Sealed=\"TRUE\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" Type=\"Boolean\" Name=\"_HasCopyDestinations\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Tiene destinos de copia\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_HasCopyDestinations\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_CopySource",
+    "Title": "Copiar origen",
+    "TypeAsString": "Text",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{6b4e226d-3d88-4a36-808d-a129bf52bccf}\" ColName=\"tp_CopySource\" RowOrdinal=\"0\" Sealed=\"TRUE\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" Type=\"Text\" Name=\"_CopySource\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Copiar origen\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_CopySource\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "owshiddenversion",
+    "Title": "owshiddenversion",
+    "TypeAsString": "Integer",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{d4e44a66-ee3a-4d02-88c9-4ec5ff3f4cd5}\" ColName=\"tp_Version\" RowOrdinal=\"0\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" Type=\"Integer\" SetAs=\"owshiddenversion\" Name=\"owshiddenversion\" DisplayName=\"owshiddenversion\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"owshiddenversion\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "WorkflowVersion",
+    "Title": "Versión del flujo de trabajo",
+    "TypeAsString": "Integer",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{f1e020bc-ba26-443f-bf2f-b68715017bbc}\" ColName=\"tp_WorkflowVersion\" RowOrdinal=\"0\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" Type=\"Integer\" Name=\"WorkflowVersion\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Versión del flujo de trabajo\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"WorkflowVersion\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_UIVersion",
+    "Title": "Versión de IU",
+    "TypeAsString": "Integer",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{7841bf41-43d0-4434-9f50-a673baef7631}\" ColName=\"tp_UIVersion\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Type=\"Integer\" Name=\"_UIVersion\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Versión de IU\" Hidden=\"TRUE\" CanToggleHidden=\"TRUE\" Required=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_UIVersion\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_UIVersionString",
+    "Title": "Versión",
+    "TypeAsString": "Text",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{dce8262a-3ae9-45aa-aab4-83bd75fb738a}\" ColName=\"tp_UIVersionString\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Type=\"Text\" Name=\"_UIVersionString\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Versión\" CanToggleHidden=\"TRUE\" Required=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_UIVersionString\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "Attachments",
+    "Title": "Datos adjuntos",
+    "TypeAsString": "Attachments",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{67df98f4-9dec-48ff-a553-29bece9c5bf4}\" ColName=\"tp_HasAttachment\" RowOrdinal=\"0\" Type=\"Attachments\" Name=\"Attachments\" DisplayName=\"Datos adjuntos\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"Attachments\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_ModerationStatus",
+    "Title": "Estado de aprobación",
+    "TypeAsString": "ModStat",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{fdc3b2ed-5bf2-4835-a4bc-b885f3396a61}\" ColName=\"tp_ModerationStatus\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Type=\"ModStat\" Name=\"_ModerationStatus\" DisplayName=\"Estado de aprobación\" Hidden=\"TRUE\" CanToggleHidden=\"TRUE\" Required=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_ModerationStatus\" FromBaseType=\"TRUE\"><CHOICES><CHOICE>0;#Aprobado</CHOICE><CHOICE>1;#Rechazado</CHOICE><CHOICE>2;#En espera</CHOICE><CHOICE>3;#Borrador</CHOICE><CHOICE>4;#Programado</CHOICE></CHOICES><Default>0</Default></Field>"
+  },
+  {
+    "InternalName": "Edit",
+    "Title": "Editar",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{503f1caa-358e-4918-9094-4a2cdc4bc034}\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"Edit\" Sortable=\"FALSE\" Filterable=\"FALSE\" DisplayName=\"Editar\" ClassInfo=\"Icon\" AuthoringInfo=\"(vínculo para editar el elemento)\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"Edit\" FromBaseType=\"TRUE\"><DisplayPattern><IfHasRights><RightsChoices><RightsGroup PermEditListItems=\"required\" /></RightsChoices><Then><HTML><![CDATA[<a href=\"]]></HTML><URL Cmd=\"Edit\" /><HTML><![CDATA[\" onclick=\"EditLink(this, ]]></HTML><Counter Type=\"View\" /><HTML><![CDATA[);return false;\" target=\"_self\">]]></HTML><HTML><![CDATA[<img border=\"0\" alt=\"]]></HTML><HTML>Editar</HTML><HTML><![CDATA[\" src=\"/_layouts/15/images/edititem.gif?rev=49\"/>]]></HTML><HTML><![CDATA[</a>]]></HTML></Then><Else><HTML><![CDATA[&#160;]]></HTML></Else></IfHasRights></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "LinkTitleNoMenu",
+    "Title": "Título",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{bc91a437-52e7-49e1-8c4e-4698904b2b6d}\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"LinkTitleNoMenu\" DisplayName=\"Título\" Dir=\"\" DisplayNameSrcField=\"Title\" AuthoringInfo=\"(vinculado al elemento)\" EnableLookup=\"TRUE\" ListItemMenuAllowed=\"Prohibited\" LinkToItemAllowed=\"Prohibited\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"LinkTitleNoMenu\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"Title\" /><FieldRef Name=\"LinkFilenameNoMenu\" /></FieldRefs><DisplayPattern><IfEqual><Expr1><LookupColumn Name=\"FSObjType\" /></Expr1><Expr2>1</Expr2><Then><Field Name=\"LinkFilenameNoMenu\" /></Then><Else><HTML><![CDATA[<a onfocus=\"OnLink(this)\" href=\"]]></HTML><URL /><HTML><![CDATA[\" onclick=\"EditLink2(this,]]></HTML><Counter Type=\"View\" /><HTML><![CDATA[);return false;\" target=\"_self\">]]></HTML><Column HTMLEncode=\"TRUE\" Name=\"Title\" Default=\"(sin título)\" /><IfEqual><Expr1><GetVar Name=\"ShowAccessibleIcon\" /></Expr1><Expr2>1</Expr2><Then><HTML><![CDATA[<img src=\"/_layouts/15/images/blank.gif?rev=49\" class=\"ms-hidden\" border=\"0\" width=\"1\" height=\"1\" alt=\"Use Mayús+Entrar para abrir el menú (nueva ventana).\"/>]]></HTML></Then></IfEqual><HTML><![CDATA[</a>]]></HTML><IfNew><HTML><![CDATA[<img src=\"/_layouts/3082/images/new.gif\" alt=\"]]></HTML><HTML>Nuevo</HTML><HTML><![CDATA[\" class=\"ms-newgif\" />]]></HTML></IfNew></Else></IfEqual></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "LinkTitle2",
+    "Title": "Título",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{5f190d91-3dbc-4489-9878-3c092caf35b6}\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"LinkTitle2\" DisplayName=\"Título\" DisplayNameSrcField=\"Title\" ClassInfo=\"Menu\" AuthoringInfo=\"(vinculado al elemento con el menú de edición) (old)\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"LinkTitle2\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"Title\" /><FieldRef Name=\"LinkTitleNoMenu\" /><FieldRef Name=\"_EditMenuTableStart\" /><FieldRef Name=\"_EditMenuTableEnd\" /></FieldRefs><DisplayPattern><FieldSwitch><Expr><GetVar Name=\"FreeForm\" /></Expr><Case Value=\"TRUE\"><Field Name=\"LinkTitleNoMenu\" /></Case><Default><Field Name=\"_EditMenuTableStart\" /><SetVar Name=\"ShowAccessibleIcon\" Value=\"1\" /><Field Name=\"LinkTitleNoMenu\" /><SetVar Name=\"ShowAccessibleIcon\" Value=\"0\" /><Field Name=\"_EditMenuTableEnd\" /></Default></FieldSwitch></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "SelectTitle",
+    "Title": "Seleccionar",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{b1f7969b-ea65-42e1-8b54-b588292635f2}\" ReadOnly=\"TRUE\" Type=\"Computed\" Sortable=\"FALSE\" Filterable=\"FALSE\" Name=\"SelectTitle\" Hidden=\"TRUE\" CanToggleHidden=\"TRUE\" DisplayName=\"Seleccionar\" Dir=\"\" AuthoringInfo=\"(conexión de elemento web)\" HeaderImage=\"blank.gif\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"SelectTitle\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"ID\" /></FieldRefs><DisplayPattern><IfEqual><Expr1><GetVar Name=\"SelectedID\" /></Expr1><Expr2><Column Name=\"ID\" /></Expr2><Then><HTML><![CDATA[<img border=\"0\" align=\"absmiddle\" style=\"cursor: pointer\" src=\"/_layouts/15/images/rbsel.gif?rev=49\" alt=\"]]></HTML><HTML>Selected</HTML><HTML><![CDATA[\"/>]]></HTML></Then><Else><HTML><![CDATA[<a href=\"javascript:SelectField(']]></HTML><GetVar Name=\"View\" /><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><Column Name=\"ID\" /></ScriptQuote><HTML><![CDATA[');return false;\" onclick=\"javascript:SelectField(']]></HTML><GetVar Name=\"View\" /><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><Column Name=\"ID\" /></ScriptQuote><HTML><![CDATA[');return false;\" target=\"_self\">]]></HTML><HTML><![CDATA[<img border=\"0\" align=\"absmiddle\" style=\"cursor: pointer\" src=\"/_layouts/15/images/rbunsel.gif?rev=49\"  alt=\"]]></HTML><HTML>Normal</HTML><HTML><![CDATA[\"/>]]></HTML><HTML><![CDATA[</a>]]></HTML></Else></IfEqual></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "InstanceID",
+    "Title": "Id. de instancia",
+    "TypeAsString": "Integer",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{50a54da4-1528-4e67-954a-e2d24f1e9efb}\" Name=\"InstanceID\" DisplayName=\"Id. de instancia\" ColName=\"tp_InstanceID\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" Type=\"Integer\" Min=\"0\" Max=\"99991231\" Filterable=\"TRUE\" Sortable=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"InstanceID\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "Order",
+    "Title": "Orden",
+    "TypeAsString": "Number",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{ca4addac-796f-4b23-b093-d2a3f65c0774}\" ColName=\"tp_ItemOrder\" RowOrdinal=\"0\" Name=\"Order\" DisplayName=\"Orden\" Type=\"Number\" Hidden=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"Order\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "GUID",
+    "Title": "GUID",
+    "TypeAsString": "Guid",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{ae069f25-3ac2-4256-b9c3-15dbc15da0e0}\" ColName=\"tp_GUID\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" Type=\"Guid\" Name=\"GUID\" DisplayName=\"GUID\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"GUID\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "WorkflowInstanceID",
+    "Title": "Id. de instancia de flujo de trabajo",
+    "TypeAsString": "Guid",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{de8beacf-5505-47cd-80a6-aa44e7ffe2f4}\" ColName=\"tp_WorkflowInstanceID\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" Type=\"Guid\" Name=\"WorkflowInstanceID\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Id. de instancia de flujo de trabajo\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"WorkflowInstanceID\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "FileRef",
+    "Title": "Dirección URL",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{94f89715-e097-4e8b-ba79-ea02aa8b7adb}\" Name=\"FileRef\" DisplaceOnUpgrade=\"TRUE\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" Type=\"Lookup\" DisplayName=\"Dirección URL\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"FullUrl\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"FileRef\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "FileDirRef",
+    "Title": "Ruta de acceso",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{56605df6-8fa1-47e4-a04c-5b384d59609f}\" Name=\"FileDirRef\" DisplaceOnUpgrade=\"TRUE\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" Type=\"Lookup\" DisplayName=\"Ruta de acceso\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"DirName\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"FileDirRef\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "Last_x0020_Modified",
+    "Title": "Modificado",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{173f76c8-aebd-446a-9bc9-769a2bd2c18f}\" Name=\"Last_x0020_Modified\" DisplaceOnUpgrade=\"TRUE\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" DisplayName=\"Modificado\" Type=\"Lookup\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"TimeLastModified\" Format=\"TRUE\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"Last_x0020_Modified\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "Created_x0020_Date",
+    "Title": "Creado",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{998b5cff-4a35-47a7-92f3-3914aa6aa4a2}\" Name=\"Created_x0020_Date\" DisplaceOnUpgrade=\"TRUE\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" DisplayName=\"Creado\" Type=\"Lookup\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"TimeCreated\" Format=\"TRUE\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"Created_x0020_Date\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "FSObjType",
+    "Title": "Tipo de elemento",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{30bb605f-5bae-48fe-b4e3-1f81d9772af9}\" Name=\"FSObjType\" DisplaceOnUpgrade=\"TRUE\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Tipo de elemento\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"FSType\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"FSObjType\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "SortBehavior",
+    "Title": "Tipo de ordenación",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{423874f8-c300-4bfb-b7a1-42e2159e3b19}\" Name=\"SortBehavior\" DisplaceOnUpgrade=\"TRUE\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Tipo de ordenación\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"SortBehavior\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"SortBehavior\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "PermMask",
+    "Title": "Máscara de permisos efectivos",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{ba3c27ee-4791-4867-8821-ff99000bac98}\" Name=\"PermMask\" DisplaceOnUpgrade=\"TRUE\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" RenderXMLUsingPattern=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Computed\" DisplayName=\"Máscara de permisos efectivos\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"PermMask\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"ID\" /></FieldRefs><DisplayPattern><CurrentRights /></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "PrincipalCount",
+    "Title": "Recuento de entidades de seguridad",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{dcc67ebd-247f-4bee-8626-85ff6f69fbb6}\" Name=\"PrincipalCount\" DisplaceOnUpgrade=\"TRUE\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" RenderXMLUsingPattern=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Computed\" DisplayName=\"Recuento de entidades de seguridad\" RecreateIfMissing=\"TRUE\" NoCustomize=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"PrincipalCount\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"ID\" /></FieldRefs><DisplayPattern><PrincipalCount /></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "FileLeafRef",
+    "Title": "Nombre",
+    "TypeAsString": "File",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{8553196d-ec8d-4564-9861-3dbe931050c8}\" Hidden=\"TRUE\" ShowInFileDlg=\"FALSE\" ShowInVersionHistory=\"FALSE\" Type=\"File\" Name=\"FileLeafRef\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Nombre\" AuthoringInfo=\"(para uso en formularios)\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"LeafName\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" NoCustomize=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"FileLeafRef\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "UniqueId",
+    "Title": "Id. único",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{4b7403de-8d94-43e8-9f0f-137a3e298126}\" Name=\"UniqueId\" DisplaceOnUpgrade=\"TRUE\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Id. único\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"UniqueId\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"UniqueId\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "ParentUniqueId",
+    "Title": "Identificador primario de documento",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{3b653cee-df6b-4cd4-b66d-ad5ce875b25e}\" Name=\"ParentUniqueId\" DisplaceOnUpgrade=\"TRUE\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Identificador primario de documento\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"ParentUniqueId\" JoinColName=\"DoclibRowId\" JoinType=\"INNER\" RecreateIfMissing=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"ParentUniqueId\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "SyncClientId",
+    "Title": "Identificador del cliente",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{6d2c4fde-3605-428e-a236-ce5f3dc2b4d4}\" Name=\"SyncClientId\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" DisplayName=\"Identificador del cliente\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"SyncClientId\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"SyncClientId\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "ProgId",
+    "Title": "ProgId",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{c5c4b81c-f1d9-4b43-a6a2-090df32ebb68}\" Name=\"ProgId\" DisplaceOnUpgrade=\"TRUE\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"ProgId\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"ProgId\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"ProgId\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "ScopeId",
+    "Title": "ScopeId",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{dddd2420-b270-4735-93b5-92b713d0944d}\" Name=\"ScopeId\" DisplaceOnUpgrade=\"TRUE\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"ScopeId\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"ScopeId\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"ScopeId\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "HTML_x0020_File_x0020_Type",
+    "Title": "Tipo de archivo HTML",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ReadOnly=\"TRUE\" ID=\"{4ef1b78f-fdba-48dc-b8ab-3fa06a0c9804}\" Hidden=\"TRUE\" Type=\"Computed\" Name=\"HTML_x0020_File_x0020_Type\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Tipo de archivo HTML\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"HTML_x0020_File_x0020_Type\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"File_x0020_Type\" /></FieldRefs><DisplayPattern /></Field>"
+  },
+  {
+    "InternalName": "_EditMenuTableStart",
+    "Title": "Editar inicio de tabla de menús",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{3c6303be-e21f-4366-80d7-d6d0a3b22c7a}\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"_EditMenuTableStart\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Editar inicio de tabla de menús\" ClassInfo=\"Menu\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_EditMenuTableStart\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"FileLeafRef\" /><FieldRef Name=\"FileDirRef\" /><FieldRef Name=\"FSObjType\" /><FieldRef Name=\"ID\" /><FieldRef Name=\"ServerUrl\" /><FieldRef Name=\"HTML_x0020_File_x0020_Type\" /><FieldRef Name=\"File_x0020_Type\" /><FieldRef Name=\"PermMask\" /><FieldRef Name=\"_HasCopyDestinations\" /><FieldRef Name=\"_CopySource\" /><FieldRef Name=\"ContentType\" /><FieldRef Name=\"ContentTypeId\" /><FieldRef Name=\"_ModerationStatus\" /><FieldRef Name=\"_UIVersion\" /></FieldRefs><DisplayPattern><HTML><![CDATA[<div class=\"ms-vb\" onmouseover=\"OnItem(this)\" CTXName=\"ctx]]></HTML><Counter Type=\"View\" /><HTML>\" id=\"</HTML><Column Name=\"ID\" HTMLEncode=\"TRUE\" /><HTML>\" Url=\"</HTML><Field Name=\"ServerUrl\" URLEncodeAsURL=\"TRUE\" /><HTML>\" DRef=\"</HTML><Field Name=\"FileDirRef\" /><HTML>\" Perm=\"</HTML><Field Name=\"PermMask\" /><HTML>\" type=\"</HTML><Column Name=\"HTML_x0020_File_x0020_Type\" /><HTML>\" Ext=\"</HTML><Column Name=\"File_x0020_Type\" /><HTML>\" Icon=\"</HTML><MapToAll><Column Name=\"HTML_x0020_File_x0020_Type\" /><HTML>|</HTML><Column Name=\"File_x0020_Type\" /></MapToAll><HTML>\" OType=\"</HTML><LookupColumn Name=\"FSObjType\" /><HTML>\" COUId=\"</HTML><HTML>\" HCD=\"</HTML><Column Name=\"_HasCopyDestinations\" /><HTML>\" CSrc=\"</HTML><Column Name=\"_CopySource\" URLEncodeAsURL=\"TRUE\" /><HTML>\" MS=\"</HTML><Column Name=\"_ModerationStatus\" /><HTML><![CDATA[\" CType=\"]]></HTML><Column Name=\"ContentType\" HTMLEncode=\"TRUE\" /><HTML><![CDATA[\" CId=\"]]></HTML><Column Name=\"ContentTypeId\" /><HTML>\" UIS=\"</HTML><Column Name=\"_UIVersion\" /><GetVar Name=\"_EditMenuTableExtra\" /><HTML>\" SUrl=\"</HTML><HTML><![CDATA[\">]]></HTML></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "_EditMenuTableStart2",
+    "Title": "Editar inicio de tabla de menús",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{1344423c-c7f9-4134-88e4-ad842e2d723c}\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"_EditMenuTableStart2\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Editar inicio de tabla de menús\" ClassInfo=\"Menu\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_EditMenuTableStart2\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"ID\" /></FieldRefs><DisplayPattern><Counter Type=\"View\" /><HTML>\" id=\"</HTML><Column Name=\"ID\" HTMLEncode=\"TRUE\" /></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "_EditMenuTableEnd",
+    "Title": "Editar fin de tabla de menús",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{2ea78cef-1bf9-4019-960a-02c41636cb47}\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"_EditMenuTableEnd\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Editar fin de tabla de menús\" ClassInfo=\"Menu\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_EditMenuTableEnd\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"ID\" /></FieldRefs><DisplayPattern><HTML><![CDATA[</div>]]></HTML><HTML><![CDATA[<div class=\"s4-ctx\" onmouseover=\"OnChildItem(this.parentNode); return false;\">]]></HTML><HTML><![CDATA[<span>&nbsp;</span>]]></HTML><HTML><![CDATA[<a onfocus=\"OnChildItem(this.parentNode.parentNode); return false;\" onclick=\"PopMenuFromChevron(event); return false;\" href=\"javascript:;\" title=\"Abrir menú\"></a>]]></HTML><HTML><![CDATA[<span>&nbsp;</span>]]></HTML><HTML><![CDATA[</div>]]></HTML></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "LinkFilenameNoMenu",
+    "Title": "Nombre",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{9d30f126-ba48-446b-b8f9-83745f322ebe}\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"LinkFilenameNoMenu\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Nombre\" Hidden=\"TRUE\" DisplayNameSrcField=\"FileLeafRef\" Filterable=\"FALSE\" AuthoringInfo=\"(vinculado al documento)\" ListItemMenuAllowed=\"Prohibited\" LinkToItemAllowed=\"Prohibited\" NoCustomize=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"LinkFilenameNoMenu\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"FileLeafRef\" /><FieldRef Name=\"FSObjType\" /><FieldRef Name=\"Created_x0020_Date\" /><FieldRef Name=\"FileRef\" /><FieldRef Name=\"File_x0020_Type\" /><FieldRef Name=\"HTML_x0020_File_x0020_Type\" /><FieldRef Name=\"ContentTypeId\" /><FieldRef Name=\"PermMask\" /></FieldRefs><DisplayPattern><IfEqual><Expr1><LookupColumn Name=\"FSObjType\" /></Expr1><Expr2>1</Expr2><Then><FieldSwitch><Expr><GetVar Name=\"RecursiveView\" /></Expr><Case Value=\"1\"><LookupColumn Name=\"FileLeafRef\" HTMLEncode=\"TRUE\" /></Case><Default><SetVar Name=\"UnencodedFilterLink\"><SetVar Name=\"RootFolder\"><HTML>/</HTML><LookupColumn Name=\"FileRef\" /></SetVar><SetVar Name=\"SkipHost\">1</SetVar><SetVar Name=\"FolderCTID\"><FieldSwitch><Expr><ListProperty Select=\"EnableContentTypes\" /></Expr><Case Value=\"1\"><Column Name=\"ContentTypeId\" /></Case></FieldSwitch></SetVar><FilterLink Default=\"\" Paged=\"FALSE\" /></SetVar><HTML><![CDATA[<a onfocus=\"OnLink(this)\" href=\"]]></HTML><GetVar Name=\"UnencodedFilterLink\" HTMLEncode=\"TRUE\" /><HTML><![CDATA[\" onmousedown=\"javascript:VerifyFolderHref(this,event, ']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><GetVar Name=\"UnencodedFilterLink\" /></ScriptQuote><HTML><![CDATA[',']]></HTML><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><ListProperty Select=\"DefaultItemOpen\" /></ScriptQuote><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><MapToControl><Column Name=\"HTML_x0020_File_x0020_Type\" /><HTML>|</HTML><Column Name=\"File_x0020_Type\" /></MapToControl></ScriptQuote><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><Column Name=\"HTML_x0020_File_x0020_Type\" /></ScriptQuote><HTML><![CDATA[',']]></HTML><HTML><![CDATA[')\"]]></HTML><HTML><![CDATA[ onclick=\"return HandleFolder(this,event, ']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><GetVar Name=\"UnencodedFilterLink\" /></ScriptQuote><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><ServerProperty Select=\"HtmlTransform\" /></ScriptQuote><HTML><![CDATA[',']]></HTML><HTML><![CDATA[',']]></HTML><HTML><![CDATA[',']]></HTML><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><ListProperty Select=\"DefaultItemOpen\" /></ScriptQuote><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><MapToControl><Column Name=\"HTML_x0020_File_x0020_Type\" /><HTML>|</HTML><Column Name=\"File_x0020_Type\" /></MapToControl></ScriptQuote><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><Column Name=\"HTML_x0020_File_x0020_Type\" /></ScriptQuote><HTML><![CDATA[',']]></HTML><HTML><![CDATA[',']]></HTML><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><UserID AllowAnonymous=\"TRUE\" /></ScriptQuote><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><ListProperty Select=\"ForceCheckout\" /></ScriptQuote><HTML><![CDATA[',']]></HTML><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><Field Name=\"PermMask\" /></ScriptQuote><HTML><![CDATA[');\" title=\"]]></HTML><LookupColumn Name=\"FileLeafRef\" HTMLEncode=\"TRUE\" /><HTML><![CDATA[\">]]></HTML><LookupColumn Name=\"FileLeafRef\" HTMLEncode=\"TRUE\" /><IfEqual><Expr1><GetVar Name=\"ShowAccessibleIcon\" /></Expr1><Expr2>1</Expr2><Then><HTML><![CDATA[<img src=\"/_layouts/15/images/blank.gif?rev=49\" class=\"ms-hidden\" border=\"0\" width=\"1\" height=\"1\" alt=\"Use Mayús+Entrar para abrir el menú (nueva ventana).\"/>]]></HTML></Then></IfEqual><HTML><![CDATA[</a>]]></HTML></Default></FieldSwitch></Then><Else><HTML><![CDATA[<a onfocus=\"OnLink(this)\" href=\"]]></HTML><Field Name=\"ServerUrl\" URLEncodeAsURL=\"TRUE\" /><HTML><![CDATA[\" onclick=\"return DispEx(this,event,']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><ServerProperty Select=\"HtmlTransform\" /></ScriptQuote><HTML><![CDATA[',']]></HTML><HTML><![CDATA[',']]></HTML><HTML><![CDATA[',']]></HTML><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><ListProperty Select=\"DefaultItemOpen\" /></ScriptQuote><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><MapToControl><Column Name=\"HTML_x0020_File_x0020_Type\" /><HTML>|</HTML><Column Name=\"File_x0020_Type\" /></MapToControl></ScriptQuote><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><Column Name=\"HTML_x0020_File_x0020_Type\" /></ScriptQuote><HTML><![CDATA[',']]></HTML><HTML><![CDATA[',']]></HTML><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><UserID AllowAnonymous=\"TRUE\" /></ScriptQuote><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><ListProperty Select=\"ForceCheckout\" /></ScriptQuote><HTML><![CDATA[',']]></HTML><HTML><![CDATA[',']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><Field Name=\"PermMask\" /></ScriptQuote><HTML><![CDATA[')\">]]></HTML><UrlBaseName HTMLEncode=\"TRUE\"><LookupColumn Name=\"FileLeafRef\" /></UrlBaseName><IfEqual><Expr1><GetVar Name=\"ShowAccessibleIcon\" /></Expr1><Expr2>1</Expr2><Then><HTML><![CDATA[<img src=\"/_layouts/15/images/blank.gif?rev=49\" class=\"ms-hidden\" border=\"0\" width=\"1\" height=\"1\" alt=\"Use Mayús+Entrar para abrir el menú (nueva ventana).\"/>]]></HTML></Then></IfEqual><HTML><![CDATA[</a>]]></HTML><IfNew Name=\"Created_x0020_Date\"><HTML><![CDATA[<img src=\"/_layouts/15/3082/images/new.gif\" alt=\"]]></HTML><HTML>Nuevo</HTML><HTML><![CDATA[\" class=\"ms-newgif\" />]]></HTML></IfNew></Else></IfEqual></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "LinkFilename",
+    "Title": "Nombre",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{5cc6dc79-3710-4374-b433-61cb4a686c12}\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"LinkFilename\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" DisplayName=\"Nombre\" DisplayNameSrcField=\"FileLeafRef\" Filterable=\"FALSE\" ClassInfo=\"Menu\" AuthoringInfo=\"(vinculado al documento con el menú de edición)\" ListItemMenuAllowed=\"Required\" LinkToItemAllowed=\"Prohibited\" NoCustomize=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"LinkFilename\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"LinkFilenameNoMenu\" /><FieldRef Name=\"_EditMenuTableStart2\" /><FieldRef Name=\"_EditMenuTableEnd\" /></FieldRefs><DisplayPattern><FieldSwitch><Expr><GetVar Name=\"FreeForm\" /></Expr><Case Value=\"TRUE\"><Field Name=\"LinkFilenameNoMenu\" /></Case><Default><HTML><![CDATA[<div class=\"ms-vb itx\" onmouseover=\"OnItem(this)\" CTXName=\"ctx]]></HTML><Field Name=\"_EditMenuTableStart2\" /><HTML><![CDATA[\">]]></HTML><Field Name=\"LinkFilenameNoMenu\" /><HTML><![CDATA[</div>]]></HTML><HTML><![CDATA[<div class=\"s4-ctx\" onmouseover=\"OnChildItem(this.parentNode); return false;\">]]></HTML><HTML><![CDATA[<span>&nbsp;</span>]]></HTML><HTML><![CDATA[<a onfocus=\"OnChildItem(this.parentNode.parentNode); return false;\" onclick=\"PopMenuFromChevron(event); return false;\" href=\"javascript:;\" title=\"Abrir menú\"></a>]]></HTML><HTML><![CDATA[<span>&nbsp;</span>]]></HTML><HTML><![CDATA[</div>]]></HTML></Default></FieldSwitch></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "LinkFilename2",
+    "Title": "Nombre",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{224ba411-da77-4050-b0eb-62d422f13d3e}\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"LinkFilename2\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Nombre\" DisplayNameSrcField=\"FileLeafRef\" Filterable=\"FALSE\" ClassInfo=\"Menu\" AuthoringInfo=\"(vinculado al documento con el menú de edición) (old)\" NoCustomize=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"LinkFilename2\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"LinkFilenameNoMenu\" /><FieldRef Name=\"_EditMenuTableStart\" /><FieldRef Name=\"_EditMenuTableEnd\" /></FieldRefs><DisplayPattern><FieldSwitch><Expr><GetVar Name=\"FreeForm\" /></Expr><Case Value=\"TRUE\"><Field Name=\"LinkFilenameNoMenu\" /></Case><Default><Field Name=\"_EditMenuTableStart\" /><SetVar Name=\"ShowAccessibleIcon\" Value=\"1\" /><Field Name=\"LinkFilenameNoMenu\" /><SetVar Name=\"ShowAccessibleIcon\" Value=\"0\" /><Field Name=\"_EditMenuTableEnd\" /></Default></FieldSwitch></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "DocIcon",
+    "Title": "Tipo",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{081c6e4c-5c14-4f20-b23e-1a71ceb6a67c}\" Type=\"Computed\" ReadOnly=\"TRUE\" Name=\"DocIcon\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Tipo\" TextOnly=\"TRUE\" ClassInfo=\"Icon\" AuthoringInfo=\"(icono vinculado a documento)\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"DocIcon\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"File_x0020_Type\" /><FieldRef Name=\"FSObjType\" /><FieldRef Name=\"FileRef\" /><FieldRef Name=\"FileLeafRef\" /><FieldRef Name=\"HTML_x0020_File_x0020_Type\" /><FieldRef Name=\"PermMask\" /><FieldRef Name=\"IconOverlay\" /></FieldRefs><DisplayPattern><SetVar Name=\"DocIconAltText\"><IfEqual><Expr1><LookupColumn Name=\"FSObjType\" /></Expr1><Expr2>1</Expr2><Then><IfSubString><Expr1>0x0120D5</Expr1><Expr2><Column Name=\"ContentTypeId\" /></Expr2><Then><HTML>Colección de documentos: </HTML><LookupColumn Name=\"FileLeafRef\" HTMLEncode=\"TRUE\" /></Then><Else><HTML>Carpeta: </HTML><LookupColumn Name=\"FileLeafRef\" HTMLEncode=\"TRUE\" /></Else></IfSubString></Then><Else><LookupColumn Name=\"Title\" HTMLEncode=\"TRUE\" /></Else></IfEqual></SetVar><SetVar Name=\"DocIconImg\"><SetVar Name=\"DocIconFileName\"><IfEqual><Expr1><Column Name=\"IconOverlay\" /></Expr1><Expr2 /><Then><IfEqual><Expr1><LookupColumn Name=\"FSObjType\" /></Expr1><Expr2>1</Expr2><Then><IfEqual><Expr1><Column Name=\"HTML_x0020_File_x0020_Type\" /><HTML>|</HTML><Column Name=\"File_x0020_Type\" /></Expr1><Expr2><HTML>|</HTML></Expr2><Then><HTML>folder.gif</HTML></Then><Else><SetVar Name=\"FolderIconFromMap\"><MapToIcon><Column Name=\"HTML_x0020_File_x0020_Type\" /><HTML>|</HTML><Column Name=\"File_x0020_Type\" /></MapToIcon></SetVar><IfEqual><Expr1><GetVar Name=\"FolderIconFromMap\" /></Expr1><Expr2><MapToIcon /></Expr2><Then><HTML>folder.gif</HTML></Then><Else><GetVar Name=\"FolderIconFromMap\" /></Else></IfEqual></Else></IfEqual></Then><Else><MapToIcon><Column Name=\"HTML_x0020_File_x0020_Type\" /><HTML>|</HTML><Column Name=\"File_x0020_Type\" /></MapToIcon></Else></IfEqual></Then><Else><MapToIcon><Column Name=\"IconOverlay\" /></MapToIcon></Else></IfEqual></SetVar><HTML><![CDATA[<img border=\"0\" alt=\"]]></HTML><GetVar Name=\"DocIconAltText\" /><HTML><![CDATA[\" title=\"]]></HTML><GetVar Name=\"DocIconAltText\" /><HTML><![CDATA[\" src=\"/_layouts/15/images/]]></HTML><GetVar Name=\"DocIconFileName\" /><HTML><![CDATA[\" />]]></HTML></SetVar><SetVar Name=\"DocIconOverlayImg\"><IfEqual><Expr1><Column Name=\"IconOverlay\" /></Expr1><Expr2 /><Then /><Else><HTML><![CDATA[<img class=\"ms-vb-icon-overlay\" alt=\"*\" src=\"/_layouts/15/images/]]></HTML><MapToOverlay><Column Name=\"IconOverlay\" /></MapToOverlay><HTML><![CDATA[\" />]]></HTML></Else></IfEqual></SetVar><IfEqual><Expr1><LookupColumn Name=\"FSObjType\" /></Expr1><Expr2>1</Expr2><Then><FieldSwitch><Expr><GetVar Name=\"RecursiveView\" /></Expr><Case Value=\"1\"><GetVar Name=\"DocIconImg\" /><GetVar Name=\"DocIconOverlayImg\" /></Case><Default><SetVar Name=\"UnencodedFilterLink\"><SetVar Name=\"RootFolder\"><HTML>/</HTML><LookupColumn Name=\"FileRef\" /></SetVar><SetVar Name=\"SkipHost\">1</SetVar><SetVar Name=\"FolderCTID\"><FieldSwitch><Expr><ListProperty Select=\"EnableContentTypes\" /></Expr><Case Value=\"1\"><Column Name=\"ContentTypeId\" /></Case></FieldSwitch></SetVar><FilterLink Default=\"\" Paged=\"FALSE\" /></SetVar><FieldSwitch><Expr><GetVar Name=\"FileDialog\" /></Expr><Case Value=\"1\"><GetVar Name=\"DocIconImg\" /><GetVar Name=\"DocIconOverlayImg\" /></Case><Default><HTML><![CDATA[<a href=\"]]></HTML><GetVar Name=\"UnencodedFilterLink\" HTMLEncode=\"TRUE\" /><HTML><![CDATA[\" onclick=\"javascript:EnterFolder(']]></HTML><ScriptQuote NotAddingQuote=\"TRUE\"><GetVar Name=\"UnencodedFilterLink\" /></ScriptQuote><HTML><![CDATA[');javascript:return false;\">]]></HTML><GetVar Name=\"DocIconImg\" /><GetVar Name=\"DocIconOverlayImg\" /><HTML><![CDATA[</a>]]></HTML></Default></FieldSwitch></Default></FieldSwitch></Then><Else><HTML><![CDATA[<a onfocus=\"OnLink(this)\" href=\"]]></HTML><URL /><HTML><![CDATA[\" onclick=\"GoToLink(this);return false;\" target=\"_self\">]]></HTML><GetVar Name=\"DocIconImg\" /><GetVar Name=\"DocIconOverlayImg\" /><HTML><![CDATA[</a>]]></HTML></Else></IfEqual></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "ServerUrl",
+    "Title": "Dirección URL relativa al servidor",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{105f76ce-724a-4bba-aece-f81f2fce58f5}\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" Type=\"Computed\" Name=\"ServerUrl\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Dirección URL relativa al servidor\" Filterable=\"FALSE\" RenderXMLUsingPattern=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"ServerUrl\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"FileRef\" /></FieldRefs><DisplayPattern><HTML>/</HTML><LookupColumn Name=\"FileRef\" /></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "EncodedAbsUrl",
+    "Title": "Dirección URL absoluta codificada",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{7177cfc7-f399-4d4d-905d-37dd51bc90bf}\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" Type=\"Computed\" Name=\"EncodedAbsUrl\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Dirección URL absoluta codificada\" Filterable=\"FALSE\" RenderXMLUsingPattern=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"EncodedAbsUrl\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"FileRef\" /></FieldRefs><DisplayPattern><HttpHost URLEncodeAsURL=\"TRUE\" /><HTML>/</HTML><LookupColumn Name=\"FileRef\" IncludeVersions=\"TRUE\" URLEncodeAsURL=\"TRUE\" /></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "BaseName",
+    "Title": "Nombre de archivo",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{7615464b-559e-4302-b8e2-8f440b913101}\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" Type=\"Computed\" Name=\"BaseName\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Nombre de archivo\" Filterable=\"FALSE\" RenderXMLUsingPattern=\"TRUE\" NoCustomize=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"BaseName\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"FileLeafRef\" /><FieldRef Name=\"FSObjType\" /></FieldRefs><DisplayPattern><IfEqual><Expr1><LookupColumn Name=\"FSObjType\" /></Expr1><Expr2>1</Expr2><Then><LookupColumn Name=\"FileLeafRef\" HTMLEncode=\"TRUE\" /></Then><Else><UrlBaseName HTMLEncode=\"TRUE\" IsPath=\"TRUE\"><LookupColumn Name=\"FileLeafRef\" /></UrlBaseName></Else></IfEqual></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "MetaInfo",
+    "Title": "Contenedor de propiedades",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{687c7f94-686a-42d3-9b67-2782eac4b4f8}\" Name=\"MetaInfo\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Contenedor de propiedades\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"MetaInfo\" JoinColName=\"DoclibRowId\" JoinType=\"INNER\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"MetaInfo\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_Level",
+    "Title": "Nivel",
+    "TypeAsString": "Integer",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{43bdd51b-3c5b-4e78-90a8-fb2087f71e70}\" ColName=\"tp_Level\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Type=\"Integer\" Name=\"_Level\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Nivel\" Hidden=\"TRUE\" Required=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_Level\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_IsCurrentVersion",
+    "Title": "es la versión actual",
+    "TypeAsString": "Boolean",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{c101c3e7-122d-4d4d-bc34-58e94a38c816}\" ColName=\"tp_IsCurrentVersion\" DisplaceOnUpgrade=\"TRUE\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Type=\"Boolean\" Name=\"_IsCurrentVersion\" DisplayName=\"es la versión actual\" Hidden=\"TRUE\" Required=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_IsCurrentVersion\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "ItemChildCount",
+    "Title": "Número secundario de elemento",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{b824e17e-a1b3-426e-aecf-f0184d900485}\" Name=\"ItemChildCount\" DisplaceOnUpgrade=\"TRUE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Número secundario de elemento\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"ItemChildCount\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"ItemChildCount\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "FolderChildCount",
+    "Title": "Recuento secundario de carpetas",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{960ff01f-2b6d-4f1b-9c3f-e19ad8927341}\" Name=\"FolderChildCount\" DisplaceOnUpgrade=\"TRUE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Recuento secundario de carpetas\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"FolderChildCount\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"FolderChildCount\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "Restricted",
+    "Title": "Restringido",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{786099e5-d20a-4232-86e5-cfc3d6face96}\" Name=\"Restricted\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Restringido\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"Restricted\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SchemaVersion=\"16.0.64.0\" RecreateIfMissing=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"Restricted\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "OriginatorId",
+    "Title": "Identificador del originador",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{14ee99cd-bed9-474a-bf99-8f753fbad6b4}\" Name=\"OriginatorId\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Identificador del originador\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"OriginatorId\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SchemaVersion=\"16.0.77.0\" RecreateIfMissing=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"OriginatorId\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "NoExecute",
+    "Title": "NoExecute",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{0b16648a-daff-47d4-9fda-c6038b75ed27}\" Name=\"NoExecute\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"NoExecute\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"DocFlags\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" MaskCheck=\"NoExecute\" RecreateIfMissing=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"NoExecute\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "ContentVersion",
+    "Title": "Versión del contenido",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{d48268e5-c65d-486c-bbf1-874cf986d7d3}\" Name=\"ContentVersion\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Versión del contenido\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"ContentVersion\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" RecreateIfMissing=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"ContentVersion\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_ComplianceFlags",
+    "Title": "Configuración de la etiqueta",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{ccc1037f-f65e-434a-868e-8c98af31fe29}\" Name=\"_ComplianceFlags\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"FALSE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Configuración de la etiqueta\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"ComplianceFlags\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SchemaVersion=\"16.0.93.0\" RecreateIfMissing=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_ComplianceFlags\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_ComplianceTag",
+    "Title": "Etiqueta de retención",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{d4b6480a-4bed-4094-9a52-30181ea38f1d}\" Name=\"_ComplianceTag\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"FALSE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Etiqueta de retención\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"ComplianceTag\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SchemaVersion=\"16.0.93.0\" RecreateIfMissing=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_ComplianceTag\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_ComplianceTagWrittenTime",
+    "Title": "Etiqueta de retención aplicada",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{92be610e-ddbb-49f4-b3b1-5c2bc768df8f}\" Name=\"_ComplianceTagWrittenTime\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"FALSE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Etiqueta de retención aplicada\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"ComplianceTagWrittenTime\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SchemaVersion=\"16.0.93.0\" RecreateIfMissing=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_ComplianceTagWrittenTime\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_ComplianceTagUserId",
+    "Title": "Usuario que ha aplicado la etiqueta:",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{418d7676-2d6f-42cf-a16a-e43d2971252a}\" Name=\"_ComplianceTagUserId\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"FALSE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Usuario que ha aplicado la etiqueta:\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"ComplianceTagUserId\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SchemaVersion=\"16.0.93.0\" RecreateIfMissing=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_ComplianceTagUserId\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_IsRecord",
+    "Title": "El elemento es un registro",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{8382d247-72a9-44b1-9794-7b177edc89f3}\" Type=\"Computed\" ReadOnly=\"TRUE\" Name=\"_IsRecord\" DisplayName=\"El elemento es un registro\" DisplaceOnUpgrade=\"TRUE\" SchemaVersion=\"16.0.93.0\" RecreateIfMissing=\"TRUE\" NoCustomize=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_IsRecord\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"_ComplianceFlags\" /></FieldRefs><DisplayPattern><Switch><Expr><LookupColumn Name=\"_ComplianceFlags\" /></Expr><Case Value=\"1\"><HTML>Sí</HTML></Case><Case Value=\"3\"><HTML>Sí</HTML></Case><Default><HTML>No</HTML></Default></Switch></DisplayPattern></Field>"
+  },
+  {
+    "InternalName": "AccessPolicy",
+    "Title": "Directiva de acceso",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{b4cb04e8-622e-4c7d-8e87-b558a1bb907b}\" Name=\"AccessPolicy\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Directiva de acceso\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"AccessPolicy\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SchemaVersion=\"16.0.110.0\" RecreateIfMissing=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"AccessPolicy\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_VirusStatus",
+    "Title": "VirusStatus",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{df7ffe41-81d6-46eb-8777-444d1613c803}\" Name=\"_VirusStatus\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"VirusStatus\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"VirusStatus\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" RecreateIfMissing=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_VirusStatus\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_VirusVendorID",
+    "Title": "VirusVendorID",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{32d407ed-15e1-4ccc-b1d4-c56f5799b256}\" Name=\"_VirusVendorID\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"VirusVendorID\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"VirusVendorID\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" RecreateIfMissing=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_VirusVendorID\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_VirusInfo",
+    "Title": "VirusInfo",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{c4b1727e-aca8-4bd8-ae83-f554ae3c08eb}\" Name=\"_VirusInfo\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"VirusInfo\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"VirusInfo\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" RecreateIfMissing=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_VirusInfo\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_RansomwareAnomalyMetaInfo",
+    "Title": "RansomwareAnomalyMetaInfo",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{a176c176-bc3a-405b-a1c1-9bec0f56e4d3}\" Name=\"_RansomwareAnomalyMetaInfo\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"RansomwareAnomalyMetaInfo\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"RansomwareAnomalyMetaInfo\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SchemaVersion=\"16.0.418.0\" RecreateIfMissing=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_RansomwareAnomalyMetaInfo\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_DraftOwnerId",
+    "Title": "Id. de propietario del borrador",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{daff81f1-d785-4da9-8df6-5fd577f38558}\" Name=\"_DraftOwnerId\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Id. de propietario del borrador\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"DraftOwnerId\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" RecreateIfMissing=\"TRUE\" SchemaVersion=\"16.0.423.0\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_DraftOwnerId\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "MainLinkSettings",
+    "Title": "Configuración del vínculo principal",
+    "TypeAsString": "Computed",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{5b9fa52c-509d-44aa-86b0-5a4c95716b8e}\" Name=\"MainLinkSettings\" RecreateIfMissing=\"TRUE\" NoCustomize=\"TRUE\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Computed\" ReadOnly=\"TRUE\" DisplayName=\"Configuración del vínculo principal\" RenderValueAs=\"MultiColumnValue\" SchemaVersion=\"16.0.435.0\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"MainLinkSettings\" FromBaseType=\"TRUE\"><FieldRefs><FieldRef Name=\"MainLinkRole\" Type=\"Lookup\" BaseLookup=\"TRUE\" FieldRef=\"ScopeId\" ShowField=\"MainLinkRole\" List=\"Docs\" ListInternal=\"Perms\" LeftColumnName=\"ScopeId\" JoinColName=\"ScopeId\" LeftList=\"Docs\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" ID=\"5333d1c3-139e-4cb6-9e5e-7bfdac599dfe\" /><FieldRef Name=\"MainLinkAudience\" Type=\"Lookup\" BaseLookup=\"TRUE\" FieldRef=\"ScopeId\" ShowField=\"MainLinkAudience\" List=\"Docs\" ListInternal=\"Perms\" LeftColumnName=\"ScopeId\" JoinColName=\"ScopeId\" LeftList=\"Docs\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" ID=\"c5f23bc7-e3d7-4218-8251-fb04f152c145\" /><FieldRef Name=\"PermissionScopeFlags\" Type=\"Lookup\" BaseLookup=\"TRUE\" FieldRef=\"ScopeId\" ShowField=\"PermissionScopeFlags\" List=\"Docs\" ListInternal=\"Perms\" LeftColumnName=\"ScopeId\" JoinColName=\"ScopeId\" LeftList=\"Docs\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" ID=\"1944d574-ecab-4818-ae78-16273b4ffc63\" ValueMask=\"PermissionScopeFlags\" /></FieldRefs></Field>"
+  },
+  {
+    "InternalName": "AppAuthor",
+    "Title": "Aplicación creada por",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{6bfaba20-36bf-44b5-a1b2-eb6346d49716}\" ColName=\"tp_AppAuthor\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Hidden=\"FALSE\" Type=\"Lookup\" List=\"AppPrincipals\" Name=\"AppAuthor\" DisplayName=\"Aplicación creada por\" ShowField=\"Title\" JoinColName=\"Id\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"AppAuthor\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "AppEditor",
+    "Title": "Aplicación modificada por",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{e08400f3-c779-4ed2-a18c-ab7f34caa318}\" ColName=\"tp_AppEditor\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Hidden=\"FALSE\" Type=\"Lookup\" List=\"AppPrincipals\" Name=\"AppEditor\" DisplayName=\"Aplicación modificada por\" ShowField=\"Title\" JoinColName=\"Id\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"AppEditor\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "SMTotalSize",
+    "Title": "Tamaño total",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{4df6bfaf-f887-424e-8ea3-fd050113e7a9}\" FieldRef=\"DocId\" LeftColumnName=\"tp_DocId\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" Type=\"Lookup\" List=\"Docs\" ListInternal=\"StorageMetrics\" RecreateIfMissing=\"TRUE\" Name=\"SMTotalSize\" DisplayName=\"Tamaño total\" ShowField=\"SMTotalSize\" JoinColName=\"DocId\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"SMTotalSize\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "SMLastModifiedDate",
+    "Title": "Última modificación",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{d340fca5-f503-4baa-bae9-90f1447ebff6}\" FieldRef=\"DocId\" LeftColumnName=\"tp_DocId\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" Type=\"Lookup\" List=\"Docs\" ListInternal=\"StorageMetrics\" RecreateIfMissing=\"TRUE\" Name=\"SMLastModifiedDate\" DisplayName=\"Última modificación\" ShowField=\"SMLastModifiedDate\" JoinColName=\"DocId\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"SMLastModifiedDate\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "SMTotalFileStreamSize",
+    "Title": "Tamaño total de las secuencias de archivo",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{1faa4902-9115-44b9-bba7-791441ca1d6f}\" FieldRef=\"DocId\" LeftColumnName=\"tp_DocId\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" Type=\"Lookup\" List=\"Docs\" ListInternal=\"StorageMetrics\" RecreateIfMissing=\"TRUE\" Name=\"SMTotalFileStreamSize\" DisplayName=\"Tamaño total de las secuencias de archivo\" ShowField=\"SMTotalFileStreamSize\" JoinColName=\"DocId\" SchemaVersion=\"16.0.80.0\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"SMTotalFileStreamSize\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "SMTotalFileCount",
+    "Title": "Recuento total de archivos",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{a261b12a-8ca2-47fa-a117-05861d637c7e}\" FieldRef=\"DocId\" LeftColumnName=\"tp_DocId\" RowOrdinal=\"0\" ReadOnly=\"TRUE\" Hidden=\"TRUE\" Type=\"Lookup\" List=\"Docs\" ListInternal=\"StorageMetrics\" RecreateIfMissing=\"TRUE\" Name=\"SMTotalFileCount\" DisplayName=\"Recuento total de archivos\" ShowField=\"SMTotalFileCount\" JoinColName=\"DocId\" SchemaVersion=\"16.0.80.0\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"SMTotalFileCount\" FromBaseType=\"TRUE\" />"
+  },
+  {
+    "InternalName": "_CommentFlags",
+    "Title": "Configuración de los comentarios",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{c274cbfd-084a-4017-925f-cce50c9e3eec}\" Name=\"_CommentFlags\" Sealed=\"TRUE\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Configuración de los comentarios\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"CommentFlags\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SchemaVersion=\"16.0.139.0\" RecreateIfMissing=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_CommentFlags\" />"
+  },
+  {
+    "InternalName": "_CommentCount",
+    "Title": "Recuento de comentarios",
+    "TypeAsString": "Lookup",
+    "Required": false,
+    "SchemaXml": "<Field ID=\"{d307dff3-340f-44a2-9f4b-fbfe1ba07459}\" Name=\"_CommentCount\" Sealed=\"TRUE\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnly=\"TRUE\" ShowInFileDlg=\"FALSE\" Type=\"Lookup\" DisplayName=\"Recuento de comentarios\" List=\"Docs\" FieldRef=\"ID\" ShowField=\"CommentCount\" JoinColName=\"DoclibRowId\" JoinRowOrdinal=\"0\" JoinType=\"INNER\" SchemaVersion=\"16.0.139.0\" RecreateIfMissing=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"_CommentCount\" />"
+  }
+]

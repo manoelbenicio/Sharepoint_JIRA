@@ -1,0 +1,302 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.4",
+    "msteams": {
+        "width": "Full"
+    },
+    "body": [
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📊",
+                                    "size": "ExtraLarge"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Status Report Semanal",
+                                    "weight": "Bolder",
+                                    "size": "Large",
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Oferta: ${jirakey}",
+                                    "spacing": "None",
+                                    "isSubtle": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        {
+                            "title": "Semana:",
+                            "value": "${semana}"
+                        },
+                        {
+                            "title": "Versão:",
+                            "value": "${versao_report}"
+                        }
+                    ]
+                }
+            ],
+            "spacing": "Small"
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Status da Oferta",
+                    "weight": "Bolder",
+                    "spacing": "Medium"
+                },
+                {
+                    "type": "Input.ChoiceSet",
+                    "id": "status_atual",
+                    "label": "Status Atual *",
+                    "style": "compact",
+                    "isRequired": true,
+                    "errorMessage": "Selecione o status atual",
+                    "choices": [
+                        {
+                            "title": "📋 Em Análise",
+                            "value": "em_analise"
+                        },
+                        {
+                            "title": "🔨 Em Desenvolvimento",
+                            "value": "em_desenvolvimento"
+                        },
+                        {
+                            "title": "📤 Enviada ao Cliente",
+                            "value": "enviada"
+                        },
+                        {
+                            "title": "💬 Em Negociação",
+                            "value": "negociacao"
+                        },
+                        {
+                            "title": "✅ Ganha (Won)",
+                            "value": "won"
+                        },
+                        {
+                            "title": "❌ Perdida (Lost)",
+                            "value": "lost"
+                        },
+                        {
+                            "title": "⏸️ Pausada",
+                            "value": "pausada"
+                        }
+                    ]
+                },
+                {
+                    "type": "Input.ChoiceSet",
+                    "id": "status_projeto",
+                    "label": "Status do Projeto (Semáforo) *",
+                    "style": "expanded",
+                    "isRequired": true,
+                    "errorMessage": "Selecione o status do semáforo",
+                    "choices": [
+                        {
+                            "title": "🟢 Verde - Tudo OK",
+                            "value": "Verde"
+                        },
+                        {
+                            "title": "🟡 Amarelo - Atenção Necessária",
+                            "value": "Amarelo"
+                        },
+                        {
+                            "title": "🔴 Vermelho - Situação Crítica",
+                            "value": "Vermelho"
+                        }
+                    ]
+                }
+            ],
+            "separator": true
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Acompanhamento",
+                    "weight": "Bolder",
+                    "spacing": "Medium"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "Input.Toggle",
+                                    "id": "reuniao_cliente",
+                                    "title": "Reunião com cliente esta semana?",
+                                    "value": "false",
+                                    "valueOn": "true",
+                                    "valueOff": "false"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "Input.Toggle",
+                                    "id": "proposta_atualizada",
+                                    "title": "Proposta foi atualizada?",
+                                    "value": "false",
+                                    "valueOn": "true",
+                                    "valueOff": "false"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Input.Toggle",
+                    "id": "bloqueio_existente",
+                    "title": "Existe algum bloqueio ou impedimento?",
+                    "value": "false",
+                    "valueOn": "true",
+                    "valueOff": "false"
+                }
+            ],
+            "separator": true
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Previsões",
+                    "weight": "Bolder",
+                    "spacing": "Medium"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "Input.Date",
+                                    "id": "previsao_fechamento",
+                                    "label": "Previsão de Fechamento"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "Input.ChoiceSet",
+                                    "id": "probabilidade_ganho",
+                                    "label": "Probabilidade de Ganho",
+                                    "style": "compact",
+                                    "choices": [
+                                        {
+                                            "title": "25%",
+                                            "value": "25"
+                                        },
+                                        {
+                                            "title": "50%",
+                                            "value": "50"
+                                        },
+                                        {
+                                            "title": "75%",
+                                            "value": "75"
+                                        },
+                                        {
+                                            "title": "100%",
+                                            "value": "100"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Input.Number",
+                    "id": "budget_consumido",
+                    "label": "Budget Consumido (%)",
+                    "min": 0,
+                    "max": 100,
+                    "placeholder": "Ex: 45"
+                }
+            ],
+            "separator": true
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Observações",
+                    "weight": "Bolder",
+                    "spacing": "Medium"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "⚠️ Obrigatório se Status = Vermelho",
+                    "size": "Small",
+                    "color": "Attention",
+                    "spacing": "None"
+                },
+                {
+                    "type": "Input.Text",
+                    "id": "observacoes",
+                    "label": "Detalhes, riscos, próximos passos",
+                    "isMultiline": true,
+                    "placeholder": "Descreva a situação atual, riscos identificados, ações planejadas..."
+                }
+            ],
+            "separator": true
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "✅ Enviar Status Report",
+            "style": "positive",
+            "data": {
+                "action": "submit_status",
+                "jirakey": "${jirakey}",
+                "oferta_id": "${oferta_id}",
+                "semana": "${semana}",
+                "versao_report": "${versao_report}",
+                "arquiteto_email": "${arquiteto_email}"
+            }
+        }
+    ]
+}

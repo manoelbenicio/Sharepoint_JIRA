@@ -1,0 +1,737 @@
+{
+  "root": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA",
+  "needles": [
+    "StatusReports_Queue_TEST"
+  ],
+  "total_findings": 104,
+  "findings": [
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/CHECKPOINT.md",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:210",
+      "preview": "- [ ] **Ops (Level 1 troubleshooting)**: create/standardize SharePoint views for `StatusReports_Queue_TEST` showing built-in `Created`/`Modified` + `QueueStatus` + `SentAt` + `CompletedAt` to validate runs without digging into Power Automate run history."
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/CHECKPOINT.md",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:216",
+      "preview": "- [ ] **Technical debt (rename queue list)**: rename `StatusReports_Queue_TEST` → `StatusReports_Queue` (SharePoint-side), then update Flow1/Flow2 to reference the new list name (or migrate flows to use list GUID to avoid name-coupling)."
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/QA_PRODUCTION_TEST_PLAN.md",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:23",
+      "preview": "- Flow1: queue creator (`StatusReports_Queue_TEST` → `Pending`)"
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/QA_PRODUCTION_TEST_PLAN.md",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:29",
+      "preview": "- SharePoint lists: `ARQs_Teams`, `Ofertas_Pipeline`, `StatusReports_Queue_TEST`, `StatusReports_Historico`, `Atualizacoes_Semanais`"
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/QA_PRODUCTION_TEST_PLAN.md",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:89",
+      "preview": "Create a view for `StatusReports_Queue_TEST` including at least:"
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/QA_PRODUCTION_TEST_PLAN.md",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:97",
+      "preview": "- Flow1 worked if new rows appear in `StatusReports_Queue_TEST` with `QueueStatus=Pending` and correct keys."
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/QA_PRODUCTION_TEST_PLAN.md",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:243",
+      "preview": "- Query `StatusReports_Queue_TEST` grouped by `(OfertaId, Semana, RecipientEmail)` and count > 1."
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/README.md",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:35",
+      "preview": "- `python tools/audit_queue_list_references.py --needles StatusReports_Queue_TEST --zip-pattern 'flow*.zip' --out tools/reports/queue_list_reference_audit.json`"
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/ops/runbooks/TD-003-ops-views-level1.md",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:17",
+      "preview": "- `StatusReports_Queue_TEST`"
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/ops/runbooks/TD-006-queue-dedupe-uniqueness.md",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:22",
+      "preview": "- Queue list name (current): `StatusReports_Queue_TEST`"
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/ops/runbooks/TD-008-queue-list-cutover-blue-green.md",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:12",
+      "preview": "Replace `StatusReports_Queue_TEST` with a production name `StatusReports_Queue` **without breaking anything**, with:"
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/ops/runbooks/TD-008-queue-list-cutover-blue-green.md",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:23",
+      "preview": "- Green = existing list `StatusReports_Queue_TEST` (kept intact for rollback)"
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/ops/runbooks/TD-008-queue-list-cutover-blue-green.md",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:30",
+      "preview": "- List name (current): `StatusReports_Queue_TEST`"
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/ops/runbooks/TD-008-queue-list-cutover-blue-green.md",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:39",
+      "preview": "- `python tools/audit_queue_list_references.py --needles StatusReports_Queue_TEST`"
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/ops/runbooks/TD-008-queue-list-cutover-blue-green.md",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:56",
+      "preview": "1. Export schema + items of `StatusReports_Queue_TEST` (scripted)."
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/ops/runbooks/TD-008-queue-list-cutover-blue-green.md",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:100",
+      "preview": "- Old list remains untouched (`StatusReports_Queue_TEST` still exists with data)."
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/ops/runbooks/TD-008-queue-list-cutover-blue-green.md",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:106",
+      "preview": "2. Enable the old Flow1/Flow2 versions that still point to `StatusReports_Queue_TEST`."
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/ops/scripts/powershell/ops-views.ps1",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:13",
+      "preview": "pwsh ops/scripts/powershell/ops-views.ps1 -SiteUrl \"https://.../sites/...\" -QueueList \"StatusReports_Queue_TEST\" -HistoricoList \"StatusReports_Historico\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/ops/scripts/powershell/queue-cutover.ps1",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:16",
+      "preview": "pwsh ops/scripts/powershell/queue-cutover.ps1 -SiteUrl \"https://.../sites/...\" -OldList \"StatusReports_Queue_TEST\" -NewList \"StatusReports_Queue\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/ops/scripts/powershell/queue-dedupe.ps1",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:12",
+      "preview": "pwsh ops/scripts/powershell/queue-dedupe.ps1 -SiteUrl \"https://.../sites/...\" -QueueList \"StatusReports_Queue_TEST\" -Mode Scan"
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/ops/scripts/powershell/queue-dedupe.ps1",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:15",
+      "preview": "pwsh ops/scripts/powershell/queue-dedupe.ps1 -SiteUrl \"https://.../sites/...\" -QueueList \"StatusReports_Queue_TEST\" -Mode Cleanup -KeepPolicy OldestCreated -Confirm:$true"
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/ops/scripts/powershell/queue-rollback.ps1",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:13",
+      "preview": "point to StatusReports_Queue_TEST. This script does not toggle flows; it keeps SharePoint-side rollback safe and auditable."
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/ops/scripts/powershell/queue-rollback.ps1",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:16",
+      "preview": "pwsh ops/scripts/powershell/queue-rollback.ps1 -SiteUrl \"https://.../sites/...\" -OldList \"StatusReports_Queue_TEST\" -NewList \"StatusReports_Queue\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:4",
+      "preview": "\"StatusReports_Queue_TEST\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:11",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:13",
+      "preview": "\"preview\": \"- [ ] **Ops (Level 1 troubleshooting)**: create/standardize SharePoint views for `StatusReports_Queue_TEST` showing built-in `Created`/`Modified` + `QueueStatus` + `SentAt` + `CompletedAt` to validate runs without digging into Power Automate run history.\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:18",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:20",
+      "preview": "\"preview\": \"- [ ] **Technical debt (rename queue list)**: rename `StatusReports_Queue_TEST` → `StatusReports_Queue` (SharePoint-side), then update Flow1/Flow2 to reference the new list name (or migrate flows to use list GUID to avoid name-coupling).\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:25",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:27",
+      "preview": "\"preview\": \"- Flow1: queue creator (`StatusReports_Queue_TEST` → `Pending`)\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:32",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:34",
+      "preview": "\"preview\": \"- SharePoint lists: `ARQs_Teams`, `Ofertas_Pipeline`, `StatusReports_Queue_TEST`, `StatusReports_Historico`, `Atualizacoes_Semanais`\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:39",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:41",
+      "preview": "\"preview\": \"Create a view for `StatusReports_Queue_TEST` including at least:\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:46",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:48",
+      "preview": "\"preview\": \"- Flow1 worked if new rows appear in `StatusReports_Queue_TEST` with `QueueStatus=Pending` and correct keys.\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:53",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:55",
+      "preview": "\"preview\": \"- Query `StatusReports_Queue_TEST` grouped by `(OfertaId, Semana, RecipientEmail)` and count > 1.\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:60",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:62",
+      "preview": "\"preview\": \"+              \\\"table\\\": \\\"StatusReports_Queue_TEST\\\"\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:67",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:69",
+      "preview": "\"preview\": \"+                  \\\"table\\\": \\\"StatusReports_Queue_TEST\\\",\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:74",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:76",
+      "preview": "\"preview\": \"+                      \\\"table\\\": \\\"StatusReports_Queue_TEST\\\",\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:81",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:83",
+      "preview": "\"preview\": \"+                            \\\"table\\\": \\\"StatusReports_Queue_TEST\\\",\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:88",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:90",
+      "preview": "\"preview\": \"+                              \\\"table\\\": \\\"StatusReports_Queue_TEST\\\",\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:95",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:102",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:109",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:111",
+      "preview": "\"preview\": \"- **Purpose**: Create queue items with `QueueStatus = Pending` in **`StatusReports_Queue_TEST`**.\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:116",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:118",
+      "preview": "\"preview\": \"- `StatusReports_Queue_TEST` (queue list for downstream processing).\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:123",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:125",
+      "preview": "\"preview\": \"6. For each offer, dedupe against `StatusReports_Queue_TEST`:\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:130",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:132",
+      "preview": "\"preview\": \"- Lists: `ARQs_Teams`, `Ofertas_Pipeline`, `StatusReports_Queue_TEST`\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:137",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:139",
+      "preview": "\"preview\": \"> **Purpose**: Creates **Pending** items in `StatusReports_Queue_TEST` for Flow2 to send cards and wait for responses.\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:144",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:146",
+      "preview": "\"preview\": \"3. `StatusReports_Queue_TEST` list exists (queue)\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:151",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:153",
+      "preview": "\"preview\": \"List Name: StatusReports_Queue_TEST\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:158",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:160",
+      "preview": "\"preview\": \"List Name: StatusReports_Queue_TEST\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:165",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:167",
+      "preview": "\"preview\": \"- `StatusReports_Queue_TEST`\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:172",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:174",
+      "preview": "\"preview\": \"- Queue list name (current): `StatusReports_Queue_TEST`\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:179",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:181",
+      "preview": "\"preview\": \"Replace `StatusReports_Queue_TEST` with a production name `StatusReports_Queue` **without breaking anything**, with:\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:186",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:188",
+      "preview": "\"preview\": \"- Green = existing list `StatusReports_Queue_TEST` (kept intact for rollback)\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:193",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:195",
+      "preview": "\"preview\": \"- List name (current): `StatusReports_Queue_TEST`\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:200",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:202",
+      "preview": "\"preview\": \"- `python tools/audit_queue_list_references.py --needles StatusReports_Queue_TEST`\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:207",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:209",
+      "preview": "\"preview\": \"1. Export schema + items of `StatusReports_Queue_TEST` (scripted).\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:214",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:216",
+      "preview": "\"preview\": \"- Old list remains untouched (`StatusReports_Queue_TEST` still exists with data).\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:221",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:223",
+      "preview": "\"preview\": \"2. Enable the old Flow1/Flow2 versions that still point to `StatusReports_Queue_TEST`.\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:228",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:230",
+      "preview": "\"preview\": \"pwsh ops/scripts/powershell/ops-views.ps1 -SiteUrl \\\"https://.../sites/...\\\" -QueueList \\\"StatusReports_Queue_TEST\\\" -HistoricoList \\\"StatusReports_Historico\\\"\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:235",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:237",
+      "preview": "\"preview\": \"pwsh ops/scripts/powershell/queue-cutover.ps1 -SiteUrl \\\"https://.../sites/...\\\" -OldList \\\"StatusReports_Queue_TEST\\\" -NewList \\\"StatusReports_Queue\\\"\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:242",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:244",
+      "preview": "\"preview\": \"pwsh ops/scripts/powershell/queue-dedupe.ps1 -SiteUrl \\\"https://.../sites/...\\\" -QueueList \\\"StatusReports_Queue_TEST\\\" -Mode Scan\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:249",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:251",
+      "preview": "\"preview\": \"pwsh ops/scripts/powershell/queue-dedupe.ps1 -SiteUrl \\\"https://.../sites/...\\\" -QueueList \\\"StatusReports_Queue_TEST\\\" -Mode Cleanup -KeepPolicy OldestCreated -Confirm:$true\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:256",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:258",
+      "preview": "\"preview\": \"point to StatusReports_Queue_TEST. This script does not toggle flows; it keeps SharePoint-side rollback safe and auditable.\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:263",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:265",
+      "preview": "\"preview\": \"pwsh ops/scripts/powershell/queue-rollback.ps1 -SiteUrl \\\"https://.../sites/...\\\" -OldList \\\"StatusReports_Queue_TEST\\\" -NewList \\\"StatusReports_Queue\\\"\""
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:270",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:277",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:284",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:291",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:298",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/tools/reports/queue_list_reference_audit.json",
+      "kind": "file",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "line:305",
+      "preview": "\"needle\": \"StatusReports_Queue_TEST\","
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/dist_zips/flow1_queue_creator.zip",
+      "kind": "zip",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "Microsoft.Flow/flows/da560886-e0e6-407d-a81c-18805a5d933a/definition.json:line:1",
+      "preview": "{\"name\":\"23e67c52-fccb-44b6-9446-8b0c7113c8ab\",\"id\":\"/providers/Microsoft.Flow/flows/23e67c52-fccb-44b6-9446-8b0c7113c8ab\",\"type\":\"Microsoft.Flow/flows\",\"properties\":{\"apiId\":\"/providers/Microsoft.PowerApps/apis/shared_logicflows\",\"displayName\":\"Flow1_QueueCreator_PROD\",\"definition\":{\"metadata\":{\"workflowEntityId\":null,\"processAdvisorMetadata\":null,\"flowChargedByPaygo\":null,\"flowclientsuspensionre"
+    },
+    {
+      "path": "/mnt/d/VMs/Projetos/Projeto_Copilot_Sharepoint/HANDOFF_FIX_QA/dist_zips/flow2_queue_wait.zip",
+      "kind": "zip",
+      "needle": "StatusReports_Queue_TEST",
+      "location": "Microsoft.Flow/flows/fc516ca8-383b-4182-a9a5-8e219329a846/definition.json:line:1",
+      "preview": "{\"name\": \"1729afb6-4433-45f9-9b60-e3589e3193a4\", \"id\": \"/providers/Microsoft.Flow/flows/1729afb6-4433-45f9-9b60-e3589e3193a4\", \"type\": \"Microsoft.Flow/flows\", \"properties\": {\"apiId\": \"/providers/Microsoft.PowerApps/apis/shared_logicflows\", \"displayName\": \"Fluxo2_Trigger_PROD\", \"definition\": {\"metadata\": {\"workflowEntityId\": null, \"processAdvisorMetadata\": null, \"flowChargedByPaygo\": null, \"flowcli"
+    }
+  ]
+}

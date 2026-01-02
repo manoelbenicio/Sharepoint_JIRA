@@ -1,0 +1,20 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "FUNCTIONS_WORKER_RUNTIME": "python",
+
+        "ENVIRONMENT": "LAB",
+        "LAB_PURGE_ENABLED": "false",
+        "LAB_PURGE_ADMIN_TOKEN": "",
+        "LAB_PURGE_CONFIRMATION": "",
+        "LAB_PURGE_MAX_ITEMS_PER_LIST": "500",
+        "LAB_PURGE_ALLOWED_LIST_IDS": "",
+
+        "SP_TENANT_ID": "",
+        "SP_CLIENT_ID": "",
+        "SP_CLIENT_SECRET": "",
+        "SP_SITE_URL": "",
+        "SP_SITE_ID": ""
+    }
+}

@@ -1,0 +1,375 @@
+{
+  "$schema": "1.0",
+  "meta": {
+    "project": "Sharepoint_JIRA Integration",
+    "description": "Automated pipeline: JIRA → SharePoint → Teams/Power BI",
+    "created": "2025-12-28T18:42:00-03:00",
+    "lastUpdated": "2025-12-30T22:00:00-03:00",
+    "lastUpdatedBy": "AI Agent (Antigravity) + Human (mbenicios)",
+    "version": "1.3.4"
+  },
+  "summary": {
+    "totalTasks": 27,
+    "completed": 23,
+    "inProgress": 0,
+    "pending": 1,
+    "skipped": 1,
+    "cancelled": 1,
+    "percentComplete": 85.2
+  },
+  "components": [
+    {
+      "id": "azure-function",
+      "name": "Azure Function",
+      "status": "COMPLETED",
+      "tasks": [
+        {
+          "id": "AF-001",
+          "task": "Create function_app.py with all endpoints",
+          "status": "COMPLETED",
+          "completedAt": "2025-12-25T18:00:00-03:00",
+          "completedBy": "AI Agent",
+          "evidence": "D:\\VMs\\Projetos\\Sharepoint_JIRA\\Azure Function\\function_app.py (136KB, 18 endpoints)"
+        },
+        {
+          "id": "AF-002",
+          "task": "Implement /api/health endpoint",
+          "status": "COMPLETED",
+          "completedAt": "2025-12-23T12:00:00-03:00",
+          "completedBy": "AI Agent"
+        },
+        {
+          "id": "AF-003",
+          "task": "Implement /api/import-jira endpoint",
+          "status": "COMPLETED",
+          "completedAt": "2025-12-23T14:00:00-03:00",
+          "completedBy": "AI Agent"
+        },
+        {
+          "id": "AF-004",
+          "task": "Implement /api/consolidar-v2 endpoint",
+          "status": "COMPLETED",
+          "completedAt": "2025-12-24T10:00:00-03:00",
+          "completedBy": "AI Agent"
+        },
+        {
+          "id": "AF-005",
+          "task": "Implement /api/normalizar-ofertas endpoint",
+          "status": "COMPLETED",
+          "completedAt": "2025-12-24T12:00:00-03:00",
+          "completedBy": "AI Agent"
+        },
+        {
+          "id": "AF-006",
+          "task": "Implement /api/lab/purge-lists endpoint (admin)",
+          "status": "COMPLETED",
+          "completedAt": "2025-12-25T16:00:00-03:00",
+          "completedBy": "AI Agent"
+        },
+        {
+          "id": "AF-007",
+          "task": "Implement Power BI API endpoints (14 total)",
+          "status": "COMPLETED",
+          "completedAt": "2025-12-25T18:00:00-03:00",
+          "completedBy": "AI Agent"
+        },
+        {
+          "id": "AF-008",
+          "task": "Deploy Azure Function to Azure",
+          "status": "COMPLETED",
+          "completedAt": "2025-12-28T18:51:00-03:00",
+          "completedBy": "AI Agent (auto-deploy script)",
+          "evidence": "19 endpoints deployed, health check passed. Function Key: REDACTED_FUNCTION_KEY"
+        },
+        {
+          "id": "AF-009",
+          "task": "Configure App Settings (PBI credentials)",
+          "status": "OPTIONAL",
+          "notes": "Only needed if using /pbi-* endpoints"
+        }
+      ]
+    },
+    {
+      "id": "sharepoint-lists",
+      "name": "SharePoint Lists Schema",
+      "status": "COMPLETED",
+      "tasks": [
+        {
+          "id": "SP-001",
+          "task": "Export Ofertas_Pipeline schema",
+          "status": "COMPLETED",
+          "completedAt": "2025-12-24T00:00:00-03:00",
+          "evidence": "D:\\VMs\\Projetos\\Sharepoint_JIRA\\XML\\sharepoint_mapping_ofertas_pipeline.xml"
+        },
+        {
+          "id": "SP-002",
+          "task": "Export ARQs_Teams schema",
+          "status": "COMPLETED",
+          "completedAt": "2025-12-24T00:00:00-03:00",
+          "evidence": "D:\\VMs\\Projetos\\Sharepoint_JIRA\\XML\\sharepoint_mapping_arqs_teams.xml"
+        },
+        {
+          "id": "SP-003",
+          "task": "Export StatusReports_Historico schema",
+          "status": "COMPLETED",
+          "completedAt": "2025-12-24T00:00:00-03:00",
+          "evidence": "D:\\VMs\\Projetos\\Sharepoint_JIRA\\XML\\share2point_mapping_statusreports_historico.xml"
+        },
+        {
+          "id": "SP-004",
+          "task": "Configure FillInChoice=TRUE for Choice fields",
+          "status": "COMPLETED",
+          "completedAt": "2025-12-24T16:00:00-03:00",
+          "completedBy": "Human (UI)",
+          "notes": "Status, Mercado, TipoServico, PraticaUnificada configured via SharePoint UI"
+        },
+        {
+          "id": "SP-005",
+          "task": "Create StatusReports_Queue_TEST list",
+          "status": "COMPLETED",
+          "completedAt": "2025-12-28T18:47:00-03:00",
+          "completedBy": "Human (previously created)",
+          "notes": "List already exists with all 12 columns including UniqueKey with enforce unique"
+        }
+      ]
+    },
+    {
+      "id": "power-automate-flows",
+      "name": "Power Automate Flows",
+      "status": "COMPLETED",
+      "tasks": [
+        {
+          "id": "PA-001",
+          "task": "Create Flow1: Queue Creator",
+          "status": "COMPLETED",
+          "startedAt": "2025-12-28T18:55:00-03:00",
+          "completedAt": "2025-12-30T01:27:00-03:00",
+          "completedBy": "Human",
+          "priority": "HIGH",
+          "documentation": "D:\\VMs\\Projetos\\Sharepoint_JIRA\\MD_Files\\FLOW1_MANUAL_CREATION_GUIDE.md",
+          "notes": "Created manually in Power Automate portal"
+        },
+        {
+          "id": "PA-002",
+          "task": "Create Flow2: Worker (Response Handler)",
+          "status": "COMPLETED",
+          "startedAt": "2025-12-28T18:55:00-03:00",
+          "completedAt": "2025-12-30T01:27:00-03:00",
+          "completedBy": "Human",
+          "priority": "HIGH",
+          "documentation": "D:\\VMs\\Projetos\\Sharepoint_JIRA\\MD_Files\\FLOW2_MANUAL_CREATION_GUIDE.md",
+          "notes": "Created manually in Power Automate portal"
+        },
+        {
+          "id": "PA-003",
+          "task": "Create Flow3: Manager Monitor (Optional)",
+          "status": "SKIPPED",
+          "reason": "Marked as optional, lower priority",
+          "documentation": "D:\\VMs\\Projetos\\Sharepoint_JIRA\\MD_Files\\FLOW3_MANAGER_MONITOR_GUIDE.md"
+        },
+        {
+          "id": "PA-004",
+          "task": "Create StatusReport Adaptive Card JSON",
+          "status": "COMPLETED",
+          "completedAt": "2025-12-28T12:00:00-03:00",
+          "evidence": "D:\\VMs\\Projetos\\Sharepoint_JIRA\\MD_Files\\StatusReport_AdaptiveCard_v1.4.json"
+        }
+      ]
+    },
+    {
+      "id": "documentation",
+      "name": "Documentation",
+      "status": "COMPLETED",
+      "tasks": [
+        {
+          "id": "DOC-001",
+          "task": "Create Deploy Checklist",
+          "status": "COMPLETED",
+          "evidence": "D:\\VMs\\Projetos\\Sharepoint_JIRA\\Azure Function\\DEPLOY_CHECKLIST.md"
+        },
+        {
+          "id": "DOC-002",
+          "task": "Create Deploy Guide",
+          "status": "COMPLETED",
+          "evidence": "D:\\VMs\\Projetos\\Sharepoint_JIRA\\Azure Function\\DEPLOY_GUIDE.md"
+        },
+        {
+          "id": "DOC-003",
+          "task": "Create Disaster Recovery Guide",
+          "status": "COMPLETED",
+          "evidence": "D:\\VMs\\Projetos\\Sharepoint_JIRA\\Azure Function\\DISASTER_RECOVERY_GUIDE.md"
+        },
+        {
+          "id": "DOC-004",
+          "task": "Create Stakeholder Project Guide",
+          "status": "COMPLETED",
+          "evidence": "D:\\VMs\\Projetos\\Sharepoint_JIRA\\XML\\ARCHITECTURE\\STAKEHOLDER_PROJECT_GUIDE.md"
+        },
+        {
+          "id": "DOC-005",
+          "task": "Create Architecture Deep Dive",
+          "status": "COMPLETED",
+          "evidence": "D:\\VMs\\Projetos\\Sharepoint_JIRA\\XML\\ARCHITECTURE\\ARCHITECTURE_DEEP_DIVE.md"
+        },
+        {
+          "id": "DOC-006",
+          "task": "Create Queue/Wait Test Plan",
+          "status": "COMPLETED",
+          "evidence": "D:\\VMs\\Projetos\\Sharepoint_JIRA\\MD_Files\\QUEUE_WAIT_TEST_PLAN.md"
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "name": "Testing & Validation",
+      "status": "IN_PROGRESS",
+      "tasks": [
+        {
+          "id": "TEST-001",
+          "task": "Execute Queue+Wait Test Plan (Test A: Flow1)",
+          "status": "COMPLETED",
+          "completedAt": "2025-12-30T01:29:00-03:00",
+          "completedBy": "Human",
+          "documentation": "D:\\VMs\\Projetos\\Sharepoint_JIRA\\MD_Files\\QUEUE_WAIT_TEST_PLAN.md"
+        },
+        {
+          "id": "TEST-002",
+          "task": "Execute Queue+Wait Test Plan (Test B: Flow2)",
+          "status": "COMPLETED",
+          "completedAt": "2025-12-30T01:29:00-03:00",
+          "completedBy": "Human"
+        },
+        {
+          "id": "TEST-003",
+          "task": "Execute Queue+Wait Test Plan (Test C: Validation)",
+          "status": "PENDING",
+          "blockedBy": "TEST-002"
+        }
+      ]
+    },
+    {
+      "id": "legacy",
+      "name": "Legacy/Deprecated Items",
+      "status": "CANCELLED",
+      "tasks": [
+        {
+          "id": "LEG-001",
+          "task": "Microsoft Forms-based weekly status collection",
+          "status": "CANCELLED",
+          "reason": "Replaced by Adaptive Card approach (Queue+Wait architecture)",
+          "cancelledAt": "2025-12-26T10:00:00-03:00"
+        }
+      ]
+    }
+  ],
+  "blockers": [
+    {
+      "id": "BLOCK-001",
+      "description": "Azure Function deployment",
+      "status": "RESOLVED",
+      "resolvedAt": "2025-12-28T18:51:00-03:00",
+      "resolution": "Deployed with DEPLOY_NOW.ps1 script"
+    },
+    {
+      "id": "BLOCK-002",
+      "description": "StatusReports_Queue_TEST list",
+      "status": "RESOLVED",
+      "resolvedAt": "2025-12-28T18:47:00-03:00",
+      "resolution": "List already existed with all columns"
+    },
+    {
+      "id": "BLOCK-003",
+      "description": "Power Automate flows require manual creation in portal",
+      "status": "RESOLVED",
+      "resolvedAt": "2025-12-30T01:27:00-03:00",
+      "affectedTasks": [
+        "PA-001",
+        "PA-002"
+      ],
+      "resolution": "Flow1 and Flow2 created manually in Power Automate portal"
+    }
+  ],
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "Execute Test Plan (Test C: E2E validation)",
+      "status": "PENDING",
+      "documentation": "D:\\VMs\\Projetos\\Sharepoint_JIRA\\MD_Files\\QUEUE_WAIT_TEST_PLAN.md",
+      "owner": "Human"
+    },
+    {
+      "priority": 2,
+      "action": "Resolve TD-001: Populate AssigneeEmail field in Ofertas_Pipeline",
+      "status": "PENDING",
+      "notes": "Field exists but 0 items have data. Azure Function needs update.",
+      "owner": "AI Agent"
+    }
+  ],
+  "credentials": {
+    "azureFunctionKey": "REDACTED_FUNCTION_KEY",
+    "azureFunctionUrl": "https://func-pipeline-consolidation.azurewebsites.net/api/"
+  },
+  "sharepointListsGUIDs": {
+    "_note": "Validated via PnP PowerShell on 2025-12-28",
+    "lists": [
+      {
+        "name": "Ofertas_Pipeline",
+        "guid": "6db5a12d-595d-4a1a-aca1-035837613815",
+        "notes": "Flow1/Flow3/Flow4"
+      },
+      {
+        "name": "Atualizacoes_Semanais",
+        "guid": "172d7d29-5a3c-4608-b4ea-b5b027ef5ac0",
+        "notes": "Flow2/Flow3"
+      },
+      {
+        "name": "ARQs_Teams",
+        "guid": "1ad529f7-db5b-4567-aa00-1582ff333264",
+        "notes": "Flow1 by name"
+      },
+      {
+        "name": "Ofertas_Pipeline_Normalizada",
+        "guid": "fa90b09d-5eb9-461f-bf15-64a494b00d2d",
+        "notes": "Azure Function"
+      },
+      {
+        "name": "StatusReports_Historico",
+        "guid": "f58b3d23-5750-4b29-b30f-a7b5421cdd80",
+        "notes": "Flow2 history"
+      },
+      {
+        "name": "StatusReports_Queue_TEST",
+        "guid": "12197c6e-b5d4-4bcd-96d4-c8aafc426d0a",
+        "notes": "NEW - Flow1/Flow2 queue"
+      },
+      {
+        "name": "Budget_Extensions",
+        "guid": "dfeda3e0-0cc9-434d-b8d5-5b450dc071b2",
+        "notes": "Not in flows"
+      },
+      {
+        "name": "Jira_Allocation_Data",
+        "guid": "f25edf86-f23a-41bb-a7b1-84a096df2dd8",
+        "notes": "Not in flows"
+      }
+    ]
+  },
+  "technicalDebt": {
+    "_note": "Technical debt items to be addressed",
+    "items": [
+      {
+        "id": "TD-001",
+        "description": "Populate AssigneeEmail field in Ofertas_Pipeline",
+        "status": "PENDING",
+        "createdAt": "2025-12-28T19:58:00-03:00",
+        "details": "Column AssigneeEmail (GUID: ecc1901f-76ff-4f74-bb8b-b618e4e7e625) created in Ofertas_Pipeline but not yet populated. Azure Function needs to be updated to populate this field during JIRA sync.",
+        "affectedComponents": [
+          "Azure Function",
+          "Flow1"
+        ],
+        "priority": "MEDIUM",
+        "resolution": "Update Azure Function import-jira endpoint to extract email from Assignee and populate AssigneeEmail column. Then update Flow1 to use AssigneeEmail instead of Assignee."
+      }
+    ]
+  }
+}
