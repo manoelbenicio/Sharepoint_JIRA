@@ -1,0 +1,534 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.5",
+    "body": [
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "bleed": true,
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Minsait_logo.svg/200px-Minsait_logo.svg.png",
+                                    "size": "Medium",
+                                    "height": "36px"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "WEEK-OVER-WEEK TRENDS",
+                                    "weight": "Bolder",
+                                    "size": "Large",
+                                    "color": "Light",
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Performance Deltas & Customer Concentration • ${semana}",
+                                    "size": "Small",
+                                    "color": "Light",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "https://img.icons8.com/fluency/96/combo-chart.png",
+                                    "size": "Small",
+                                    "width": "40px"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "📈 PIPELINE COMPARISON",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Accent"
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "style": "accent",
+                                    "bleed": true,
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "THIS WEEK",
+                                            "size": "Small",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center",
+                                            "color": "Accent"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${pipeline_current_valor_fmt}",
+                                            "size": "Large",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center",
+                                            "spacing": "None"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${pipeline_current_count} offers",
+                                            "size": "Small",
+                                            "isSubtle": true,
+                                            "horizontalAlignment": "Center",
+                                            "spacing": "None"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "style": "default",
+                                    "bleed": true,
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "LAST WEEK",
+                                            "size": "Small",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center",
+                                            "isSubtle": true
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${pipeline_previous_valor_fmt}",
+                                            "size": "Large",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center",
+                                            "isSubtle": true,
+                                            "spacing": "None"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${pipeline_previous_count} offers",
+                                            "size": "Small",
+                                            "isSubtle": true,
+                                            "horizontalAlignment": "Center",
+                                            "spacing": "None"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "style": "${pipeline_delta_style}",
+                                    "bleed": true,
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Δ CHANGE",
+                                            "size": "Small",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${pipeline_delta_indicator} ${pipeline_delta_pct}%",
+                                            "size": "ExtraLarge",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center",
+                                            "spacing": "None"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "WoW",
+                                            "size": "Small",
+                                            "horizontalAlignment": "Center",
+                                            "spacing": "None"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "🎯 KPI TREND INDICATORS",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Warning"
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "style": "${win_rate_trend_style}",
+                                    "bleed": true,
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "WIN RATE",
+                                            "size": "Small",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${win_rate_current}% ${win_rate_trend_icon}",
+                                            "size": "Large",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center",
+                                            "spacing": "None"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Δ ${win_rate_delta}pp",
+                                            "size": "Small",
+                                            "horizontalAlignment": "Center",
+                                            "isSubtle": true,
+                                            "spacing": "None"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "style": "${avg_margin_trend_style}",
+                                    "bleed": true,
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "AVG MARGIN",
+                                            "size": "Small",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${avg_margin_current}% ${avg_margin_trend_icon}",
+                                            "size": "Large",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center",
+                                            "spacing": "None"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Δ ${avg_margin_delta}pp",
+                                            "size": "Small",
+                                            "horizontalAlignment": "Center",
+                                            "isSubtle": true,
+                                            "spacing": "None"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "style": "${cycle_time_trend_style}",
+                                    "bleed": true,
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "CYCLE TIME",
+                                            "size": "Small",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${cycle_time_current}d ${cycle_time_trend_icon}",
+                                            "size": "Large",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center",
+                                            "spacing": "None"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Δ ${cycle_time_delta}d",
+                                            "size": "Small",
+                                            "horizontalAlignment": "Center",
+                                            "isSubtle": true,
+                                            "spacing": "None"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "🏢 CUSTOMER CONCENTRATION",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Accent"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Top 5 clients by active pipeline value",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        {
+                            "title": "🥇 ${client_1_nome}",
+                            "value": "${client_1_valor_fmt} │ ${client_1_pct}%"
+                        },
+                        {
+                            "title": "🥈 ${client_2_nome}",
+                            "value": "${client_2_valor_fmt} │ ${client_2_pct}%"
+                        },
+                        {
+                            "title": "🥉 ${client_3_nome}",
+                            "value": "${client_3_valor_fmt} │ ${client_3_pct}%"
+                        },
+                        {
+                            "title": "4⃣ ${client_4_nome}",
+                            "value": "${client_4_valor_fmt} │ ${client_4_pct}%"
+                        },
+                        {
+                            "title": "5⃣ ${client_5_nome}",
+                            "value": "${client_5_valor_fmt} │ ${client_5_pct}%"
+                        }
+                    ],
+                    "spacing": "Small"
+                },
+                {
+                    "type": "Container",
+                    "style": "${concentration_risk_style}",
+                    "spacing": "Small",
+                    "items": [
+                        {
+                            "type": "ColumnSet",
+                            "columns": [
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${concentration_risk_icon} TOP 5 CONCENTRATION",
+                                            "weight": "Bolder",
+                                            "size": "Small"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Column",
+                                    "width": "auto",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${top5_concentration_pct}%",
+                                            "weight": "Bolder",
+                                            "size": "Large"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${concentration_risk_message}",
+                            "size": "Small",
+                            "wrap": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "🚨 TARGETS vs ACTUALS",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Attention"
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Win Rate Target: ${win_rate_target}%",
+                                    "size": "Small"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Margin Target: ${margin_target}%",
+                                    "size": "Small",
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Cycle Time Target: ${cycle_time_target}d",
+                                    "size": "Small",
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${win_rate_status_icon}",
+                                    "size": "Medium"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${margin_status_icon}",
+                                    "size": "Medium",
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${cycle_time_status_icon}",
+                                    "size": "Medium",
+                                    "spacing": "None"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "bleed": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "https://img.icons8.com/fluency/48/artificial-intelligence.png",
+                                    "size": "Small",
+                                    "width": "20px"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "MINSAIT Pipeline Intelligence",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "color": "Light"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "v3.0 Premium │ DN Technology Architecture",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "color": "Light",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
