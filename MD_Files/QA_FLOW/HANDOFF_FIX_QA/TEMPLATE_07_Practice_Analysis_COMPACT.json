@@ -1,0 +1,427 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.4",
+    "body": [
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "bleed": true,
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Minsait_logo.svg/200px-Minsait_logo.svg.png",
+                                    "size": "Medium",
+                                    "height": "32px"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📊 PRACTICE PERFORMANCE REPORT",
+                                    "weight": "Bolder",
+                                    "size": "Large",
+                                    "color": "Light",
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Business Unit Analysis • ${report_period}",
+                                    "size": "Small",
+                                    "color": "Light",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "📈 OVERVIEW",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Accent"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Total Practices",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${total_practices}",
+                                    "size": "ExtraLarge",
+                                    "weight": "Bolder",
+                                    "color": "Accent",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Total Pipeline",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${total_pipeline_value}",
+                                    "size": "ExtraLarge",
+                                    "weight": "Bolder",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Avg Win Rate",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${avg_win_rate}%",
+                                    "size": "ExtraLarge",
+                                    "weight": "Bolder",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "⏳ TOP 5 - FOLLOW-UP (30 Days)",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Warning"
+                },
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        {
+                            "title": "🥇 ${followup_1_practice}",
+                            "value": "${followup_1_count} | ${followup_1_value}"
+                        },
+                        {
+                            "title": "🥈 ${followup_2_practice}",
+                            "value": "${followup_2_count} | ${followup_2_value}"
+                        },
+                        {
+                            "title": "🥉 ${followup_3_practice}",
+                            "value": "${followup_3_count} | ${followup_3_value}"
+                        },
+                        {
+                            "title": "4️⃣ ${followup_4_practice}",
+                            "value": "${followup_4_count} | ${followup_4_value}"
+                        },
+                        {
+                            "title": "5️⃣ ${followup_5_practice}",
+                            "value": "${followup_5_count} | ${followup_5_value}"
+                        }
+                    ]
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "📊 Total: ${total_followup_count} offers | ${total_followup_value}",
+                    "weight": "Bolder",
+                    "size": "Small",
+                    "color": "Warning"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "✅ TOP 5 - WON (30 Days)",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Good"
+                },
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        {
+                            "title": "🏆 ${won_1_practice}",
+                            "value": "${won_1_count} | ${won_1_value}"
+                        },
+                        {
+                            "title": "🥈 ${won_2_practice}",
+                            "value": "${won_2_count} | ${won_2_value}"
+                        },
+                        {
+                            "title": "🥉 ${won_3_practice}",
+                            "value": "${won_3_count} | ${won_3_value}"
+                        },
+                        {
+                            "title": "4️⃣ ${won_4_practice}",
+                            "value": "${won_4_count} | ${won_4_value}"
+                        },
+                        {
+                            "title": "5️⃣ ${won_5_practice}",
+                            "value": "${won_5_count} | ${won_5_value}"
+                        }
+                    ]
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "🎯 Total: ${total_won_count} offers | ${total_won_value}",
+                    "weight": "Bolder",
+                    "size": "Small",
+                    "color": "Good"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "❌ TOP 5 - LOST (30 Days)",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Attention"
+                },
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        {
+                            "title": "⚠️ ${lost_1_practice}",
+                            "value": "${lost_1_count} | ${lost_1_value}"
+                        },
+                        {
+                            "title": "⚠️ ${lost_2_practice}",
+                            "value": "${lost_2_count} | ${lost_2_value}"
+                        },
+                        {
+                            "title": "⚠️ ${lost_3_practice}",
+                            "value": "${lost_3_count} | ${lost_3_value}"
+                        },
+                        {
+                            "title": "⚠️ ${lost_4_practice}",
+                            "value": "${lost_4_count} | ${lost_4_value}"
+                        },
+                        {
+                            "title": "⚠️ ${lost_5_practice}",
+                            "value": "${lost_5_count} | ${lost_5_value}"
+                        }
+                    ]
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "💔 Total: ${total_lost_count} offers | ${total_lost_value}",
+                    "weight": "Bolder",
+                    "size": "Small",
+                    "color": "Attention"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📈 HIGHEST MARGIN",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Good"
+                                },
+                                {
+                                    "type": "FactSet",
+                                    "facts": [
+                                        {
+                                            "title": "🥇 ${high_margin_1_practice}",
+                                            "value": "${high_margin_1_value}%"
+                                        },
+                                        {
+                                            "title": "🥈 ${high_margin_2_practice}",
+                                            "value": "${high_margin_2_value}%"
+                                        },
+                                        {
+                                            "title": "🥉 ${high_margin_3_practice}",
+                                            "value": "${high_margin_3_value}%"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📉 LOWEST MARGIN",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Attention"
+                                },
+                                {
+                                    "type": "FactSet",
+                                    "facts": [
+                                        {
+                                            "title": "⚠️ ${low_margin_1_practice}",
+                                            "value": "${low_margin_1_value}%"
+                                        },
+                                        {
+                                            "title": "⚠️ ${low_margin_2_practice}",
+                                            "value": "${low_margin_2_value}%"
+                                        },
+                                        {
+                                            "title": "⚠️ ${low_margin_3_practice}",
+                                            "value": "${low_margin_3_value}%"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "📊 PRACTICE COMPARISON",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Accent"
+                },
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        {
+                            "title": "🔹 Data/IA",
+                            "value": "Won: ${data_ia_won} | Lost: ${data_ia_lost} | ${data_ia_winrate}%"
+                        },
+                        {
+                            "title": "🔹 DS",
+                            "value": "Won: ${ds_won} | Lost: ${ds_lost} | ${ds_winrate}%"
+                        },
+                        {
+                            "title": "🔹 SGE",
+                            "value": "Won: ${sge_won} | Lost: ${sge_lost} | ${sge_winrate}%"
+                        },
+                        {
+                            "title": "🔹 DIC",
+                            "value": "Won: ${dic_won} | Lost: ${dic_lost} | ${dic_winrate}%"
+                        },
+                        {
+                            "title": "🔹 GU",
+                            "value": "Won: ${gu_won} | Lost: ${gu_lost} | ${gu_winrate}%"
+                        },
+                        {
+                            "title": "🔹 Cyber",
+                            "value": "Won: ${cyber_won} | Lost: ${cyber_lost} | ${cyber_winrate}%"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "bleed": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📅 ${generation_date}",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Week ${week_number} • ${year}",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

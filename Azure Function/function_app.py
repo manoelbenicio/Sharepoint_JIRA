@@ -13,6 +13,56 @@ from datetime import datetime, date
 
 app = func.FunctionApp()
 
+# =============================================================================
+# PAYLOAD DEFAULTS - Ensures all adaptive card tokens are always present
+# =============================================================================
+
+_PAYLOAD_DEFAULTS_CACHE = None
+
+def load_payload_defaults():
+    """Load the payload template with default values for all adaptive card tokens.
+    
+    This ensures that even when data is missing, the adaptive cards will display
+    properly with placeholder values instead of blank/broken fields.
+    """
+    global _PAYLOAD_DEFAULTS_CACHE
+    if _PAYLOAD_DEFAULTS_CACHE is not None:
+        return _PAYLOAD_DEFAULTS_CACHE.copy()
+    
+    try:
+        # Try to load from file in the same directory as function_app.py
+        import pathlib
+        template_path = pathlib.Path(__file__).parent / "payload.template.json"
+        if template_path.exists():
+            with open(template_path, "r", encoding="utf-8") as f:
+                _PAYLOAD_DEFAULTS_CACHE = json.load(f)
+                logging.info(f"Loaded payload defaults with {len(_PAYLOAD_DEFAULTS_CACHE)} keys")
+                return _PAYLOAD_DEFAULTS_CACHE.copy()
+    except Exception as e:
+        logging.warning(f"Could not load payload.template.json: {e}")
+    
+    # Fallback: return minimal defaults
+    _PAYLOAD_DEFAULTS_CACHE = {
+        "semana": "",
+        "data_geracao": "",
+        "status": "sem_dados",
+        "total_ofertas_recebidas": 0,
+        "mensagem": "Nenhuma oferta recebida"
+    }
+    return _PAYLOAD_DEFAULTS_CACHE.copy()
+
+
+def merge_with_defaults(data: dict) -> dict:
+    """Merge actual data with defaults to ensure all keys are present.
+    
+    This guarantees that adaptive cards always receive a complete payload
+    with all expected tokens, preventing display issues.
+    """
+    defaults = load_payload_defaults()
+    # Actual data takes precedence over defaults
+    result = {**defaults, **data}
+    return result
+
 NULL_LIKE = {"nan", "none", "null", "n/a", "na", "#n/a", "", " ", "-", "--", "undefined"}
 
 
@@ -487,8 +537,10 @@ def consolidar_pipeline_v2(req: func.HttpRequest) -> func.HttpResponse:
         
         if df_ofertas.empty:
             resultado_base["mensagem"] = "Nenhuma oferta recebida"
+            # Merge with defaults to ensure all card tokens are present
+            resultado_completo = merge_with_defaults(resultado_base)
             return func.HttpResponse(
-                json.dumps(to_native_obj(resultado_base), ensure_ascii=False),
+                json.dumps(to_native_obj(resultado_completo), ensure_ascii=False),
                 status_code=200,
                 mimetype="application/json",
             )
@@ -1289,10 +1341,13 @@ def consolidar_pipeline_v2(req: func.HttpRequest) -> func.HttpResponse:
             "teams_card_html": teams_card_html
         }
         
+        # Merge with defaults to ensure all adaptive card tokens are present
+        resultado_completo = merge_with_defaults(resultado)
+        
         logging.info("Consolidação V2 concluída: %s ofertas processadas", len(df_ofertas))
         
         return func.HttpResponse(
-            json.dumps(to_native_obj(resultado), ensure_ascii=False),
+            json.dumps(to_native_obj(resultado_completo), ensure_ascii=False),
             status_code=200,
             mimetype="application/json",
         )
