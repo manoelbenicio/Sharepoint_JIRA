@@ -1,0 +1,426 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.5",
+    "body": [
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "📈",
+                            "size": "Large"
+                        }
+                    ],
+                    "verticalContentAlignment": "Center"
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "MARKET INTELLIGENCE",
+                            "weight": "Bolder",
+                            "size": "Large",
+                            "color": "Accent"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Weekly Market & Practice Performance • ${semana}",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "spacing": "None"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "MARKETS",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center",
+                                    "color": "Accent"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${total_mercados}",
+                                    "size": "ExtraLarge",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Active",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "PIPELINE",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center",
+                                    "color": "Good"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${pipeline_total_30d_fmt}",
+                                    "size": "Large",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center",
+                                    "color": "Good",
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Last 30d",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "WON",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center",
+                                    "color": "Warning"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${won_total_30d_fmt}",
+                                    "size": "Large",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center",
+                                    "color": "Warning",
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Last 30d",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "⏳ FOLLOW-UP",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Warning"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Awaiting decision",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "FactSet",
+                                    "facts": [
+                                        {
+                                            "title": "🥇 ${mkt_followup_1_nome}",
+                                            "value": "${mkt_followup_1_count} • ${mkt_followup_1_valor_fmt}"
+                                        },
+                                        {
+                                            "title": "🥈 ${mkt_followup_2_nome}",
+                                            "value": "${mkt_followup_2_count} • ${mkt_followup_2_valor_fmt}"
+                                        },
+                                        {
+                                            "title": "🥉 ${mkt_followup_3_nome}",
+                                            "value": "${mkt_followup_3_count} • ${mkt_followup_3_valor_fmt}"
+                                        }
+                                    ],
+                                    "spacing": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "✅ WON (30d)",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Good"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Most successful",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "FactSet",
+                                    "facts": [
+                                        {
+                                            "title": "🥇 ${mkt_won_1_nome}",
+                                            "value": "${mkt_won_1_count} • ${mkt_won_1_valor_fmt}"
+                                        },
+                                        {
+                                            "title": "🥈 ${mkt_won_2_nome}",
+                                            "value": "${mkt_won_2_count} • ${mkt_won_2_valor_fmt}"
+                                        },
+                                        {
+                                            "title": "🥉 ${mkt_won_3_nome}",
+                                            "value": "${mkt_won_3_count} • ${mkt_won_3_valor_fmt}"
+                                        }
+                                    ],
+                                    "spacing": "Small"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "❌ LOST (30d)",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Attention"
+                                },
+                                {
+                                    "type": "FactSet",
+                                    "facts": [
+                                        {
+                                            "title": "⚠️ ${mkt_lost_1_nome}",
+                                            "value": "${mkt_lost_1_count} • ${mkt_lost_1_valor_fmt}"
+                                        },
+                                        {
+                                            "title": "⚠️ ${mkt_lost_2_nome}",
+                                            "value": "${mkt_lost_2_count} • ${mkt_lost_2_valor_fmt}"
+                                        },
+                                        {
+                                            "title": "⚠️ ${mkt_lost_3_nome}",
+                                            "value": "${mkt_lost_3_count} • ${mkt_lost_3_valor_fmt}"
+                                        }
+                                    ],
+                                    "spacing": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🚫 CANCELLED (90d)",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Attention"
+                                },
+                                {
+                                    "type": "FactSet",
+                                    "facts": [
+                                        {
+                                            "title": "🔴 ${mkt_cancelled_1_nome}",
+                                            "value": "${mkt_cancelled_1_count} • ${mkt_cancelled_1_valor_fmt}"
+                                        },
+                                        {
+                                            "title": "🔴 ${mkt_cancelled_2_nome}",
+                                            "value": "${mkt_cancelled_2_count} • ${mkt_cancelled_2_valor_fmt}"
+                                        },
+                                        {
+                                            "title": "🔴 ${mkt_cancelled_3_nome}",
+                                            "value": "${mkt_cancelled_3_count} • ${mkt_cancelled_3_valor_fmt}"
+                                        }
+                                    ],
+                                    "spacing": "Small"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "📊 MARGIN ANALYSIS",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Accent"
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📈 HIGHEST",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Good"
+                                },
+                                {
+                                    "type": "FactSet",
+                                    "facts": [
+                                        {
+                                            "title": "${mkt_high_margin_1_nome}",
+                                            "value": "${mkt_high_margin_1_pct}%"
+                                        },
+                                        {
+                                            "title": "${mkt_high_margin_2_nome}",
+                                            "value": "${mkt_high_margin_2_pct}%"
+                                        },
+                                        {
+                                            "title": "${mkt_high_margin_3_nome}",
+                                            "value": "${mkt_high_margin_3_pct}%"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📉 LOWEST",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Attention"
+                                },
+                                {
+                                    "type": "FactSet",
+                                    "facts": [
+                                        {
+                                            "title": "${mkt_low_margin_1_nome}",
+                                            "value": "${mkt_low_margin_1_pct}%"
+                                        },
+                                        {
+                                            "title": "${mkt_low_margin_2_nome}",
+                                            "value": "${mkt_low_margin_2_pct}%"
+                                        },
+                                        {
+                                            "title": "${mkt_low_margin_3_nome}",
+                                            "value": "${mkt_low_margin_3_pct}%"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🤖 MINSAIT Pipeline Intelligence",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "v3.1 • DN Technology Architecture",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

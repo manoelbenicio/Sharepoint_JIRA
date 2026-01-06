@@ -1,0 +1,392 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.5",
+    "body": [
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "🏗️",
+                            "size": "Large"
+                        }
+                    ],
+                    "verticalContentAlignment": "Center"
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "ARCHITECT PERFORMANCE",
+                            "weight": "Bolder",
+                            "size": "Large",
+                            "color": "Accent"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Weekly ARQ Team Dashboard • ${semana}",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "spacing": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "📅 ${data_geracao}",
+                            "size": "Small",
+                            "isSubtle": true
+                        }
+                    ],
+                    "verticalContentAlignment": "Center"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "ARCHITECTS",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center",
+                                    "color": "Accent"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${total_arquitetos}",
+                                    "size": "ExtraLarge",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Active Team",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "UTILIZATION",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center",
+                                    "color": "Good"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${utilizacao_media_pct}%",
+                                    "size": "ExtraLarge",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center",
+                                    "color": "Good",
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Avg Rate",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "OFFERS",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center",
+                                    "color": "Warning"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${total_ofertas_ativas}",
+                                    "size": "ExtraLarge",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center",
+                                    "color": "Warning",
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "In Pipeline",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "⚡ TOP 5 UTILIZATION",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Accent"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Hours consumed / allocated",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        {
+                            "title": "🥇 ${arq_util_1_nome}",
+                            "value": "${arq_util_1_pct}% (${arq_util_1_horas_consumidas}h/${arq_util_1_horas_alocadas}h)"
+                        },
+                        {
+                            "title": "🥈 ${arq_util_2_nome}",
+                            "value": "${arq_util_2_pct}% (${arq_util_2_horas_consumidas}h/${arq_util_2_horas_alocadas}h)"
+                        },
+                        {
+                            "title": "🥉 ${arq_util_3_nome}",
+                            "value": "${arq_util_3_pct}% (${arq_util_3_horas_consumidas}h/${arq_util_3_horas_alocadas}h)"
+                        },
+                        {
+                            "title": "4️⃣ ${arq_util_4_nome}",
+                            "value": "${arq_util_4_pct}% (${arq_util_4_horas_consumidas}h/${arq_util_4_horas_alocadas}h)"
+                        },
+                        {
+                            "title": "5️⃣ ${arq_util_5_nome}",
+                            "value": "${arq_util_5_pct}% (${arq_util_5_horas_consumidas}h/${arq_util_5_horas_alocadas}h)"
+                        }
+                    ],
+                    "spacing": "Small"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📊 BY VOLUME",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Warning"
+                                },
+                                {
+                                    "type": "FactSet",
+                                    "facts": [
+                                        {
+                                            "title": "🥇 ${arq_vol_1_nome}",
+                                            "value": "${arq_vol_1_count} offers • ${arq_vol_1_valor_fmt}"
+                                        },
+                                        {
+                                            "title": "🥈 ${arq_vol_2_nome}",
+                                            "value": "${arq_vol_2_count} offers • ${arq_vol_2_valor_fmt}"
+                                        },
+                                        {
+                                            "title": "🥉 ${arq_vol_3_nome}",
+                                            "value": "${arq_vol_3_count} offers • ${arq_vol_3_valor_fmt}"
+                                        }
+                                    ],
+                                    "spacing": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "💰 BY VALUE",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Good"
+                                },
+                                {
+                                    "type": "FactSet",
+                                    "facts": [
+                                        {
+                                            "title": "🥇 ${arq_impact_1_nome}",
+                                            "value": "${arq_impact_1_valor_fmt}"
+                                        },
+                                        {
+                                            "title": "🥈 ${arq_impact_2_nome}",
+                                            "value": "${arq_impact_2_valor_fmt}"
+                                        },
+                                        {
+                                            "title": "🥉 ${arq_impact_3_nome}",
+                                            "value": "${arq_impact_3_valor_fmt}"
+                                        }
+                                    ],
+                                    "spacing": "Small"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "💎 100MM+ DEALS",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Accent"
+                                },
+                                {
+                                    "type": "FactSet",
+                                    "facts": [
+                                        {
+                                            "title": "🥇 ${arq_100m_1_nome}",
+                                            "value": "${arq_100m_1_count} • ${arq_100m_1_valor_fmt}"
+                                        },
+                                        {
+                                            "title": "🥈 ${arq_100m_2_nome}",
+                                            "value": "${arq_100m_2_count} • ${arq_100m_2_valor_fmt}"
+                                        },
+                                        {
+                                            "title": "🥉 ${arq_100m_3_nome}",
+                                            "value": "${arq_100m_3_count} • ${arq_100m_3_valor_fmt}"
+                                        }
+                                    ],
+                                    "spacing": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🏆 WINS (30d)",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Good"
+                                },
+                                {
+                                    "type": "FactSet",
+                                    "facts": [
+                                        {
+                                            "title": "🥇 ${arq_won_1_nome}",
+                                            "value": "${arq_won_1_count} • ${arq_won_1_valor_fmt}"
+                                        },
+                                        {
+                                            "title": "🥈 ${arq_won_2_nome}",
+                                            "value": "${arq_won_2_count} • ${arq_won_2_valor_fmt}"
+                                        },
+                                        {
+                                            "title": "🥉 ${arq_won_3_nome}",
+                                            "value": "${arq_won_3_count} • ${arq_won_3_valor_fmt}"
+                                        }
+                                    ],
+                                    "spacing": "Small"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🤖 MINSAIT Pipeline Intelligence",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "v3.1",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
