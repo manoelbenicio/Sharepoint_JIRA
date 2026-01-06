@@ -1,6 +1,6 @@
 # CHECKPOINT (Single Source of Truth)
 
-Last updated: 2026-01-06T07:06:00-03:00
+Last updated: 2026-01-06T16:58:00-03:00
 
 ## Execution Ownership (Non-Negotiable)
 
@@ -44,6 +44,8 @@ Last updated: 2026-01-06T07:06:00-03:00
 | 2026-01-01T22:30:00-03:00 | Agent Antigravity | QA-DUP1 | Verified duplicate detection logic in `queue-dedupe.ps1` | OK | Code inspection confirms Group-Object logic |
 | 2026-01-06T07:00:00-03:00 | Agent Antigravity | Flow6 | Created 4 premium card templates (04-07): ARQ, Market, WoW, Practice | OK | `TEMPLATE_04-07_*.json` |
 | 2026-01-06T07:04:00-03:00 | Human (mbenicios) | Flow6 | Created Teams channel `Ofertas_Analytics`, approved bi-weekly schedule (Tue/Fri) | OK | User confirmation |
+| 2026-01-06T16:55:00-03:00 | Agent Antigravity | TD-012 | Created `payload.template.json` (233 tokens) + updated `function_app.py` with `load_payload_defaults()` and `merge_with_defaults()` functions | OK | Git commit `0f31d5e` |
+| 2026-01-06T16:57:00-03:00 | Agent Antigravity | TD-012 | Deployed Azure Function with payload defaults fix to `func-pipeline-consolidation` | OK | Health check passed, all 20 endpoints active |
 
 ## Peer Review Log (append-only)
 
@@ -136,6 +138,7 @@ Estimated timeline (depends on access to Power Platform/Azure tenant for import/
   - `ZIP/XML/ARCHITECTURE/LOGGING_AND_DATA_CONTROL_SYSTEM.md`
 - Secrets/config guidance: `SECURITY_CONFIG.md`
 - Azure Function code + deploy: `ZIP/Azure_Function/` (includes LAB purge endpoint doc: `ZIP/Azure_Function/LAB_PURGE_ENDPOINT.md`)
+- **Adaptive Card Payload Defaults**: `Azure Function/payload.template.json` (233 tokens with default values for Flow6 cards)
 
 ## SharePoint Lists (GUIDs)
 
@@ -235,8 +238,9 @@ Estimated timeline (depends on access to Power Platform/Azure tenant for import/
 | 9 | TD-009 | Single source template | ✅ DONE | Source of truth para card | Repo + Flow1/Flow2 | Agent GPT-5.2 Codex |
 | 10 | TD-010 | Secrets/config hygiene | ✅ DONE | Env vars/connection refs | Power Platform + Azure | Agent GPT-5.2 Codex |
 | 11 | TD-011 | Performance refactor Flow1 | ✅ DONE | Offer-driven, sem N+1 | Flow1 | Agent GPT-5.2 Codex |
+| 12 | TD-012 | Payload defaults (cards fix) | ✅ DONE | All 233 tokens present | Azure Function | Agent Antigravity |
 
-> **All 11 Technical Debt items completed as of 2025-12-31.**
+> **All 12 Technical Debt items completed as of 2026-01-06.**
 
 - [ ] **Single source template (optional)**: Flow1 still composes the card with Power Automate expressions; keep it aligned with the canonical contract and re-sync Flow2 via `tools/sync_inputs_adaptive_card.py` when the template changes.
 - [ ] **Choice values vs CSV (reporting consistency)**: current `/import-jira` is PASSTHROUGH and `Ofertas_Pipeline` has `FillInChoice=TRUE` for key Choice fields, so imports should accept new values; decide whether to activate `/normalizar-ofertas` for consistent reporting; see `ZIP/XML/sharepoint_mapping_ofertas_pipeline.audit.md` and `ZIP/XML/ARCHITECTURE/STAKEHOLDER_PROJECT_GUIDE.md`.

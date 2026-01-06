@@ -4,9 +4,9 @@
     "project": "Sharepoint_JIRA Integration",
     "description": "Automated pipeline: JIRA → SharePoint → Teams/Power BI",
     "created": "2025-12-28T18:42:00-03:00",
-    "lastUpdated": "2026-01-05T22:24:52-03:00",
-    "lastUpdatedBy": "AI Agent (Antigravity) + Human (mbenicios)",
-    "version": "1.4.0"
+    "lastUpdated": "2026-01-06T17:00:00-03:00",
+    "lastUpdatedBy": "AI Agent (Antigravity)",
+    "version": "1.5.0"
   },
   "summary": {
     "totalTasks": 27,
@@ -18,9 +18,9 @@
     "percentComplete": 96,
     "e2eTestsTotal": 27,
     "e2eTestsPassed": 27,
-    "technicalDebtTotal": 11,
-    "technicalDebtCompleted": 11,
-    "note": "Flow 3 (C-Level Weekly) template created but NOT deployed to Power Automate"
+    "technicalDebtTotal": 12,
+    "technicalDebtCompleted": 12,
+    "note": "All technical debt complete including TD-012 (payload defaults fix for adaptive cards)"
   },
   "components": [
     {
@@ -355,10 +355,10 @@
     ]
   },
   "technicalDebt": {
-    "_note": "All 11 technical debt items completed as of 2025-12-31",
+    "_note": "All 12 technical debt items completed as of 2026-01-06",
     "status": "ALL_COMPLETE",
-    "totalItems": 11,
-    "completedItems": 11,
+    "totalItems": 12,
+    "completedItems": 12,
     "items": [
       {
         "id": "TD-001",
@@ -366,6 +366,14 @@
         "status": "DONE",
         "completedAt": "2025-12-31T00:00:00-03:00",
         "completedBy": "Agent GPT-5.2 Codex"
+      },
+      {
+        "id": "TD-012",
+        "description": "Payload defaults for adaptive cards (233 tokens)",
+        "status": "DONE",
+        "completedAt": "2026-01-06T17:00:00-03:00",
+        "completedBy": "Agent Antigravity",
+        "evidence": "Azure Function/payload.template.json + function_app.py (merge_with_defaults)"
       }
     ]
   }

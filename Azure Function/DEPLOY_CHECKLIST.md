@@ -1,6 +1,6 @@
 # Azure Function Deployment Checklist
 
-> **Última atualização:** 2025-12-25T18:00:00-03:00  
+> **Última atualização:** 2026-01-06T17:00:00-03:00  
 > **Function App:** `func-pipeline-consolidation` (ÚNICA)
 
 ---
@@ -24,6 +24,7 @@ D:\VMs\Projetos\JIRA_Teams_PBI_Integration\AzureFunction\  ← DEPLOY DAQUI
 ├── requirements.txt     ✅ pandas, numpy, azure-functions
 ├── host.json           ✅ v2.0, extensionBundle 4.x
 ├── local.settings.json ✅ Config local
+├── payload.template.json ✅ 233 default tokens for adaptive cards (2026-01-06)
 ├── FUNCTIONS_AS_IS.md  📄 Documentação AS-IS
 ├── DEPLOY_CHECKLIST.md 📄 Este arquivo
 └── README.md           📄 Guia geral
@@ -181,4 +182,4 @@ az functionapp keys list `
 
 ---
 
-*Documento gerado automaticamente em 2025-12-24*
+*Documento atualizado em 2026-01-06 (payload defaults fix)*

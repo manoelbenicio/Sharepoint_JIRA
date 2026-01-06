@@ -1,9 +1,9 @@
 # 📋 CONTRATO DE ENTREGÁVEIS
 ## Projeto: Sharepoint_JIRA Integration
 
-**Data:** 2025-12-28  
-**Versão:** 1.0  
-**Status:** Em Execução
+**Data:** 2026-01-06  
+**Versão:** 1.1  
+**Status:** Completo (96%)
 
 ---
 
@@ -25,6 +25,7 @@ Garantir entrega 100% de todos os componentes do pipeline automatizado JIRA → 
 | 1.4 | Deploy no Azure | `/api/health` retorna `{"status":"healthy"}` | ✅ ENTREGUE | Human |
 | 1.5 | App Settings configurados | PBI_TENANT_ID, PBI_CLIENT_ID, PBI_CLIENT_SECRET | ✅ ENTREGUE | Human |
 | 1.6 | Function Key obtida | Chave copiada para uso nos Flows | ✅ ENTREGUE | Human |
+| 1.7 | `payload.template.json` | 233 tokens com defaults para adaptive cards | ✅ ENTREGUE | AI Agent |
 
 **Comando de Deploy:**
 ```powershell
@@ -151,6 +152,7 @@ O projeto estará **100% entregue** quando:
 | Data | Versão | Alteração | Por |
 |------|--------|-----------|-----|
 | 2025-12-28 | 1.0 | Criação inicial do contrato | AI Agent |
+| 2026-01-06 | 1.1 | Adicionado payload.template.json (TD-012) | AI Agent Antigravity |
 
 ---
 
