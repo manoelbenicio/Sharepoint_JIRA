@@ -46,6 +46,7 @@ Last updated: 2026-01-06T16:58:00-03:00
 | 2026-01-06T07:04:00-03:00 | Human (mbenicios) | Flow6 | Created Teams channel `Ofertas_Analytics`, approved bi-weekly schedule (Tue/Fri) | OK | User confirmation |
 | 2026-01-06T16:55:00-03:00 | Agent Antigravity | TD-012 | Created `payload.template.json` (233 tokens) + updated `function_app.py` with `load_payload_defaults()` and `merge_with_defaults()` functions | OK | Git commit `0f31d5e` |
 | 2026-01-06T16:57:00-03:00 | Agent Antigravity | TD-012 | Deployed Azure Function with payload defaults fix to `func-pipeline-consolidation` | OK | Health check passed, all 20 endpoints active |
+| 2026-01-06T17:15:00-03:00 | Agent Antigravity | TD-012 | Validated payload defaults: 233/233 tokens present in response with correct defaults | OK | API test: `status=sem_dados`, all tokens populated |
 
 ## Peer Review Log (append-only)
 
