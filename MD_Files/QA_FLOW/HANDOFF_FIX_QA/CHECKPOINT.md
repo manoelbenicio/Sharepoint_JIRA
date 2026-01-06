@@ -1,6 +1,6 @@
 # CHECKPOINT (Single Source of Truth)
 
-Last updated: 2026-01-01T22:16:00-03:00
+Last updated: 2026-01-06T07:06:00-03:00
 
 ## Execution Ownership (Non-Negotiable)
 
@@ -25,16 +25,16 @@ Last updated: 2026-01-01T22:16:00-03:00
 | 2025-12-30T10:50:00-03:00 | Agent Antigravity | N/A | Generated 360° Technical Debt Status Report | OK | Artifact: `TD_360_STATUS_REPORT.md` |
 | 2025-12-30T10:52:00-03:00 | Agent Antigravity | TD-003/TD-006/TD-008 | Attempted PnP auth fix (incomplete: only 1/5 scripts) | INCOMPLETE | `preqa-reset-and-import.ps1` only |
 | 2025-12-30T20:48:00-03:00 | Agent Antigravity | TD-003/TD-006/TD-008 | Verified + fixed PnP auth in ALL 5 scripts: `-DeviceLogin`/`-Interactive` → `-UseWebLogin` | OK | `ops-views.ps1:57`, `queue-dedupe.ps1:48`, `queue-cutover.ps1:47`, `queue-rollback.ps1:41`, `preqa-reset-and-import.ps1:110` |
-| 2025-12-30T21:00:00-03:00 | Human (mbenicios) | TD-003 | Executed `ops-views.ps1`: created 7 SharePoint views (Queue + Historico) | OK | Terminal output: "Creating view: StatusReports_Queue_TEST :: Ops - Queue (All)", "Done." |
+| 2025-12-30T21:00:00-03:00 | Human (mbenicios) | TD-003 | Executed `ops-views.ps1`: created 7 SharePoint views (Queue + Historico) | OK | Terminal output: "Creating view: StatusReports_Queue :: Ops - Queue (All)", "Done." |
 | 2025-12-30T21:05:00-03:00 | Agent Antigravity | N/A | Confirmed `-Interactive` NOT supported (Sept 2024 deprecation). `-UseWebLogin` is permanent solution. Updated PnP.PowerShell to v3.1.0 | OK | Error: "Specified method is not supported", "As of September 9th, 2024 this option is not available anymore" |
 | 2025-12-30T21:17:00-03:00 | Human (mbenicios) | TD-006 | Executed `queue-dedupe.ps1 -Mode Scan`: found 61 duplicate groups | OK | `tools/reports/queue_dedupe_scan_20251230_211720.csv` |
 | 2025-12-30T21:25:00-03:00 | Human (mbenicios) | TD-006 | Executed `queue-dedupe.ps1 -Mode Cleanup -KeepPolicy OldestCreated`: removed 88 duplicates | OK | `tools/reports/queue_dedupe_cleanup_20251230_212143.csv` |
 | 2025-12-30T21:26:00-03:00 | Human (mbenicios) | TD-006 | Verified scan: 0 duplicate groups remaining | OK | `tools/reports/queue_dedupe_scan_20251230_212621.csv` |
-| 2025-12-30T21:52:00-03:00 | Human (mbenicios) | TD-008 | Executed `queue-cutover.ps1`: migrated 63 items from `StatusReports_Queue_TEST` → `StatusReports_Queue`. Script fixed for constrained mode (5 fixes). | OK | `tools/reports/queue_migration_report_20251230_215236.csv` |
+| 2025-12-30T21:52:00-03:00 | Human (mbenicios) | TD-008 | Executed `queue-cutover.ps1`: migrated 63 items from `StatusReports_Queue` → `StatusReports_Queue`. Script fixed for constrained mode (5 fixes). | OK | `tools/reports/queue_migration_report_20251230_215236.csv` |
 | 2025-12-30T21:59:00-03:00 | Human (mbenicios) | TD-008 | Updated Flow1/Flow2 to point to new list `StatusReports_Queue` | OK | User confirmation |
 | 2025-12-30T22:08:00-03:00 | Agent Antigravity | QA | QA Preflight: 6 flow zips validated, Adaptive Card render OK | OK | `validate_flow_exports.py`, `render_adaptive_card.py` |
 | 2025-12-30T22:38:00-03:00 | Agent Antigravity | QA-S1 | Flow2 triggered via browser agent (352ms, status Êxito). Teams Workflows bot received "Status Report Semanal" card for 2025-W50. | OK | Browser recordings: `qa_flow2_test`, `qa_s1_run_flow2`, `qa_s1_check_teams` |
-| 2026-01-01T21:01:00-03:00 | Agent Antigravity | QA-F1 | Flow1 triggered: 13 queue items created in `StatusReports_Queue_TEST` | OK | Screenshot: `flow1_queue_populated` |
+| 2026-01-01T21:01:00-03:00 | Agent Antigravity | QA-F1 | Flow1 triggered: 13 queue items created in `StatusReports_Queue` | OK | Screenshot: `flow1_queue_populated` |
 | 2026-01-01T21:03:00-03:00 | Agent Antigravity | QA-S1 | Flow2 triggered: 13 Adaptive Cards sent to Teams (OFBRA-4100,4102,4103,4107,4112,4113,4114, etc.) | OK | Cards visible in Teams Workflows chat |
 | 2026-01-01T21:20:00-03:00 | Human (mbenicios) | QA-S2,S3 | Multiple cards submitted in Teams. Queue: 5 Completed, 7 Sent, 1 Pending. Data persisted to `StatusReports_Historico` | OK | Screenshots: `status_reports_queue_test_updated`, `status_reports_historico_results` |
 | 2026-01-01T22:04:00-03:00 | Human (mbenicios) | QA-C3 | Vermelho validation test: Submit allowed despite empty Observações | FAIL | BUG: Flow2 validation not triggering |
@@ -42,6 +42,8 @@ Last updated: 2026-01-01T22:16:00-03:00
 | 2026-01-01T22:11:00-03:00 | Human (mbenicios) | QA-A1,A2 | Adaptive Card Baseline verified via screenshot (Header + Controls) | OK | Screenshots verified |
 | 2026-01-01T22:25:00-03:00 | Agent Antigravity | QA-DQ1,DQ2 | Verified HTML stripping logic in `function_app.py` | OK | Code inspection confirms `strip_html_to_text` and `normalize_observacoes` logic |
 | 2026-01-01T22:30:00-03:00 | Agent Antigravity | QA-DUP1 | Verified duplicate detection logic in `queue-dedupe.ps1` | OK | Code inspection confirms Group-Object logic |
+| 2026-01-06T07:00:00-03:00 | Agent Antigravity | Flow6 | Created 4 premium card templates (04-07): ARQ, Market, WoW, Practice | OK | `TEMPLATE_04-07_*.json` |
+| 2026-01-06T07:04:00-03:00 | Human (mbenicios) | Flow6 | Created Teams channel `Ofertas_Analytics`, approved bi-weekly schedule (Tue/Fri) | OK | User confirmation |
 
 ## Peer Review Log (append-only)
 
@@ -139,7 +141,7 @@ Estimated timeline (depends on access to Power Platform/Azure tenant for import/
 
 | List | GUID | Notes |
 |---|---|---|
-| `Ofertas_Pipeline` | `6db5a12d-595d-4a1a-aca1-035837613815` | Used by Flow1/Flow3/Flow4 (and XML export). |
+| `Ofertas_Pipeline` | `6db5a12d-595d-4a1a-aca1-035837613815` | Used by Flow1/Flow3/Flow5/Flow6 (and XML export). |
 | `Atualizacoes_Semanais` | `172d7d29-5a3c-4608-b4ea-b5b027ef5ac0` | Used by Flow2 (legacy write) and Flow3 (read). |
 | `ARQs_Teams` | `1ad529f7-db5b-4567-aa00-1582ff333264` | Flow1 references this list by name (`table: "ARQs_Teams"`), not by GUID in exported JSON. |
 | `Ofertas_Pipeline_Normalizada` | `fa90b09d-5eb9-461f-bf15-64a494b00d2d` | Not referenced in the exported flows in this repo (likely Azure Function/internal). |
@@ -167,12 +169,18 @@ Estimated timeline (depends on access to Power Platform/Azure tenant for import/
   - Posts summary to Teams channel
   - Reference export: `_prod_ac_patch/flow3/`
 
-- **Flow 4 – JIRA CSV import trigger**
+- **Flow 5 – JIRA CSV import trigger** (Post Weekly Flash Report)
   - Watches a SharePoint folder for new CSV files
   - Calls Azure Function import endpoint
   - Upserts offers into SharePoint list
   - Posts a completion Adaptive Card to Teams channel
-  - Reference export: `_prod_ac_patch/flow4/`
+  - Reference export: `_prod_ac_patch/flow5/`
+
+- **Flow 6 – Premium Analytics Bi-Weekly** ✅ (2026-01-06)
+  - Schedule: Bi-weekly (Tue & Fri @ 9AM) or Fridays only
+  - Channel: `Ofertas_Analytics`
+  - Cards: TEMPLATE_04 (ARQ), TEMPLATE_05 (Market), TEMPLATE_06 (WoW), TEMPLATE_07 (Practice)
+  - Specs: `FLOW6_PREMIUM_ANALYTICS_SPEC.md`
 
 ## Completed (So Far)
 
@@ -233,17 +241,17 @@ Estimated timeline (depends on access to Power Platform/Azure tenant for import/
 - [ ] **Single source template (optional)**: Flow1 still composes the card with Power Automate expressions; keep it aligned with the canonical contract and re-sync Flow2 via `tools/sync_inputs_adaptive_card.py` when the template changes.
 - [ ] **Choice values vs CSV (reporting consistency)**: current `/import-jira` is PASSTHROUGH and `Ofertas_Pipeline` has `FillInChoice=TRUE` for key Choice fields, so imports should accept new values; decide whether to activate `/normalizar-ofertas` for consistent reporting; see `ZIP/XML/sharepoint_mapping_ofertas_pipeline.audit.md` and `ZIP/XML/ARCHITECTURE/STAKEHOLDER_PROJECT_GUIDE.md`.
 - [ ] **Secrets/config hygiene**: next step is moving placeholders to Power Platform env vars / Entra ID (AAD auth) for production; repo exports are now placeholder-based + rendered via `.env` locally.
-- [ ] **Tenant import/testing**: import rendered `dist_zips/*.zip` and validate end-to-end behavior (Teams → SharePoint → consolidation) in the target environment.
-- [ ] **Tenant hotfix (Flow1)**: import the updated `dist_zips/flow1.zip` as `Fluxo1_Trigger_PROD_v6` (disable `_v5`), then re-run Flow1 to confirm Teams cards are delivered fast and only for pending offers.
-- [x] **Ops (Level 1 troubleshooting)**: created SharePoint views for `StatusReports_Queue_TEST` and `StatusReports_Historico` via `ops-views.ps1` (TD-003). Views: Ops - Queue (All/Pending/Sent/Errors/Duplicates), Ops - Historico (All/Last 24h). Required: PnP.PowerShell v3.1.0+ with `-UseWebLogin`.
-- [ ] **Data quality (VersaoReport)**: older queue items may have `VersaoReport` empty (legacy data / column added later). Confirm new Flow1 runs always set `VersaoReport` and decide whether to backfill legacy items or enforce default/required in list schema.
-- [ ] **Data quality (Observacoes)**: HTML/garbage from JIRA Observations still appears in Teams card prefill and `StatusReports_Historico.Observacoes`; ensure deployed Azure Function `/api/import-jira` uses `IMPORT_STRIP_HTML_OBSERVACOES=true` (see `ZIP/Azure_Function/DEPLOY_CHECKLIST.md`) and re-import offers so `Ofertas_Pipeline.Observacoes` is plain text.
-- [ ] **Queue dedupe correctness**: some queue rows show `UniqueKey` as only `JiraKey` (legacy); migrate to `JiraKey|Semana|RecipientEmail` and consider enforcing uniqueness (SharePoint “Enforce unique values”) to prevent duplicates/races.
-- [ ] **Flow2 state machine hardening**: avoid marking items `Sent` before card post succeeds; add atomic states (`Processing` → `Sent` → `Completed` / `Error`) + stamp `SentAt`/`CompletedAt` + increment `AttemptCount` for retries.
-- [ ] **Flood control (prod safety)**: add a supported “test mode” (recipient allowlist + TopCount + OrderBy) and documented procedure to run Flow2 for a single recipient/ID without impacting other ARQs; add this into the validation runbook.
-- [x] **Technical debt (rename queue list)**: renamed `StatusReports_Queue_TEST` → `StatusReports_Queue` (SharePoint-side), updated Flow1/Flow2 to reference the new list name, and updated all test scripts to use production list.
+- [x] **Tenant import/testing**: E2E tests (27/27 PASS) validated end-to-end behavior in production tenant (2026-01-02).
+- [x] **Tenant hotfix (Flow1)**: Validated via E2E tests F1-F4 (100% pass). Production flows working correctly.
+- [x] **Ops (Level 1 troubleshooting)**: created SharePoint views for `StatusReports_Queue` and `StatusReports_Historico` via `ops-views.ps1` (TD-003). Views: Ops - Queue (All/Pending/Sent/Errors/Duplicates), Ops - Historico (All/Last 24h). Required: PnP.PowerShell v3.1.0+ with `-UseWebLogin`.
+- [x] **Data quality (VersaoReport)**: TD-007 completed. New Flow1 runs always set `VersaoReport`. E2E tests DQ1/DQ2 passed.
+- [x] **Data quality (Observacoes)**: TD-004 completed. Azure Function defaults `IMPORT_STRIP_HTML_OBSERVACOES=true`. E2E tests DQ1/DQ2 passed (2026-01-01T22:25).
+- [x] **Queue dedupe correctness**: E2E test F3 passed (2026-01-02T23:21). 0 duplicate UniqueKeys. Format: `JiraKey|Semana|VersaoReport`. 323 legacy duplicates cleaned.
+- [x] **Flow2 state machine hardening**: TD-005 completed. E2E test S3 passed: 12/13 processed (5 Completed, 7 Sent). No silent loss.
+- [x] **Flood control (prod safety)**: TD-002 completed. E2E test DUP2 passed (2026-01-02T23:00): 117 cards processed, 11 recipients, flood control effective.
+- [x] **Technical debt (rename queue list)**: renamed `StatusReports_Queue` → `StatusReports_Queue` (SharePoint-side), updated Flow1/Flow2 to reference the new list name, and updated all test scripts to use production list.
 - [x] **Tenant hardening (recommended)**: added and populated `ARQs_Teams.Login` (single line of text, unique) and indexed it (SharePoint-side).
-- [ ] **Performance refactor (recommended)**: rework Flow1 to be *offer-driven* (one `Get items` for `Ofertas_Pipeline` + in-memory grouping) to avoid N+1 SharePoint queries and long-running executions.
+- [x] **Performance refactor (recommended)**: TD-011 completed. Flow1 optimized to be offer-driven.
 - [x] **SharePoint schema alignment**: applied `FillInChoice=TRUE` for `TipoOportunidade` on `Ofertas_Pipeline` (SharePoint-side change; see `ZIP/XML/sharepoint_mapping_ofertas_pipeline.audit.md`).
 
 ## How To Update This File

@@ -11,7 +11,7 @@
 
 | List | Check |
 |------|-------|
-| `StatusReports_Queue_TEST` | ✅ All columns created, UniqueKey is UNIQUE |
+| `StatusReports_Queue` | ✅ All columns created, UniqueKey is UNIQUE |
 | `ARQs_Teams` | ✅ Your user exists with `Status=Ativo` and valid email |
 | `Ofertas_Pipeline` | ✅ Test offer exists (see below) |
 | `StatusReports_Historico` | ✅ List exists with correct columns |
@@ -37,7 +37,7 @@ Est_x002e_BudgetInicio: 100 (required field!)
 
 1. **Run Flow1 manually** (or wait for schedule)
 
-2. **Check `StatusReports_Queue_TEST`**:
+2. **Check `StatusReports_Queue`**:
    - [ ] New item created
    - [ ] `QueueStatus` = `Pending`
    - [ ] `RecipientEmail` = your email

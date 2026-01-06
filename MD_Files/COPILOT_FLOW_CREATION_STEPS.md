@@ -7,7 +7,7 @@
 ## Prerequisites
 
 - SharePoint Site: `https://indra365.sharepoint.com/sites/Grp_T_DN_Arquitetura_Solucoes_Multi_Praticas_QA`
-- Lists: `Ofertas_Pipeline`, `StatusReports_Queue_TEST`, `StatusReports_Historico`
+- Lists: `Ofertas_Pipeline`, `StatusReports_Queue`, `StatusReports_Historico`
 - Function Key: REDACTED_FUNCTION_KEY`
 
 ---
@@ -94,7 +94,7 @@ In the inner Yes branch, set these variables:
 
 **Prompt 7:**
 ```
-Create a new item in SharePoint list "StatusReports_Queue_TEST" with:
+Create a new item in SharePoint list "StatusReports_Queue" with:
 - Title: JiraKey from trigger
 - JiraKey: JiraKey from trigger
 - RecipientEmail: varRecipientEmail variable
@@ -134,7 +134,7 @@ and add a parallel Scope called "Catch Error" that runs if the first fails
 **Prompt 1:**
 ```
 Create an automated flow triggered when an item is created 
-in SharePoint list "StatusReports_Queue_TEST"
+in SharePoint list "StatusReports_Queue"
 ```
 
 ✅ **Verify**: SharePoint "When item is created" trigger
@@ -282,6 +282,6 @@ Add a parallel Scope "Handle Error" that updates QueueStatus to "Error" if Proce
 # 🧪 Quick Test
 
 1. Modify an offer in `Ofertas_Pipeline` with Status = "Em Acompanhamento"
-2. Check `StatusReports_Queue_TEST` for new item
+2. Check `StatusReports_Queue` for new item
 3. Respond to Adaptive Card in Teams
 4. Verify `StatusReports_Historico` has new record

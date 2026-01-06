@@ -13,7 +13,7 @@ This folder contains XML schema exports for SharePoint lists used in this projec
 | `ARQs_Teams` | `1ad529f7-db5b-4567-aa00-1582ff333264` | `ZIP/XML/sharepoint_mapping_arqs_teams.xml` | Used by Flow1 (read); flow export references list by name (`ARQs_Teams`). |
 | `Ofertas_Pipeline_Normalizada` | `fa90b09d-5eb9-461f-bf15-64a494b00d2d` | `ZIP/XML/sharepoint_mapping_ofertas_pipeline_normalizada.xml` | Not referenced in exported flows in this repo (likely Azure Function/internal). |
 | `StatusReports_Historico` | `f58b3d23-5750-4b29-b30f-a7b5421cdd80` | *(no mapping yet)* | ✅ Flow2 history |
-| `StatusReports_Queue_TEST` | `12197c6e-b5d4-4bcd-96d4-c8aafc426d0a` | *(no mapping yet)* | 🆕 Flow1/Flow2 queue |
+| `StatusReports_Queue` | `12197c6e-b5d4-4bcd-96d4-c8aafc426d0a` | *(no mapping yet)* | 🆕 Flow1/Flow2 queue |
 | `Budget_Extensions` | `dfeda3e0-0cc9-434d-b8d5-5b450dc071b2` | *(no mapping yet)* | ✅ Not in flows |
 | `Resumo_Semanal` | `1d4a803e-9884-4e10-b932-ef9ff598f127` | `ZIP/XML/sharepoint_mapping_Resumo_Semanal.xml` | Not referenced in exported flows in this repo. |
 | `Jira_Allocation_Data` | `f25edf86-f23a-41bb-a7b1-84a096df2dd8` | *(no mapping yet)* | ✅ Not in flows |

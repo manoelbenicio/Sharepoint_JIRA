@@ -19,7 +19,7 @@ Copilot works better with **short, phased prompts** rather than long detailed pl
 ```
 Create a comprehensive automation that monitors SharePoint Ofertas_Pipeline list 
 for changes, filters items where Status is "Em Acompanhamento" and assigns an 
-architect, then creates queue items in StatusReports_Queue_TEST with unique keys, 
+architect, then creates queue items in StatusReports_Queue with unique keys, 
 handles duplicates gracefully, and includes error handling...
 ```
 
@@ -58,7 +58,7 @@ ACTION: Do [specific action] in [target service]
 |-------|---------------|
 | 1 | "Create a flow triggered when SharePoint list item is modified" |
 | 2 | "Add condition: Status equals 'Em Acompanhamento'" |
-| 3 | "Add action: Create item in StatusReports_Queue_TEST list" |
+| 3 | "Add action: Create item in StatusReports_Queue list" |
 | 4 | "Add error handling with Try/Catch scope" |
 
 ---
@@ -82,7 +82,7 @@ AND Arquiteto Responsavel is not empty
 
 **Phase 3:**
 ```
-In the Yes branch, create an item in SharePoint list "StatusReports_Queue_TEST"
+In the Yes branch, create an item in SharePoint list "StatusReports_Queue"
 with fields: JiraKey, RecipientEmail, Title
 ```
 
@@ -91,7 +91,7 @@ with fields: JiraKey, RecipientEmail, Title
 **Phase 1:**
 ```
 Create a flow that triggers when an item is created in SharePoint list 
-"StatusReports_Queue_TEST"
+"StatusReports_Queue"
 ```
 
 **Phase 2:**

@@ -43,7 +43,7 @@ If any Teams notification in Flow4 is not restricted, do **not** proceed outside
 - `Ofertas_Pipeline`
 - `StatusReports_Historico`
 - `Atualizacoes_Semanais`
-- Queue list (`StatusReports_Queue_TEST`) if allowed (recommended)
+- Queue list (`StatusReports_Queue`) if allowed (recommended)
 
 ### Endpoint
 

@@ -1,0 +1,447 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.4",
+    "body": [
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "bleed": true,
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "verticalContentAlignment": "Center",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "⚡",
+                                    "size": "ExtraLarge",
+                                    "weight": "Bolder"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "WEEKLY FLASH REPORT",
+                                    "weight": "Bolder",
+                                    "size": "Large",
+                                    "wrap": true,
+                                    "color": "Accent"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Architecture & Solutions | ${semana}",
+                                    "size": "Small",
+                                    "wrap": true,
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "horizontalAlignment": "Right",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🏢 Minsait",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "TextBlock",
+            "text": "📊 NUMBERS AT A GLANCE",
+            "weight": "Bolder",
+            "size": "Medium",
+            "separator": true,
+            "spacing": "Large"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "1",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "PIPELINE",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${valor_pipeline_formatado}",
+                            "weight": "Bolder",
+                            "size": "Large",
+                            "color": "Accent",
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${total_ofertas} offers",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center",
+                            "spacing": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "1",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "ACTIVE",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${pipeline_ativo_quantidade}",
+                            "weight": "Bolder",
+                            "size": "Large",
+                            "color": "Good",
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "in dev",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center",
+                            "spacing": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "1",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "CLOSED",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${resultados_7_dias_total}",
+                            "weight": "Bolder",
+                            "size": "Large",
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "this week",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center",
+                            "spacing": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "1",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "WIN RATE",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${win_rate_30d}%",
+                            "weight": "Bolder",
+                            "size": "Large",
+                            "color": "${win_rate_color}",
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "30 days",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center",
+                            "spacing": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "1",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "MARGIN",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${margem_media}%",
+                            "weight": "Bolder",
+                            "size": "Large",
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "average",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center",
+                            "spacing": "None"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "separator": true,
+            "spacing": "Large",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "1",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "🎯 THIS WEEK'S WINS",
+                            "weight": "Bolder",
+                            "size": "Small",
+                            "color": "Good"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "• ${won_7d_item1}",
+                            "size": "Small",
+                            "wrap": true,
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "• ${won_7d_item2}",
+                            "size": "Small",
+                            "wrap": true,
+                            "spacing": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "1",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "⚠️ ATTENTION NEEDED",
+                            "weight": "Bolder",
+                            "size": "Small",
+                            "color": "Warning"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "• ${alert_item1}",
+                            "size": "Small",
+                            "wrap": true,
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "• ${alert_item2}",
+                            "size": "Small",
+                            "wrap": true,
+                            "spacing": "None"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "separator": true,
+            "spacing": "Medium",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "1",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "📅 KEY DEADLINES NEXT WEEK",
+                            "weight": "Bolder",
+                            "size": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "• ${deadline_item1}",
+                            "size": "Small",
+                            "wrap": true,
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "• ${deadline_item2}",
+                            "size": "Small",
+                            "wrap": true,
+                            "spacing": "None"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "• ${deadline_item3}",
+                            "size": "Small",
+                            "wrap": true,
+                            "spacing": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "1",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "🏆 TOP PERFORMERS",
+                            "weight": "Bolder",
+                            "size": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "1. ${top_arquiteto_1}",
+                            "size": "Small",
+                            "wrap": true,
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "2. ${top_arquiteto_2}",
+                            "size": "Small",
+                            "wrap": true,
+                            "spacing": "None"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "3. ${top_arquiteto_3}",
+                            "size": "Small",
+                            "wrap": true,
+                            "spacing": "None"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "style": "emphasis",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "📈 ARCHITECT UTILIZATION",
+                    "weight": "Bolder",
+                    "size": "Small"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "████████████████░░░░ ${taxa_resposta}%",
+                                    "fontType": "Monospace",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Target: 85%",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Responded: ${arquitetos_responderam} / ${total_arquitetos}",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "spacing": "None"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Small",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Generated: ${data_geracao}",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🔗 View Dashboard",
+                                    "size": "Small",
+                                    "color": "Accent"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "msteams": {
+        "width": "Full"
+    }
+}

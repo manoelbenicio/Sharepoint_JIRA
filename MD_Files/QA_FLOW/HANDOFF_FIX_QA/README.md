@@ -35,10 +35,10 @@ From this folder root:
   - `python tools/patch_flow2_queue_query.py --zip dist_zips/flow2_queue_wait.zip --recipient-email mbenicios@minsait.com --top 1 --orderby "Created asc"`
 - Ensure Flow2 state machine stamps are applied (optional, recommended):
   - `python tools/patch_flow2_state_machine.py --zip dist_zips/flow2_queue_wait.zip`
-- Ensure Flow4 does NOT post to Teams channels during QA prep (optional, recommended):
-  - `python tools/patch_flow4_remove_teams_notify.py --zip dist_zips/flow4.zip`
+- Ensure Flow6 does NOT post to Teams channels during QA prep (optional, recommended):
+  - `python tools/patch_flow6_remove_teams_notify.py --zip dist_zips/flow6.zip`
 - Audit references to the queue list name (TD‑008 double check):
-  - `python tools/audit_queue_list_references.py --needles StatusReports_Queue_TEST --zip-pattern 'flow*.zip' --out tools/reports/queue_list_reference_audit.json`
+  - `python tools/audit_queue_list_references.py --needles StatusReports_Queue --zip-pattern 'flow*.zip' --out tools/reports/queue_list_reference_audit.json`
 
 ## What’s included
 
@@ -57,17 +57,18 @@ From this folder root:
   - `dist_zips/flow2.zip`
   - `dist_zips/flow2_queue_wait.zip`
   - `dist_zips/flow3.zip`
-  - `dist_zips/flow4.zip`
+  - `dist_zips/flow5.zip`
+  - `dist_zips/flow6.zip`
 
-## Required manual settings (before running Flow4 / purge)
+## Required manual settings (before running Flow6 / purge)
 
-### Flow4 HTTP action (import-jira)
+### Flow6 HTTP action (premium-analytics)
 
-For security, `dist_zips/flow4.zip` ships with a placeholder:
+For security, `dist_zips/flow6.zip` ships with a placeholder:
 
-- `https://func-pipeline-consolidation.azurewebsites.net/api/import-jira?code=<FUNCTION_KEY>`
+- `https://sharepoint-jira-functions-br.azurewebsites.net/api/premium-analytics?code=<FUNCTION_KEY>`
 
-After import, set the real Function Key in the Flow4 HTTP action URI.
+After import, set the real Function Key in the Flow6 HTTP action URI.
 
 ### Azure Function purge endpoint (pre-QA baseline)
 

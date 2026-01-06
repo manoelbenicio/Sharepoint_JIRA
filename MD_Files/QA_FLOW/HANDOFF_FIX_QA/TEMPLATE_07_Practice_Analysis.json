@@ -1,0 +1,1884 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.4",
+    "body": [
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "bleed": true,
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Minsait_logo.svg/200px-Minsait_logo.svg.png",
+                                    "size": "Medium",
+                                    "height": "32px"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📊 PRACTICE PERFORMANCE REPORT",
+                                    "weight": "Bolder",
+                                    "size": "Large",
+                                    "color": "Light",
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Business Unit Financial Analysis • ${report_period}",
+                                    "size": "Small",
+                                    "color": "Light",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "⚡",
+                                    "size": "ExtraLarge"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        }
+                    ]
+                }
+            ],
+            "backgroundImage": {
+                "url": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230d1f17'/%3E%3Cstop offset='50%25' style='stop-color:%23163829'/%3E%3Cstop offset='100%25' style='stop-color:%230f261c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g)' width='100' height='100'/%3E%3C/svg%3E",
+                "fillMode": "Cover"
+            }
+        },
+        {
+            "type": "Container",
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "📈 PRACTICE OVERVIEW",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Accent"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "style": "emphasis",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Total Practices",
+                                            "size": "Small",
+                                            "isSubtle": true,
+                                            "horizontalAlignment": "Center"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${total_practices}",
+                                            "size": "ExtraLarge",
+                                            "weight": "Bolder",
+                                            "color": "Accent",
+                                            "horizontalAlignment": "Center"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "style": "emphasis",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Total Pipeline",
+                                            "size": "Small",
+                                            "isSubtle": true,
+                                            "horizontalAlignment": "Center"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${total_pipeline_value}",
+                                            "size": "ExtraLarge",
+                                            "weight": "Bolder",
+                                            "color": "Good",
+                                            "horizontalAlignment": "Center"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "style": "emphasis",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "Avg Win Rate",
+                                            "size": "Small",
+                                            "isSubtle": true,
+                                            "horizontalAlignment": "Center"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${avg_win_rate}%",
+                                            "size": "ExtraLarge",
+                                            "weight": "Bolder",
+                                            "color": "Good",
+                                            "horizontalAlignment": "Center"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "⏳ A) TOP 5 PRACTICES - FOLLOW-UP STATUS (Last 30 Days)",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Warning"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Offers awaiting customer decision/feedback",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Practice",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Accent"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Offers",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Accent",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Total Value",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Accent",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🥇 ${followup_1_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${followup_1_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${followup_1_value}",
+                                    "size": "Small",
+                                    "color": "Warning",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🥈 ${followup_2_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${followup_2_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${followup_2_value}",
+                                    "size": "Small",
+                                    "color": "Warning",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🥉 ${followup_3_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${followup_3_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${followup_3_value}",
+                                    "size": "Small",
+                                    "color": "Warning",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "4️⃣ ${followup_4_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${followup_4_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${followup_4_value}",
+                                    "size": "Small",
+                                    "color": "Warning",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "5️⃣ ${followup_5_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${followup_5_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${followup_5_value}",
+                                    "size": "Small",
+                                    "color": "Warning",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "style": "warning",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "📊 TOTAL FOLLOW-UP: ${total_followup_count} offers | ${total_followup_value}",
+                            "weight": "Bolder",
+                            "size": "Small",
+                            "horizontalAlignment": "Center"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "✅ B) TOP 5 PRACTICES - WON OFFERS (Last 30 Days)",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Good"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Practices with highest won revenue",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Practice",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Accent"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Won",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Accent",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Total Value",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Accent",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🏆 ${won_1_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${won_1_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${won_1_value}",
+                                    "size": "Small",
+                                    "color": "Good",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🥈 ${won_2_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${won_2_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${won_2_value}",
+                                    "size": "Small",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🥉 ${won_3_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${won_3_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${won_3_value}",
+                                    "size": "Small",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "4️⃣ ${won_4_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${won_4_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${won_4_value}",
+                                    "size": "Small",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "5️⃣ ${won_5_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${won_5_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${won_5_value}",
+                                    "size": "Small",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "style": "good",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "🎯 TOTAL WON: ${total_won_count} offers | ${total_won_value}",
+                            "weight": "Bolder",
+                            "size": "Small",
+                            "horizontalAlignment": "Center"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "❌ C) TOP 5 PRACTICES - LOST OFFERS (Last 30 Days)",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Attention"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Practices with highest lost revenue",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Practice",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Accent"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Lost",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Accent",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Total Value",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Accent",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "⚠️ ${lost_1_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${lost_1_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${lost_1_value}",
+                                    "size": "Small",
+                                    "color": "Attention",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "⚠️ ${lost_2_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${lost_2_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${lost_2_value}",
+                                    "size": "Small",
+                                    "color": "Attention",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "⚠️ ${lost_3_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${lost_3_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${lost_3_value}",
+                                    "size": "Small",
+                                    "color": "Attention",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "⚠️ ${lost_4_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${lost_4_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${lost_4_value}",
+                                    "size": "Small",
+                                    "color": "Attention",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "⚠️ ${lost_5_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${lost_5_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${lost_5_value}",
+                                    "size": "Small",
+                                    "color": "Attention",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "style": "attention",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "💔 TOTAL LOST: ${total_lost_count} offers | ${total_lost_value}",
+                            "weight": "Bolder",
+                            "size": "Small",
+                            "horizontalAlignment": "Center"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "🚫 D) TOP 5 PRACTICES - CANCELLED/ABANDONED (Last 30 Days)",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Default"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Practices with highest cancellation rate",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Practice",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Accent"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Count",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Accent",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Total Value",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Accent",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🔴 ${cancelled_1_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${cancelled_1_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${cancelled_1_value}",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🔴 ${cancelled_2_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${cancelled_2_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${cancelled_2_value}",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🔴 ${cancelled_3_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${cancelled_3_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${cancelled_3_value}",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🔴 ${cancelled_4_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${cancelled_4_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${cancelled_4_value}",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🔴 ${cancelled_5_practice}",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${cancelled_5_count}",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${cancelled_5_value}",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📈 E) TOP 5 PRACTICES - HIGHEST MARGIN",
+                                    "weight": "Bolder",
+                                    "size": "Medium",
+                                    "color": "Good"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Won offers with best profitability",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "FactSet",
+                                    "facts": [
+                                        {
+                                            "title": "🥇 ${high_margin_1_practice}",
+                                            "value": "${high_margin_1_value}%"
+                                        },
+                                        {
+                                            "title": "🥈 ${high_margin_2_practice}",
+                                            "value": "${high_margin_2_value}%"
+                                        },
+                                        {
+                                            "title": "🥉 ${high_margin_3_practice}",
+                                            "value": "${high_margin_3_value}%"
+                                        },
+                                        {
+                                            "title": "4️⃣ ${high_margin_4_practice}",
+                                            "value": "${high_margin_4_value}%"
+                                        },
+                                        {
+                                            "title": "5️⃣ ${high_margin_5_practice}",
+                                            "value": "${high_margin_5_value}%"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📉 F) TOP 5 PRACTICES - LOWEST MARGIN",
+                                    "weight": "Bolder",
+                                    "size": "Medium",
+                                    "color": "Attention"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Won offers needing margin review",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "FactSet",
+                                    "facts": [
+                                        {
+                                            "title": "⚠️ ${low_margin_1_practice}",
+                                            "value": "${low_margin_1_value}%"
+                                        },
+                                        {
+                                            "title": "⚠️ ${low_margin_2_practice}",
+                                            "value": "${low_margin_2_value}%"
+                                        },
+                                        {
+                                            "title": "⚠️ ${low_margin_3_practice}",
+                                            "value": "${low_margin_3_value}%"
+                                        },
+                                        {
+                                            "title": "⚠️ ${low_margin_4_practice}",
+                                            "value": "${low_margin_4_value}%"
+                                        },
+                                        {
+                                            "title": "⚠️ ${low_margin_5_practice}",
+                                            "value": "${low_margin_5_value}%"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "📊 PRACTICE PERFORMANCE COMPARISON",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Accent"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Practice",
+                                    "weight": "Bolder",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Won",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Lost",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Attention",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Win %",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Accent",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🔹 Data/IA",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${data_ia_won}",
+                                    "size": "Small",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${data_ia_lost}",
+                                    "size": "Small",
+                                    "color": "Attention",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${data_ia_winrate}%",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🔹 DS",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${ds_won}",
+                                    "size": "Small",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${ds_lost}",
+                                    "size": "Small",
+                                    "color": "Attention",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${ds_winrate}%",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🔹 SGE",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${sge_won}",
+                                    "size": "Small",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${sge_lost}",
+                                    "size": "Small",
+                                    "color": "Attention",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${sge_winrate}%",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🔹 DIC",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${dic_won}",
+                                    "size": "Small",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${dic_lost}",
+                                    "size": "Small",
+                                    "color": "Attention",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${dic_winrate}%",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🔹 GU",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${gu_won}",
+                                    "size": "Small",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${gu_lost}",
+                                    "size": "Small",
+                                    "color": "Attention",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${gu_winrate}%",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🔹 Cyber",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${cyber_won}",
+                                    "size": "Small",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${cyber_lost}",
+                                    "size": "Small",
+                                    "color": "Attention",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${cyber_winrate}%",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "bleed": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📅 Generated: ${generation_date}",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Week ${week_number} • ${year}",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

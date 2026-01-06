@@ -89,7 +89,7 @@
 | `ARQs_Teams` | `1ad529f7-db5b-4567-aa00-1582ff333264` | ✅ Flow1 references by name. |
 | `Ofertas_Pipeline_Normalizada` | `fa90b09d-5eb9-461f-bf15-64a494b00d2d` | ✅ Azure Function/internal. |
 | `StatusReports_Historico` | `f58b3d23-5750-4b29-b30f-a7b5421cdd80` | ✅ Used by Flow2 (history write). |
-| `StatusReports_Queue_TEST` | `12197c6e-b5d4-4bcd-96d4-c8aafc426d0a` | ✅ 🆕 Queue for Flow1/Flow2. |
+| `StatusReports_Queue` | `12197c6e-b5d4-4bcd-96d4-c8aafc426d0a` | ✅ 🆕 Queue for Flow1/Flow2. |
 | `Budget_Extensions` | `dfeda3e0-0cc9-434d-b8d5-5b450dc071b2` | ✅ Not referenced in flows. |
 | `Jira_Allocation_Data` | `f25edf86-f23a-41bb-a7b1-84a096df2dd8` | ✅ Not referenced in flows. |
 

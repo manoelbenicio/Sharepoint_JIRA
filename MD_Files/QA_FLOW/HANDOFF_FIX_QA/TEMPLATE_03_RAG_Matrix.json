@@ -1,0 +1,960 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.5",
+    "body": [
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "bleed": true,
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🚦",
+                                    "size": "ExtraLarge"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "PIPELINE RAG MATRIX",
+                                    "weight": "Bolder",
+                                    "size": "Large",
+                                    "color": "Accent",
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Week 02/2026 vs Week 01/2026",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "style": "good",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": " 🟢 ON TRACK ",
+                                            "weight": "Bolder",
+                                            "size": "Medium"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "◈ KPI SCORECARD",
+                    "weight": "Bolder",
+                    "size": "Small",
+                    "color": "Accent"
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "2",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "DIMENSION",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "ACTUAL",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "RAG",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "TREND",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "TARGET",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "2",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Pipeline Value",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "€2.5M",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🟢",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "↗️ +12%",
+                                    "size": "Small",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "€5M",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "2",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Win Rate",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "48%",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🟢",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "↗️ +5%",
+                                    "size": "Small",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "35%",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "2",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Average Margin",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "22%",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🟡",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "➡️ 0%",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "28%",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "2",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Time to Close",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "42 days",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🟢",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "↗️ -8d",
+                                    "size": "Small",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "45d",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "2",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Resource Utilization",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "80%",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🟢",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "↗️ +5%",
+                                    "size": "Small",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "85%",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "style": "attention",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "⚠️ OFFERS REQUIRING ATTENTION",
+                    "weight": "Bolder",
+                    "size": "Small"
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "JIRA",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "2",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "OFFER",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "VALUE",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "RAG",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "ISSUE",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "OFBRA-4067",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "2",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Petrobras SEGEND",
+                                    "size": "Small",
+                                    "weight": "Bolder"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "€1.0M",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🔴",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "5 days left",
+                                    "size": "Small",
+                                    "color": "Attention"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "OFBRA-3920",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "2",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "CAIXA Fábrica SW",
+                                    "size": "Small",
+                                    "weight": "Bolder"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "€31.7M",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🟡",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Pricing",
+                                    "size": "Small",
+                                    "color": "Warning"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "OFBRA-4081",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "2",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "VIVO AAA Modern.",
+                                    "size": "Small",
+                                    "weight": "Bolder"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "€320K",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🟡",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Tech review",
+                                    "size": "Small",
+                                    "color": "Warning"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "📈 WEEK-OVER-WEEK DELTA",
+                    "weight": "Bolder",
+                    "size": "Small",
+                    "color": "Accent"
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "style": "good",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📈 WON",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Center"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "2 offers",
+                                    "size": "Medium",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "€0.4M",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "style": "attention",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📉 LOST",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Center"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "1 offer",
+                                    "size": "Medium",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "€0.1M",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "style": "accent",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "➡️ NEW",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Center"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "3 offers",
+                                    "size": "Medium",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "€0.6M",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "style": "warning",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "⚠️ DUE <7d",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Center"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "2 offers",
+                                    "size": "Medium",
+                                    "weight": "Bolder",
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "€1.3M at risk",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Small",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🚦 MINSAIT",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "color": "Accent"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Legend: ↗️ Improving · ➡️ Stable · ↘️ Declining",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "2026-01-06 08:47 UTC",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "msteams": {
+        "width": "Full"
+    }
+}

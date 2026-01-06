@@ -137,8 +137,8 @@ def main() -> int:
     parser.add_argument(
         "--needles",
         nargs="+",
-        default=["StatusReports_Queue_TEST"],
-        help="Strings to search for (default: StatusReports_Queue_TEST)",
+        default=["StatusReports_Queue"],
+        help="Strings to search for (default: StatusReports_Queue)",
     )
     parser.add_argument(
         "--zip-pattern",

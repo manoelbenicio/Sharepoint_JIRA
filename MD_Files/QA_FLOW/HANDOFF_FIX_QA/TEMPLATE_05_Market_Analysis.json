@@ -1,0 +1,472 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.4",
+    "body": [
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "bleed": true,
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "https://img.icons8.com/fluency/96/bullish.png",
+                                    "size": "Medium",
+                                    "altText": "Market Icon"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🏛️ MARKET INTELLIGENCE REPORT",
+                                    "weight": "Bolder",
+                                    "size": "Large",
+                                    "color": "Light",
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Weekly Market & Practice Performance • ${semana}",
+                                    "size": "Small",
+                                    "color": "Light",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        }
+                    ]
+                }
+            ],
+            "backgroundImage": {
+                "url": "https://raw.githubusercontent.com/microsoft/AdaptiveCards/main/samples/v1.5/Scenarios/FlightUpdate/background.png",
+                "fillMode": "Cover"
+            }
+        },
+        {
+            "type": "Container",
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "style": "accent",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "TOTAL MARKETS",
+                                            "size": "Small",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${total_mercados}",
+                                            "size": "ExtraLarge",
+                                            "weight": "Bolder",
+                                            "color": "Accent",
+                                            "horizontalAlignment": "Center"
+                                        }
+                                    ],
+                                    "bleed": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "style": "good",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "PIPELINE (30d)",
+                                            "size": "Small",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${pipeline_total_30d_fmt}",
+                                            "size": "Large",
+                                            "weight": "Bolder",
+                                            "color": "Good",
+                                            "horizontalAlignment": "Center"
+                                        }
+                                    ],
+                                    "bleed": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "style": "warning",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "WON (30d)",
+                                            "size": "Small",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${won_total_30d_fmt}",
+                                            "size": "Large",
+                                            "weight": "Bolder",
+                                            "color": "Warning",
+                                            "horizontalAlignment": "Center"
+                                        }
+                                    ],
+                                    "bleed": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Large",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "⏳ TOP 5 MARKETS AWAITING DECISION (Follow-up)",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Warning"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Offers pending customer response",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        {
+                            "title": "🥇 ${mkt_followup_1_nome}",
+                            "value": "${mkt_followup_1_count} offers • ${mkt_followup_1_valor_fmt}"
+                        },
+                        {
+                            "title": "🥈 ${mkt_followup_2_nome}",
+                            "value": "${mkt_followup_2_count} offers • ${mkt_followup_2_valor_fmt}"
+                        },
+                        {
+                            "title": "🥉 ${mkt_followup_3_nome}",
+                            "value": "${mkt_followup_3_count} offers • ${mkt_followup_3_valor_fmt}"
+                        },
+                        {
+                            "title": "4️⃣ ${mkt_followup_4_nome}",
+                            "value": "${mkt_followup_4_count} offers • ${mkt_followup_4_valor_fmt}"
+                        },
+                        {
+                            "title": "5️⃣ ${mkt_followup_5_nome}",
+                            "value": "${mkt_followup_5_count} offers • ${mkt_followup_5_valor_fmt}"
+                        }
+                    ],
+                    "spacing": "Medium"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Large",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "✅ TOP 5 MARKETS BY WINS (30 DAYS)",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Good"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Most successful markets this month",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        {
+                            "title": "🥇 ${mkt_won_1_nome}",
+                            "value": "${mkt_won_1_count} won • ${mkt_won_1_valor_fmt}"
+                        },
+                        {
+                            "title": "🥈 ${mkt_won_2_nome}",
+                            "value": "${mkt_won_2_count} won • ${mkt_won_2_valor_fmt}"
+                        },
+                        {
+                            "title": "🥉 ${mkt_won_3_nome}",
+                            "value": "${mkt_won_3_count} won • ${mkt_won_3_valor_fmt}"
+                        },
+                        {
+                            "title": "4️⃣ ${mkt_won_4_nome}",
+                            "value": "${mkt_won_4_count} won • ${mkt_won_4_valor_fmt}"
+                        },
+                        {
+                            "title": "5️⃣ ${mkt_won_5_nome}",
+                            "value": "${mkt_won_5_count} won • ${mkt_won_5_valor_fmt}"
+                        }
+                    ],
+                    "spacing": "Medium"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Large",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "❌ TOP 5 MARKETS BY LOSSES (30 DAYS)",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Attention"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Markets requiring attention and analysis",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        {
+                            "title": "⚠️ ${mkt_lost_1_nome}",
+                            "value": "${mkt_lost_1_count} lost • ${mkt_lost_1_valor_fmt}"
+                        },
+                        {
+                            "title": "⚠️ ${mkt_lost_2_nome}",
+                            "value": "${mkt_lost_2_count} lost • ${mkt_lost_2_valor_fmt}"
+                        },
+                        {
+                            "title": "⚠️ ${mkt_lost_3_nome}",
+                            "value": "${mkt_lost_3_count} lost • ${mkt_lost_3_valor_fmt}"
+                        },
+                        {
+                            "title": "⚠️ ${mkt_lost_4_nome}",
+                            "value": "${mkt_lost_4_count} lost • ${mkt_lost_4_valor_fmt}"
+                        },
+                        {
+                            "title": "⚠️ ${mkt_lost_5_nome}",
+                            "value": "${mkt_lost_5_count} lost • ${mkt_lost_5_valor_fmt}"
+                        }
+                    ],
+                    "spacing": "Medium"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Large",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "🚫 TOP 5 MARKETS - CANCELLED/ABANDONED (90 DAYS)",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Attention"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Stale opportunities requiring cleanup or reactivation",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        {
+                            "title": "🔴 ${mkt_cancelled_1_nome}",
+                            "value": "${mkt_cancelled_1_count} cancelled • ${mkt_cancelled_1_valor_fmt}"
+                        },
+                        {
+                            "title": "🔴 ${mkt_cancelled_2_nome}",
+                            "value": "${mkt_cancelled_2_count} cancelled • ${mkt_cancelled_2_valor_fmt}"
+                        },
+                        {
+                            "title": "🔴 ${mkt_cancelled_3_nome}",
+                            "value": "${mkt_cancelled_3_count} cancelled • ${mkt_cancelled_3_valor_fmt}"
+                        },
+                        {
+                            "title": "🔴 ${mkt_cancelled_4_nome}",
+                            "value": "${mkt_cancelled_4_count} cancelled • ${mkt_cancelled_4_valor_fmt}"
+                        },
+                        {
+                            "title": "🔴 ${mkt_cancelled_5_nome}",
+                            "value": "${mkt_cancelled_5_count} cancelled • ${mkt_cancelled_5_valor_fmt}"
+                        }
+                    ],
+                    "spacing": "Medium"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Large",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📈 HIGHEST MARGIN MARKETS",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Good"
+                                },
+                                {
+                                    "type": "FactSet",
+                                    "facts": [
+                                        {
+                                            "title": "🥇 ${mkt_high_margin_1_nome}",
+                                            "value": "${mkt_high_margin_1_pct}%"
+                                        },
+                                        {
+                                            "title": "🥈 ${mkt_high_margin_2_nome}",
+                                            "value": "${mkt_high_margin_2_pct}%"
+                                        },
+                                        {
+                                            "title": "🥉 ${mkt_high_margin_3_nome}",
+                                            "value": "${mkt_high_margin_3_pct}%"
+                                        },
+                                        {
+                                            "title": "4️⃣ ${mkt_high_margin_4_nome}",
+                                            "value": "${mkt_high_margin_4_pct}%"
+                                        },
+                                        {
+                                            "title": "5️⃣ ${mkt_high_margin_5_nome}",
+                                            "value": "${mkt_high_margin_5_pct}%"
+                                        }
+                                    ],
+                                    "spacing": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📉 LOWEST MARGIN MARKETS",
+                                    "weight": "Bolder",
+                                    "size": "Small",
+                                    "color": "Attention"
+                                },
+                                {
+                                    "type": "FactSet",
+                                    "facts": [
+                                        {
+                                            "title": "⚠️ ${mkt_low_margin_1_nome}",
+                                            "value": "${mkt_low_margin_1_pct}%"
+                                        },
+                                        {
+                                            "title": "⚠️ ${mkt_low_margin_2_nome}",
+                                            "value": "${mkt_low_margin_2_pct}%"
+                                        },
+                                        {
+                                            "title": "⚠️ ${mkt_low_margin_3_nome}",
+                                            "value": "${mkt_low_margin_3_pct}%"
+                                        },
+                                        {
+                                            "title": "⚠️ ${mkt_low_margin_4_nome}",
+                                            "value": "${mkt_low_margin_4_pct}%"
+                                        },
+                                        {
+                                            "title": "⚠️ ${mkt_low_margin_5_nome}",
+                                            "value": "${mkt_low_margin_5_pct}%"
+                                        }
+                                    ],
+                                    "spacing": "Small"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "bleed": true,
+            "spacing": "Large",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🤖 Generated by MINSAIT Pipeline Intelligence",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "color": "Light"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "v2.0 • DN Technology Architecture",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "color": "Light",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

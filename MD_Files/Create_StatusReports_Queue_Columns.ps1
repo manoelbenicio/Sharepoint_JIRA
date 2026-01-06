@@ -1,10 +1,10 @@
 # Create-StatusReports_Queue_Columns.ps1
-# Creates all required columns for StatusReports_Queue_TEST list
+# Creates all required columns for StatusReports_Queue list
 # Compatible with SharePointPnPPowerShellOnline v3.29
 
 param(
     [string]$SiteUrl = "https://indra365.sharepoint.com/sites/Grp_T_DN_Arquitetura_Solucoes_Multi_Praticas_QA",
-    [string]$ListName = "StatusReports_Queue_TEST"
+    [string]$ListName = "StatusReports_Queue"
 )
 
 Write-Host "================================================" -ForegroundColor Cyan

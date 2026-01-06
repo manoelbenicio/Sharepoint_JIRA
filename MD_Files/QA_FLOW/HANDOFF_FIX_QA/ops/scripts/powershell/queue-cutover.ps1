@@ -13,7 +13,7 @@
   must be performed in Power Automate (or via your Power Platform automation tooling).
 
 .EXAMPLE
-  pwsh ops/scripts/powershell/queue-cutover.ps1 -SiteUrl "https://.../sites/..." -OldList "StatusReports_Queue_TEST" -NewList "StatusReports_Queue"
+  pwsh ops/scripts/powershell/queue-cutover.ps1 -SiteUrl "https://.../sites/..." -OldList "StatusReports_Queue" -NewList "StatusReports_Queue"
 #>
 
 [CmdletBinding(SupportsShouldProcess = $true, ConfirmImpact = "High")]

@@ -9,10 +9,10 @@
   PnP.PowerShell
 
 .EXAMPLE
-  pwsh ops/scripts/powershell/queue-dedupe.ps1 -SiteUrl "https://.../sites/..." -QueueList "StatusReports_Queue_TEST" -Mode Scan
+  pwsh ops/scripts/powershell/queue-dedupe.ps1 -SiteUrl "https://.../sites/..." -QueueList "StatusReports_Queue" -Mode Scan
 
 .EXAMPLE
-  pwsh ops/scripts/powershell/queue-dedupe.ps1 -SiteUrl "https://.../sites/..." -QueueList "StatusReports_Queue_TEST" -Mode Cleanup -KeepPolicy OldestCreated -Confirm:$true
+  pwsh ops/scripts/powershell/queue-dedupe.ps1 -SiteUrl "https://.../sites/..." -QueueList "StatusReports_Queue" -Mode Cleanup -KeepPolicy OldestCreated -Confirm:$true
 #>
 
 [CmdletBinding(SupportsShouldProcess = $true, ConfirmImpact = "High")]

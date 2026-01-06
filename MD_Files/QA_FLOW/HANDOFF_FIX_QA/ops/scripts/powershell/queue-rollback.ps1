@@ -10,10 +10,10 @@
 
 .NOTES
   The primary rollback for TD-008 is disabling the new Flow1/Flow2 versions and enabling the previous ones that still
-  point to StatusReports_Queue_TEST. This script does not toggle flows; it keeps SharePoint-side rollback safe and auditable.
+  point to StatusReports_Queue. This script does not toggle flows; it keeps SharePoint-side rollback safe and auditable.
 
 .EXAMPLE
-  pwsh ops/scripts/powershell/queue-rollback.ps1 -SiteUrl "https://.../sites/..." -OldList "StatusReports_Queue_TEST" -NewList "StatusReports_Queue"
+  pwsh ops/scripts/powershell/queue-rollback.ps1 -SiteUrl "https://.../sites/..." -OldList "StatusReports_Queue" -NewList "StatusReports_Queue"
 #>
 
 [CmdletBinding(SupportsShouldProcess = $true, ConfirmImpact = "High")]

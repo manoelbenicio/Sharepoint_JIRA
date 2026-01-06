@@ -22,9 +22,9 @@ Garantir entrega 100% de todos os componentes do pipeline automatizado JIRA → 
 | 1.1 | `function_app.py` com 18 endpoints | Arquivo existe, >100KB, todos endpoints documentados | ✅ ENTREGUE | AI Agent |
 | 1.2 | `requirements.txt` | Contém azure-functions, pandas, numpy | ✅ ENTREGUE | AI Agent |
 | 1.3 | `host.json` configurado | v2.0, extensionBundle 4.x | ✅ ENTREGUE | AI Agent |
-| 1.4 | Deploy no Azure | `/api/health` retorna `{"status":"healthy"}` | ⏳ PENDENTE | Human |
-| 1.5 | App Settings configurados | PBI_TENANT_ID, PBI_CLIENT_ID, PBI_CLIENT_SECRET | ⏳ PENDENTE | Human |
-| 1.6 | Function Key obtida | Chave copiada para uso nos Flows | ⏳ PENDENTE | Human |
+| 1.4 | Deploy no Azure | `/api/health` retorna `{"status":"healthy"}` | ✅ ENTREGUE | Human |
+| 1.5 | App Settings configurados | PBI_TENANT_ID, PBI_CLIENT_ID, PBI_CLIENT_SECRET | ✅ ENTREGUE | Human |
+| 1.6 | Function Key obtida | Chave copiada para uso nos Flows | ✅ ENTREGUE | Human |
 
 **Comando de Deploy:**
 ```powershell
@@ -42,7 +42,7 @@ func azure functionapp publish func-pipeline-consolidation
 | 2.2 | Schema `ARQs_Teams` exportado | XML válido | ✅ ENTREGUE | AI Agent |
 | 2.3 | Schema `StatusReports_Historico` exportado | XML válido | ✅ ENTREGUE | AI Agent |
 | 2.4 | FillInChoice=TRUE nos campos Choice | Status, Mercado, TipoServico aceita valores livres | ✅ ENTREGUE | Human (UI) |
-| 2.5 | Lista `StatusReports_Queue_TEST` criada | 12 colunas incluindo UniqueKey com enforce unique | ⏳ PENDENTE | Human |
+| 2.5 | Lista `StatusReports_Queue` criada | 12 colunas incluindo UniqueKey com enforce unique | ⏳ PENDENTE | Human |
 
 **Comando de Criação:**
 ```powershell
@@ -120,7 +120,7 @@ graph TD
 
 | Prioridade | Ação | Tempo Estimado | Bloqueador |
 |------------|------|----------------|------------|
-| **1** | Criar lista StatusReports_Queue_TEST | 5 min | Nenhum |
+| **1** | Criar lista StatusReports_Queue | 5 min | Nenhum |
 | **2** | Deploy Azure Function | 10 min | Nenhum |
 | **3** | Configurar App Settings no Azure | 5 min | Deploy |
 | **4** | Obter Function Key | 2 min | Deploy |
@@ -137,7 +137,7 @@ graph TD
 O projeto estará **100% entregue** quando:
 
 1. [ ] `/api/health` retorna `{"status":"healthy"}` no Azure
-2. [ ] Lista `StatusReports_Queue_TEST` existe no SharePoint com UniqueKey unique
+2. [ ] Lista `StatusReports_Queue` existe no SharePoint com UniqueKey unique
 3. [ ] Flow1 cria items na queue automaticamente (Tue/Fri 09:00)
 4. [ ] Flow2 envia Adaptive Card no Teams 1:1 chat
 5. [ ] Respostas do card são persistidas em `StatusReports_Historico`

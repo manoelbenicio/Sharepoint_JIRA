@@ -1,6 +1,6 @@
 # Flow2: Worker - Manual Creation Guide
 
-> **Trigger**: SharePoint "When an item is created" on `StatusReports_Queue_TEST`  
+> **Trigger**: SharePoint "When an item is created" on `StatusReports_Queue`  
 > **Purpose**: Sends adaptive card, waits for response, persists to SharePoint
 
 ---
@@ -29,7 +29,7 @@
 ```
 Trigger: When an item is created
 Site Address: https://indra365.sharepoint.com/sites/Grp_T_DN_Arquitetura_Solucoes_Multi_Praticas_QA
-List Name: StatusReports_Queue_TEST
+List Name: StatusReports_Queue
 ```
 
 ---
@@ -50,7 +50,7 @@ Condition: triggerOutputs()?['body/QueueStatus/Value'] is equal to Pending
 ```
 Action: SharePoint - Update item
 Site Address: https://indra365.sharepoint.com/sites/Grp_T_DN_Arquitetura_Solucoes_Multi_Praticas_QA
-List Name: StatusReports_Queue_TEST
+List Name: StatusReports_Queue
 Id: triggerOutputs()?['body/ID']
 
 Fields:
@@ -164,7 +164,7 @@ LastError: Status Vermelho requer observações preenchidas
 ```
 Action: SharePoint - Update item
 Site Address: https://indra365.sharepoint.com/sites/Grp_T_DN_Arquitetura_Solucoes_Multi_Praticas_QA
-List Name: StatusReports_Queue_TEST
+List Name: StatusReports_Queue
 Id: triggerOutputs()?['body/ID']
 
 Fields:

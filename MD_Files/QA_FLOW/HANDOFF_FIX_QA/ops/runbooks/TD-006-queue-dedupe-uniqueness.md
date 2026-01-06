@@ -21,7 +21,7 @@ Stop queue duplicates and remove existing duplicates safely, using a determinist
 
 ## Preconditions / Inputs
 
-- Queue list name (current): `StatusReports_Queue_TEST`
+- Queue list name (current): `StatusReports_Queue`
 - **PnP.PowerShell v3.1.0+** installed
 - **Authentication**: Use `-UseWebLogin` (NOT `-Interactive`)
 - Confirmation that queue items have:

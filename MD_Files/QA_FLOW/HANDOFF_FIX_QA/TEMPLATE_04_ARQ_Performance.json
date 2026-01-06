@@ -1,0 +1,462 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.4",
+    "body": [
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "bleed": true,
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "https://img.icons8.com/fluency/96/engineer.png",
+                                    "size": "Medium",
+                                    "altText": "ARQ Icon"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "👷 ARCHITECT PERFORMANCE DASHBOARD",
+                                    "weight": "Bolder",
+                                    "size": "Large",
+                                    "color": "Light",
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Weekly ARQ Team Performance • ${semana}",
+                                    "size": "Small",
+                                    "color": "Light",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        }
+                    ]
+                }
+            ],
+            "backgroundImage": {
+                "url": "https://raw.githubusercontent.com/microsoft/AdaptiveCards/main/samples/v1.5/Scenarios/FlightUpdate/background.png",
+                "fillMode": "Cover"
+            }
+        },
+        {
+            "type": "Container",
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📊 TEAM OVERVIEW",
+                                    "weight": "Bolder",
+                                    "size": "Medium",
+                                    "color": "Accent"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📅 ${data_geracao}",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ColumnSet",
+                    "separator": true,
+                    "spacing": "Medium",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "style": "accent",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "TOTAL ARQs",
+                                            "size": "Small",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${total_arquitetos}",
+                                            "size": "ExtraLarge",
+                                            "weight": "Bolder",
+                                            "color": "Accent",
+                                            "horizontalAlignment": "Center"
+                                        }
+                                    ],
+                                    "bleed": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "style": "good",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "AVG UTILIZATION",
+                                            "size": "Small",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${utilizacao_media_pct}%",
+                                            "size": "ExtraLarge",
+                                            "weight": "Bolder",
+                                            "color": "Good",
+                                            "horizontalAlignment": "Center"
+                                        }
+                                    ],
+                                    "bleed": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "style": "warning",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "TOTAL OFFERS",
+                                            "size": "Small",
+                                            "weight": "Bolder",
+                                            "horizontalAlignment": "Center"
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${total_ofertas_ativas}",
+                                            "size": "ExtraLarge",
+                                            "weight": "Bolder",
+                                            "color": "Warning",
+                                            "horizontalAlignment": "Center"
+                                        }
+                                    ],
+                                    "bleed": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Large",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "⚡ TOP 5 ARCHITECT UTILIZATION",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Accent"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Hours consumed vs allocated budget",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        {
+                            "title": "🥇 ${arq_util_1_nome}",
+                            "value": "${arq_util_1_pct}% (${arq_util_1_horas_consumidas}h / ${arq_util_1_horas_alocadas}h)"
+                        },
+                        {
+                            "title": "🥈 ${arq_util_2_nome}",
+                            "value": "${arq_util_2_pct}% (${arq_util_2_horas_consumidas}h / ${arq_util_2_horas_alocadas}h)"
+                        },
+                        {
+                            "title": "🥉 ${arq_util_3_nome}",
+                            "value": "${arq_util_3_pct}% (${arq_util_3_horas_consumidas}h / ${arq_util_3_horas_alocadas}h)"
+                        },
+                        {
+                            "title": "4️⃣ ${arq_util_4_nome}",
+                            "value": "${arq_util_4_pct}% (${arq_util_4_horas_consumidas}h / ${arq_util_4_horas_alocadas}h)"
+                        },
+                        {
+                            "title": "5️⃣ ${arq_util_5_nome}",
+                            "value": "${arq_util_5_pct}% (${arq_util_5_horas_consumidas}h / ${arq_util_5_horas_alocadas}h)"
+                        }
+                    ],
+                    "spacing": "Medium"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Large",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "📈 TOP 5 ARQs BY OFFER VOLUME",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Warning"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Active offers in development pipeline",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        {
+                            "title": "🥇 ${arq_vol_1_nome}",
+                            "value": "${arq_vol_1_count} offers • ${arq_vol_1_valor_fmt}"
+                        },
+                        {
+                            "title": "🥈 ${arq_vol_2_nome}",
+                            "value": "${arq_vol_2_count} offers • ${arq_vol_2_valor_fmt}"
+                        },
+                        {
+                            "title": "🥉 ${arq_vol_3_nome}",
+                            "value": "${arq_vol_3_count} offers • ${arq_vol_3_valor_fmt}"
+                        },
+                        {
+                            "title": "4️⃣ ${arq_vol_4_nome}",
+                            "value": "${arq_vol_4_count} offers • ${arq_vol_4_valor_fmt}"
+                        },
+                        {
+                            "title": "5️⃣ ${arq_vol_5_nome}",
+                            "value": "${arq_vol_5_count} offers • ${arq_vol_5_valor_fmt}"
+                        }
+                    ],
+                    "spacing": "Medium"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Large",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "💰 TOP 5 ARQs BY PIPELINE VALUE",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Good"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Highest financial impact in active pipeline",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        {
+                            "title": "🥇 ${arq_impact_1_nome}",
+                            "value": "${arq_impact_1_valor_fmt} (${arq_impact_1_count} offers)"
+                        },
+                        {
+                            "title": "🥈 ${arq_impact_2_nome}",
+                            "value": "${arq_impact_2_valor_fmt} (${arq_impact_2_count} offers)"
+                        },
+                        {
+                            "title": "🥉 ${arq_impact_3_nome}",
+                            "value": "${arq_impact_3_valor_fmt} (${arq_impact_3_count} offers)"
+                        },
+                        {
+                            "title": "4️⃣ ${arq_impact_4_nome}",
+                            "value": "${arq_impact_4_valor_fmt} (${arq_impact_4_count} offers)"
+                        },
+                        {
+                            "title": "5️⃣ ${arq_impact_5_nome}",
+                            "value": "${arq_impact_5_valor_fmt} (${arq_impact_5_count} offers)"
+                        }
+                    ],
+                    "spacing": "Medium"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Large",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "💎 TOP 5 ARQs WITH 100MM+ BRL OFFERS",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Accent"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "High-value strategic opportunities",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        {
+                            "title": "🥇 ${arq_100m_1_nome}",
+                            "value": "${arq_100m_1_count} mega offers • ${arq_100m_1_valor_fmt}"
+                        },
+                        {
+                            "title": "🥈 ${arq_100m_2_nome}",
+                            "value": "${arq_100m_2_count} mega offers • ${arq_100m_2_valor_fmt}"
+                        },
+                        {
+                            "title": "🥉 ${arq_100m_3_nome}",
+                            "value": "${arq_100m_3_count} mega offers • ${arq_100m_3_valor_fmt}"
+                        },
+                        {
+                            "title": "4️⃣ ${arq_100m_4_nome}",
+                            "value": "${arq_100m_4_count} mega offers • ${arq_100m_4_valor_fmt}"
+                        },
+                        {
+                            "title": "5️⃣ ${arq_100m_5_nome}",
+                            "value": "${arq_100m_5_count} mega offers • ${arq_100m_5_valor_fmt}"
+                        }
+                    ],
+                    "spacing": "Medium"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Large",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "🏆 TOP 5 ARQs BY WINS (30 DAYS)",
+                    "weight": "Bolder",
+                    "size": "Medium",
+                    "color": "Good"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Successful closures in the last month",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "spacing": "None"
+                },
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        {
+                            "title": "🥇 ${arq_won_1_nome}",
+                            "value": "${arq_won_1_count} won • ${arq_won_1_valor_fmt}"
+                        },
+                        {
+                            "title": "🥈 ${arq_won_2_nome}",
+                            "value": "${arq_won_2_count} won • ${arq_won_2_valor_fmt}"
+                        },
+                        {
+                            "title": "🥉 ${arq_won_3_nome}",
+                            "value": "${arq_won_3_count} won • ${arq_won_3_valor_fmt}"
+                        },
+                        {
+                            "title": "4️⃣ ${arq_won_4_nome}",
+                            "value": "${arq_won_4_count} won • ${arq_won_4_valor_fmt}"
+                        },
+                        {
+                            "title": "5️⃣ ${arq_won_5_nome}",
+                            "value": "${arq_won_5_count} won • ${arq_won_5_valor_fmt}"
+                        }
+                    ],
+                    "spacing": "Medium"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "bleed": true,
+            "spacing": "Large",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🤖 Generated by MINSAIT Pipeline Intelligence",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "color": "Light"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "v2.0 • DN Technology Architecture",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "color": "Light",
+                                    "horizontalAlignment": "Right"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

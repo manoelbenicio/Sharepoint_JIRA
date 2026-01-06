@@ -1,13 +1,13 @@
 # Flow1: Queue Creator - Manual Creation Guide
 
 > **Trigger**: Recurrence (Tue/Fri 09:00 São Paulo)  
-> **Purpose**: Creates queue items in `StatusReports_Queue_TEST` for actionable offers
+> **Purpose**: Creates queue items in `StatusReports_Queue` for actionable offers
 
 ---
 
 ## Prerequisites
 
-1. ✅ Create list `StatusReports_Queue_TEST` with all columns (run PowerShell script)
+1. ✅ Create list `StatusReports_Queue` with all columns (run PowerShell script)
 2. ✅ Verify `UniqueKey` has **Enforce unique values = Yes**
 3. ✅ Confirm `ARQs_Teams` list has active architects with emails
 
@@ -182,7 +182,7 @@ Name: Scope_CreateQueueItem
 ```
 Action: SharePoint - Create item
 Site Address: https://indra365.sharepoint.com/sites/Grp_T_DN_Arquitetura_Solucoes_Multi_Praticas_QA
-List Name: StatusReports_Queue_TEST
+List Name: StatusReports_Queue
 
 QueueStatus Value: Pending
 RecipientEmail: first(body('Filter_Architect'))?['email']

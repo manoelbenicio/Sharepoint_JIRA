@@ -11,7 +11,7 @@
 
 ## Goal
 
-Replace `StatusReports_Queue_TEST` with a production name `StatusReports_Queue` **without breaking anything**, with:
+Replace `StatusReports_Queue` with a production name `StatusReports_Queue` **without breaking anything**, with:
 
 - double-check of every reference
 - canary cutover
@@ -22,14 +22,14 @@ Replace `StatusReports_Queue_TEST` with a production name `StatusReports_Queue` 
 - **Do not rename** the existing list in place as the primary strategy.
 - Use **blue/green**:
   - Blue = new list `StatusReports_Queue`
-  - Green = existing list `StatusReports_Queue_TEST` (kept intact for rollback)
+  - Green = existing list `StatusReports_Queue` (kept intact for rollback)
 - **Recipient safety (hard constraint)**: during validation, the only allowed Teams recipient is `mbenicios@minsait.com`.
   - If there is any possibility of other recipients receiving messages, mark **BLOCKED (business hours validation required)**.
 
 ## Preconditions / Inputs
 
 - Site URL (target)
-- List name (current): `StatusReports_Queue_TEST`
+- List name (current): `StatusReports_Queue`
 - List name (new): `StatusReports_Queue`
 - Flow1 + Flow2 exports available for rollback (keep previous `_vNN-1` enabled-ready)
 - Flood control (TD-002) already applied to Flow2
@@ -38,7 +38,7 @@ Replace `StatusReports_Queue_TEST` with a production name `StatusReports_Queue` 
 ## Double-check (mandatory before any cutover)
 
 1. Run repo audit for stale references:
-   - `python tools/audit_queue_list_references.py --needles StatusReports_Queue_TEST`
+   - `python tools/audit_queue_list_references.py --needles StatusReports_Queue`
    - Review `tools/reports/queue_list_reference_audit.json`
 2. Confirm Power Automate references:
    - Flow1 queue creator: every SharePoint action must point to the correct list
@@ -55,7 +55,7 @@ Replace `StatusReports_Queue_TEST` with a production name `StatusReports_Queue` 
 
 ### B) Backup
 
-1. Export schema + items of `StatusReports_Queue_TEST` (scripted).
+1. Export schema + items of `StatusReports_Queue` (scripted).
 2. Export current Flow1/Flow2 versions (package).
 
 ### C) Provision “blue” list
@@ -99,13 +99,13 @@ From SharePoint lists:
 
 Rollback is fast and safe because:
 
-- Old list remains untouched (`StatusReports_Queue_TEST` still exists with data).
+- Old list remains untouched (`StatusReports_Queue` still exists with data).
 - Old flow exports exist.
 
 Procedure:
 
 1. Disable the new Flow1/Flow2 versions.
-2. Enable the old Flow1/Flow2 versions that still point to `StatusReports_Queue_TEST`.
+2. Enable the old Flow1/Flow2 versions that still point to `StatusReports_Queue`.
 3. Keep the new list for analysis; do not delete it during incident response.
 
 ## Evidence to attach (required)

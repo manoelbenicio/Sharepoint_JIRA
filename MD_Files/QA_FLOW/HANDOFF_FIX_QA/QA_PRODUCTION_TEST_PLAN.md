@@ -20,13 +20,13 @@ This repo can only provide the plan and offline artifact validation; tenant-side
 ## 0) Scope (what must be tested)
 
 **Flows**
-- Flow1: queue creator (`StatusReports_Queue_TEST` → `Pending`)
+- Flow1: queue creator (`StatusReports_Queue` → `Pending`)
 - Flow2: queue processor + Teams card + response persistence (queue → Teams → `StatusReports_Historico` + legacy writes)
 - Flow3: consolidation + Teams post (optional for this QA cycle)
 - Flow4: JIRA CSV import via Azure Function (data quality + Observacoes sanitization)
 
 **Data stores**
-- SharePoint lists: `ARQs_Teams`, `Ofertas_Pipeline`, `StatusReports_Queue_TEST`, `StatusReports_Historico`, `Atualizacoes_Semanais`
+- SharePoint lists: `ARQs_Teams`, `Ofertas_Pipeline`, `StatusReports_Queue`, `StatusReports_Historico`, `Atualizacoes_Semanais`
 
 **UX surface**
 - Teams Adaptive Card: every control (radio/choice/checkbox/date/text/toggles) and the submit button behavior.
@@ -86,7 +86,7 @@ Prevents:
 
 ### A. Required SharePoint views (create once)
 
-Create a view for `StatusReports_Queue_TEST` including at least:
+Create a view for `StatusReports_Queue` including at least:
 - `ID`, `Created`, `Modified`, `QueueStatus`, `RecipientEmail`, `JiraKey`, `OfertaId`, `Semana`, `VersaoReport`, `UniqueKey`, `SentAt`, `CompletedAt`, `AttemptCount`
 
 Create a view for `StatusReports_Historico` including at least:
@@ -94,7 +94,7 @@ Create a view for `StatusReports_Historico` including at least:
 
 ### B. How to “prove” each component works (Level 1)
 
-- Flow1 worked if new rows appear in `StatusReports_Queue_TEST` with `QueueStatus=Pending` and correct keys.
+- Flow1 worked if new rows appear in `StatusReports_Queue` with `QueueStatus=Pending` and correct keys.
 - Flow2 “sent” worked if those rows transition `Pending → Sent` (and ideally `SentAt` is stamped).
 - Flow2 “response” worked if `StatusReports_Historico` gets a new row after card submit.
 - Data quality worked if `Observacoes` is plain text (no HTML tags) in `Ofertas_Pipeline` and downstream.
@@ -240,7 +240,7 @@ Verify:
 
 ### DUP1. Queue duplicates detection
 
-- Query `StatusReports_Queue_TEST` grouped by `(OfertaId, Semana, RecipientEmail)` and count > 1.
+- Query `StatusReports_Queue` grouped by `(OfertaId, Semana, RecipientEmail)` and count > 1.
 - If duplicates exist: do not proceed to broad rollout until:
   - uniqueness strategy is defined (UniqueKey enforced) and
   - cleanup procedure is executed.

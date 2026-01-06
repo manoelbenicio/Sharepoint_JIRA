@@ -1,0 +1,267 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.4",
+    "body": [
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "bleed": true,
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "verticalContentAlignment": "Center",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "⚡",
+                                    "size": "ExtraLarge",
+                                    "weight": "Bolder"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "WEEKLY FLASH REPORT",
+                                    "weight": "Bolder",
+                                    "size": "Large",
+                                    "wrap": true,
+                                    "color": "Accent"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Architecture & Solutions | Week 02/2026",
+                                    "size": "Small",
+                                    "wrap": true,
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "horizontalAlignment": "Right",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🏢 Minsait",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "TextBlock",
+            "text": "📊 NUMBERS AT A GLANCE",
+            "weight": "Bolder",
+            "size": "Medium",
+            "separator": true,
+            "spacing": "Large"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "1",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "PIPELINE",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center",
+                            "weight": "Bolder"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "€2.5M",
+                            "weight": "Bolder",
+                            "size": "ExtraLarge",
+                            "color": "Accent",
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "45 offers",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center",
+                            "spacing": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "1",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "ACTIVE",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center",
+                            "weight": "Bolder"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "12",
+                            "weight": "Bolder",
+                            "size": "ExtraLarge",
+                            "color": "Good",
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "in dev",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center",
+                            "spacing": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "1",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "CLOSED",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center",
+                            "weight": "Bolder"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "5",
+                            "weight": "Bolder",
+                            "size": "ExtraLarge",
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "this week",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center",
+                            "spacing": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "1",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "WIN RATE",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center",
+                            "weight": "Bolder"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "48%",
+                            "weight": "Bolder",
+                            "size": "ExtraLarge",
+                            "color": "Good",
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "30 days",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center",
+                            "spacing": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "1",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "MARGIN",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center",
+                            "weight": "Bolder"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "22%",
+                            "weight": "Bolder",
+                            "size": "ExtraLarge",
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "average",
+                            "size": "Small",
+                            "isSubtle": true,
+                            "horizontalAlignment": "Center",
+                            "spacing": "None"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "style": "emphasis",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "📈 ARCHITECT UTILIZATION",
+                    "weight": "Bolder",
+                    "size": "Small"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Responded: 8 / 10 architects (80%)",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "spacing": "Small"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Small",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Generated: 2026-01-06 08:21 UTC",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "horizontalAlignment": "Center"
+                }
+            ]
+        }
+    ],
+    "msteams": {
+        "width": "Full"
+    }
+}

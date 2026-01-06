@@ -10,7 +10,7 @@
   PnP.PowerShell
 
 .EXAMPLE
-  pwsh ops/scripts/powershell/ops-views.ps1 -SiteUrl "https://.../sites/..." -QueueList "StatusReports_Queue_TEST" -HistoricoList "StatusReports_Historico"
+  pwsh ops/scripts/powershell/ops-views.ps1 -SiteUrl "https://.../sites/..." -QueueList "StatusReports_Queue" -HistoricoList "StatusReports_Historico"
 #>
 
 [CmdletBinding()]

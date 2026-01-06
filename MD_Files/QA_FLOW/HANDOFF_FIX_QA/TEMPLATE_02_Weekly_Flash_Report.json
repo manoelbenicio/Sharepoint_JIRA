@@ -1,0 +1,519 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.5",
+    "body": [
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "bleed": true,
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "⚡",
+                                    "size": "ExtraLarge"
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "WEEKLY FLASH",
+                                    "weight": "Bolder",
+                                    "size": "Large",
+                                    "color": "Accent",
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "30-Second Executive Brief · Week 02/2026",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "Container",
+                                    "style": "good",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": " ON TRACK ",
+                                            "weight": "Bolder",
+                                            "size": "Small",
+                                            "horizontalAlignment": "Center"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "verticalContentAlignment": "Center"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "style": "emphasis",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "€2.5M",
+                                    "weight": "Bolder",
+                                    "size": "ExtraLarge",
+                                    "color": "Accent",
+                                    "horizontalAlignment": "Center"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "PIPELINE",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None",
+                                    "weight": "Bolder"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "45 opportunities",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "12",
+                                    "weight": "Bolder",
+                                    "size": "ExtraLarge",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Center"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "ACTIVE",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None",
+                                    "weight": "Bolder"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "in development",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "5",
+                                    "weight": "Bolder",
+                                    "size": "ExtraLarge",
+                                    "horizontalAlignment": "Center"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "CLOSED",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None",
+                                    "weight": "Bolder"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "this week",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "48%",
+                                    "weight": "Bolder",
+                                    "size": "ExtraLarge",
+                                    "color": "Good",
+                                    "horizontalAlignment": "Center"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "WIN RATE",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None",
+                                    "weight": "Bolder"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "YTD average",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "22%",
+                                    "weight": "Bolder",
+                                    "size": "ExtraLarge",
+                                    "horizontalAlignment": "Center"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "MARGIN",
+                                    "size": "Small",
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None",
+                                    "weight": "Bolder"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "avg gross",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "horizontalAlignment": "Center",
+                                    "spacing": "None"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "style": "good",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "🏆 THIS WEEK'S WINS",
+                    "weight": "Bolder",
+                    "size": "Small"
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "**VIVO AAA Modernização** · €320K",
+                                    "size": "Small"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "**Bradesco Cloud** · €280K",
+                                    "size": "Small"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "style": "warning",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "⚠️ ATTENTION REQUIRED",
+                    "weight": "Bolder",
+                    "size": "Small"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "• **Petrobras SEGEND** - Deadline in 5 days, exec sponsor needed",
+                    "size": "Small",
+                    "wrap": true,
+                    "spacing": "Small"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "• **CAIXA Fábrica** - Pricing approval pending from Finance",
+                    "size": "Small",
+                    "wrap": true,
+                    "spacing": "None"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "📅 KEY DEADLINES",
+                    "weight": "Bolder",
+                    "size": "Small"
+                },
+                {
+                    "type": "ColumnSet",
+                    "spacing": "Small",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "**Jan 10**",
+                                    "size": "Small",
+                                    "color": "Attention",
+                                    "weight": "Bolder"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Petrobras SEGEND",
+                                    "size": "Small",
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "**Jan 12**",
+                                    "size": "Small",
+                                    "color": "Warning",
+                                    "weight": "Bolder"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "CAIXA Tech Review",
+                                    "size": "Small",
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "**Jan 13**",
+                                    "size": "Small",
+                                    "weight": "Bolder"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Itaú Discovery",
+                                    "size": "Small",
+                                    "spacing": "None"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "style": "accent",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "💡 EXECUTIVE ASK",
+                    "weight": "Bolder",
+                    "size": "Small"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "CEO-level sponsor required for Petrobras meeting by **January 8th**",
+                    "size": "Small",
+                    "wrap": true,
+                    "spacing": "Small"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Medium",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "📈 ARCHITECT UTILIZATION",
+                                    "weight": "Bolder",
+                                    "size": "Small"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "████████████████░░░░",
+                                    "fontType": "Monospace",
+                                    "size": "Small",
+                                    "color": "Good",
+                                    "spacing": "Small"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "**80%** · Target 85% · 2 FTEs available",
+                                    "size": "Small",
+                                    "isSubtle": true,
+                                    "spacing": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🏆 TOP PERFORMERS",
+                                    "weight": "Bolder",
+                                    "size": "Small"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🥇 Carlos S. · 5 offers",
+                                    "size": "Small",
+                                    "spacing": "Small"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🥈 Maria L. · 4 offers",
+                                    "size": "Small",
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "🥉 João P. · 3 offers",
+                                    "size": "Small",
+                                    "spacing": "None"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "Small",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "⚡ MINSAIT",
+                                    "size": "Small",
+                                    "weight": "Bolder",
+                                    "color": "Accent"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Report by: Manoel Benicio",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "2026-01-06 08:47 UTC",
+                                    "size": "Small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "msteams": {
+        "width": "Full"
+    }
+}

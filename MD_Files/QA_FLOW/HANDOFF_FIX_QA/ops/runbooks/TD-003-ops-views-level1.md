@@ -16,7 +16,7 @@ Standardize SharePoint views so troubleshooting is **tables-first** and repeatab
 
 - `SiteUrl` (target site)
 - List names:
-  - `StatusReports_Queue_TEST`
+  - `StatusReports_Queue`
   - `StatusReports_Historico`
 - **PnP.PowerShell v3.1.0+** installed
 - **Authentication**: Use `-UseWebLogin` (NOT `-Interactive`)
@@ -80,11 +80,11 @@ Codex must:
 ### Terminal Output (Evidence)
 
 ```
-Creating view: StatusReports_Queue_TEST :: Ops - Queue (All)
-Creating view: StatusReports_Queue_TEST :: Ops - Queue (Pending)
-Creating view: StatusReports_Queue_TEST :: Ops - Queue (Sent)
-Creating view: StatusReports_Queue_TEST :: Ops - Queue (Errors)
-Creating view: StatusReports_Queue_TEST :: Ops - Queue (Duplicates)
+Creating view: StatusReports_Queue :: Ops - Queue (All)
+Creating view: StatusReports_Queue :: Ops - Queue (Pending)
+Creating view: StatusReports_Queue :: Ops - Queue (Sent)
+Creating view: StatusReports_Queue :: Ops - Queue (Errors)
+Creating view: StatusReports_Queue :: Ops - Queue (Duplicates)
 Creating view: StatusReports_Historico :: Ops - Historico (All)
 Creating view: StatusReports_Historico :: Ops - Historico (Last 24h)
 Done.

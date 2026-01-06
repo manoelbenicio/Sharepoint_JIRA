@@ -142,7 +142,7 @@ az account set --subscription "SUBSCRIPTION_NAME_OR_ID"
 | `ARQs_Teams` | `1ad529f7-db5b-4567-aa00-1582ff333264` | Flow1 | `sharepoint_mapping_arqs_teams.xml` |
 | `Ofertas_Pipeline_Normalizada` | `fa90b09d-5eb9-461f-bf15-64a494b00d2d` | Azure Function | `sharepoint_mapping_ofertas_pipeline_normalizada.xml` |
 | `StatusReports_Historico` | `f58b3d23-5750-4b29-b30f-a7b5421cdd80` | Flow2 history | `share2point_mapping_statusreports_historico.xml` |
-| `StatusReports_Queue_TEST` | `12197c6e-b5d4-4bcd-96d4-c8aafc426d0a` | 🆕 Flow1/Flow2 queue | Created via PowerShell |
+| `StatusReports_Queue` | `12197c6e-b5d4-4bcd-96d4-c8aafc426d0a` | 🆕 Flow1/Flow2 queue | Created via PowerShell |
 | `Budget_Extensions` | `dfeda3e0-0cc9-434d-b8d5-5b450dc071b2` | Not in flows | `sharepoint_mapping_budget_extensions.xml` |
 | `Jira_Allocation_Data` | `f25edf86-f23a-41bb-a7b1-84a096df2dd8` | Not in flows | `sharepoint_jira_Allocation_Data.xml` |
 | `Resumo_Semanal` | `1d4a803e-9884-4e10-b932-ef9ff598f127` | Not in flows | `sharepoint_mapping_Resumo_Semanal.xml` |
@@ -195,14 +195,14 @@ powershell -ExecutionPolicy Bypass -File DEPLOY_NOW.ps1
 ### Script 2: Create_StatusReports_Queue_Columns.ps1
 
 **Location:** `D:\VMs\Projetos\Sharepoint_JIRA\MD_Files\Create_StatusReports_Queue_Columns.ps1`  
-**Purpose:** Creates SharePoint list `StatusReports_Queue_TEST` with all required columns  
+**Purpose:** Creates SharePoint list `StatusReports_Queue` with all required columns  
 **PnP Module Version:** SharePointPnPPowerShellOnline v3.29
 
 ```powershell
 # Run command:
 .\Create_StatusReports_Queue_Columns.ps1 `
     -SiteUrl "https://indra365.sharepoint.com/sites/Grp_T_DN_Arquitetura_Solucoes_Multi_Praticas_QA" `
-    -ListName "StatusReports_Queue_TEST"
+    -ListName "StatusReports_Queue"
 ```
 
 **Columns Created:**
