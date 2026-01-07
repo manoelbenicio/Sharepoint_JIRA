@@ -1,0 +1,192 @@
+{
+    "name": "Claude Pipeline Intelligence Agent",
+    "nodes": [
+        {
+            "parameters": {
+                "options": {
+                    "allowedFileTypes": "image/*,application/json"
+                }
+            },
+            "name": "Chat Trigger",
+            "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+            "typeVersion": 1.1,
+            "position": [
+                250,
+                300
+            ],
+            "webhookId": "pipeline-agent"
+        },
+        {
+            "parameters": {
+                "promptType": "define",
+                "text": "={{ $json.chatInput }}",
+                "options": {
+                    "systemMessage": "You are a C-Level Pipeline Intelligence Analyst for MINSAIT, a major IT consulting company.\n\nYour job is to:\n1. Analyze pipeline data from JIRA and SharePoint\n2. Identify risks (low win rates, delayed offers, margin issues)\n3. Generate executive insights in Portuguese (Brazilian)\n4. Recommend actions for architects and DNs\n\nAlways respond with:\n- Key metric changes (Week-over-Week comparison)\n- Top 3 risks with severity (🔴 Critical, 🟡 Warning, 🟢 OK)\n- Top 3 opportunities\n- Recommended actions with responsible person\n\nUse professional, C-Level language. Be concise but insightful.\nFormat your response as structured markdown.\n\nAvailable tools:\n- query_jira: Search JIRA issues\n- read_sharepoint: Get data from SharePoint lists\n- calculate_kpis: Compute win rate, avg margin, cycle time\n- post_teams: Send alerts to Teams channels"
+                }
+            },
+            "name": "AI Agent",
+            "type": "@n8n/n8n-nodes-langchain.agent",
+            "typeVersion": 3,
+            "position": [
+                550,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "model": "claude-sonnet-4-20250514",
+                "options": {
+                    "temperature": 0.3,
+                    "maxTokens": 4096
+                }
+            },
+            "name": "Claude 3.5 Sonnet",
+            "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+            "typeVersion": 1.3,
+            "position": [
+                550,
+                500
+            ],
+            "credentials": {
+                "anthropicApi": {
+                    "id": "YOUR_ANTHROPIC_CREDENTIAL_ID",
+                    "name": "Anthropic API"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "sessionIdType": "customKey",
+                "sessionKey": "pipeline_agent_memory"
+            },
+            "name": "Buffer Memory",
+            "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+            "typeVersion": 1.3,
+            "position": [
+                700,
+                500
+            ]
+        },
+        {
+            "parameters": {
+                "name": "query_jira",
+                "description": "Query JIRA for offer/pipeline information. Input: JQL filter string. Returns: List of issues with key, summary, status, assignee, value.",
+                "code": "const jql = $input.all()[0].json.query || 'project = OFBRA ORDER BY updated DESC';\n\nconst response = await this.helpers.httpRequest({\n  method: 'GET',\n  url: `${$vars.JIRA_BASE_URL}/rest/api/3/search`,\n  qs: {\n    jql: jql,\n    maxResults: 50,\n    fields: 'key,summary,status,assignee,customfield_10200,customfield_10201'\n  },\n  auth: {\n    user: $vars.JIRA_USER,\n    password: $vars.JIRA_API_TOKEN\n  }\n});\n\nreturn response.issues.map(i => ({\n  key: i.key,\n  summary: i.fields.summary,\n  status: i.fields.status.name,\n  assignee: i.fields.assignee?.displayName || 'Unassigned',\n  valueEUR: i.fields.customfield_10200 || 0,\n  margin: i.fields.customfield_10201 || 0\n}));"
+            },
+            "name": "Tool: Query JIRA",
+            "type": "@n8n/n8n-nodes-langchain.toolCode",
+            "typeVersion": 1.1,
+            "position": [
+                400,
+                600
+            ]
+        },
+        {
+            "parameters": {
+                "name": "read_sharepoint",
+                "description": "Read data from SharePoint lists. Input: list name (Arquitetos_Expandida, Atualizacoes_Semanais, Ofertas). Returns: List items.",
+                "code": "const listName = $input.all()[0].json.listName || 'Arquitetos_Expandida';\nconst listIds = {\n  'Arquitetos_Expandida': $vars.SP_ARQUITETOS_LIST_ID,\n  'Atualizacoes_Semanais': $vars.SP_ATUALIZACOES_LIST_ID,\n  'Ofertas': $vars.SP_OFERTAS_LIST_ID\n};\n\nconst listId = listIds[listName];\nif (!listId) return { error: 'Unknown list: ' + listName };\n\nconst response = await this.helpers.httpRequest({\n  method: 'GET',\n  url: `https://graph.microsoft.com/v1.0/sites/${$vars.SP_SITE_ID}/lists/${listId}/items?expand=fields`,\n  headers: {\n    'Authorization': `Bearer ${$vars.MS_GRAPH_TOKEN}`\n  }\n});\n\nreturn response.value.map(item => item.fields);"
+            },
+            "name": "Tool: Read SharePoint",
+            "type": "@n8n/n8n-nodes-langchain.toolCode",
+            "typeVersion": 1.1,
+            "position": [
+                550,
+                600
+            ]
+        },
+        {
+            "parameters": {
+                "name": "calculate_kpis",
+                "description": "Calculate pipeline KPIs. Input: timeframe (week, month, quarter). Returns: win_rate, avg_margin, avg_cycle_time, pipeline_value.",
+                "code": "const timeframe = $input.all()[0].json.timeframe || 'week';\n\n// Simulated KPI calculation - replace with actual data query\nconst kpis = {\n  win_rate: 32.5,\n  win_rate_delta: +2.1,\n  avg_margin: 27.8,\n  avg_margin_delta: -0.5,\n  avg_cycle_time_days: 45,\n  cycle_time_delta: -3,\n  pipeline_value_eur: 15200000,\n  pipeline_delta_pct: +8.2,\n  total_offers: 87,\n  new_this_week: 12,\n  closed_won: 5,\n  closed_lost: 8\n};\n\nreturn kpis;"
+            },
+            "name": "Tool: Calculate KPIs",
+            "type": "@n8n/n8n-nodes-langchain.toolCode",
+            "typeVersion": 1.1,
+            "position": [
+                700,
+                600
+            ]
+        }
+    ],
+    "connections": {
+        "Chat Trigger": {
+            "main": [
+                [
+                    {
+                        "node": "AI Agent",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Claude 3.5 Sonnet": {
+            "ai_languageModel": [
+                [
+                    {
+                        "node": "AI Agent",
+                        "type": "ai_languageModel",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Buffer Memory": {
+            "ai_memory": [
+                [
+                    {
+                        "node": "AI Agent",
+                        "type": "ai_memory",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Tool: Query JIRA": {
+            "ai_tool": [
+                [
+                    {
+                        "node": "AI Agent",
+                        "type": "ai_tool",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Tool: Read SharePoint": {
+            "ai_tool": [
+                [
+                    {
+                        "node": "AI Agent",
+                        "type": "ai_tool",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Tool: Calculate KPIs": {
+            "ai_tool": [
+                [
+                    {
+                        "node": "AI Agent",
+                        "type": "ai_tool",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "settings": {
+        "executionOrder": "v1"
+    },
+    "tags": [
+        "AI",
+        "Claude",
+        "Agent",
+        "Pipeline",
+        "Intelligence"
+    ],
+    "triggerCount": 1
+}

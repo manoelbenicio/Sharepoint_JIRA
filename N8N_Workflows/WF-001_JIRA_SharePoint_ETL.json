@@ -1,0 +1,349 @@
+{
+    "name": "JIRA → SharePoint ETL Pipeline",
+    "nodes": [
+        {
+            "parameters": {
+                "events": [
+                    "issue_created",
+                    "issue_updated"
+                ],
+                "jiraVersion": "cloud",
+                "additionalFields": {
+                    "project": [
+                        "OFBRA"
+                    ]
+                }
+            },
+            "name": "JIRA Trigger",
+            "type": "n8n-nodes-base.jiraTrigger",
+            "typeVersion": 1.1,
+            "position": [
+                250,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "conditions": {
+                    "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict"
+                    },
+                    "conditions": [
+                        {
+                            "leftValue": "={{ $json.issue.fields.project.key }}",
+                            "rightValue": "OFBRA",
+                            "operator": {
+                                "type": "string",
+                                "operation": "equals"
+                            }
+                        }
+                    ],
+                    "combinator": "and"
+                }
+            },
+            "name": "Filter OFBRA Only",
+            "type": "n8n-nodes-base.filter",
+            "typeVersion": 2,
+            "position": [
+                450,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "mode": "raw",
+                "jsonOutput": "={\n  \"JiraKey\": \"{{ $json.issue.key }}\",\n  \"TituloOferta\": \"{{ $json.issue.fields.summary }}\",\n  \"Cliente\": \"{{ $json.issue.fields.customfield_10100 || 'N/A' }}\",\n  \"ValorEUR\": {{ $json.issue.fields.customfield_10200 || 0 }},\n  \"Margem\": {{ $json.issue.fields.customfield_10201 || 0 }},\n  \"Status\": \"{{ $json.issue.fields.status.name }}\",\n  \"Arquiteto\": \"{{ $json.issue.fields.assignee?.name || 'Unassigned' }}\",\n  \"DN\": \"{{ $json.issue.fields.customfield_10300 || 'N/A' }}\",\n  \"DataCriacao\": \"{{ $json.issue.fields.created }}\",\n  \"DataAtualizacao\": \"{{ $json.issue.fields.updated }}\",\n  \"Mercado\": \"{{ $json.issue.fields.customfield_10400 || 'N/A' }}\",\n  \"Practice\": \"{{ $json.issue.fields.customfield_10500 || 'N/A' }}\"\n}",
+                "options": {}
+            },
+            "name": "Transform Fields",
+            "type": "n8n-nodes-base.set",
+            "typeVersion": 3.4,
+            "position": [
+                650,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "listItem",
+                "operation": "getAll",
+                "siteId": "={{ $vars.SHAREPOINT_SITE_ID }}",
+                "listId": "={{ $vars.SHAREPOINT_OFERTAS_LIST_ID }}",
+                "returnAll": false,
+                "limit": 1,
+                "filters": {
+                    "filter": "fields/JiraKey eq '{{ $json.JiraKey }}'"
+                }
+            },
+            "name": "Check If Exists",
+            "type": "n8n-nodes-base.microsoftSharePoint",
+            "typeVersion": 1,
+            "position": [
+                850,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "conditions": {
+                    "options": {
+                        "caseSensitive": true,
+                        "leftValue": "",
+                        "typeValidation": "strict"
+                    },
+                    "conditions": [
+                        {
+                            "leftValue": "={{ $json.length }}",
+                            "rightValue": 0,
+                            "operator": {
+                                "type": "number",
+                                "operation": "gt"
+                            }
+                        }
+                    ],
+                    "combinator": "and"
+                }
+            },
+            "name": "Exists?",
+            "type": "n8n-nodes-base.if",
+            "typeVersion": 2,
+            "position": [
+                1050,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "listItem",
+                "operation": "update",
+                "siteId": "={{ $vars.SHAREPOINT_SITE_ID }}",
+                "listId": "={{ $vars.SHAREPOINT_OFERTAS_LIST_ID }}",
+                "itemId": "={{ $('Check If Exists').item.json.id }}",
+                "fieldsUi": {
+                    "values": [
+                        {
+                            "fieldName": "TituloOferta",
+                            "fieldValue": "={{ $('Transform Fields').item.json.TituloOferta }}"
+                        },
+                        {
+                            "fieldName": "ValorEUR",
+                            "fieldValue": "={{ $('Transform Fields').item.json.ValorEUR }}"
+                        },
+                        {
+                            "fieldName": "Margem",
+                            "fieldValue": "={{ $('Transform Fields').item.json.Margem }}"
+                        },
+                        {
+                            "fieldName": "Status",
+                            "fieldValue": "={{ $('Transform Fields').item.json.Status }}"
+                        },
+                        {
+                            "fieldName": "DataAtualizacao",
+                            "fieldValue": "={{ $('Transform Fields').item.json.DataAtualizacao }}"
+                        }
+                    ]
+                }
+            },
+            "name": "Update SharePoint",
+            "type": "n8n-nodes-base.microsoftSharePoint",
+            "typeVersion": 1,
+            "position": [
+                1250,
+                200
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "listItem",
+                "operation": "create",
+                "siteId": "={{ $vars.SHAREPOINT_SITE_ID }}",
+                "listId": "={{ $vars.SHAREPOINT_OFERTAS_LIST_ID }}",
+                "fieldsUi": {
+                    "values": [
+                        {
+                            "fieldName": "JiraKey",
+                            "fieldValue": "={{ $('Transform Fields').item.json.JiraKey }}"
+                        },
+                        {
+                            "fieldName": "TituloOferta",
+                            "fieldValue": "={{ $('Transform Fields').item.json.TituloOferta }}"
+                        },
+                        {
+                            "fieldName": "Cliente",
+                            "fieldValue": "={{ $('Transform Fields').item.json.Cliente }}"
+                        },
+                        {
+                            "fieldName": "ValorEUR",
+                            "fieldValue": "={{ $('Transform Fields').item.json.ValorEUR }}"
+                        },
+                        {
+                            "fieldName": "Margem",
+                            "fieldValue": "={{ $('Transform Fields').item.json.Margem }}"
+                        },
+                        {
+                            "fieldName": "Status",
+                            "fieldValue": "={{ $('Transform Fields').item.json.Status }}"
+                        },
+                        {
+                            "fieldName": "Arquiteto",
+                            "fieldValue": "={{ $('Transform Fields').item.json.Arquiteto }}"
+                        },
+                        {
+                            "fieldName": "DN",
+                            "fieldValue": "={{ $('Transform Fields').item.json.DN }}"
+                        },
+                        {
+                            "fieldName": "Mercado",
+                            "fieldValue": "={{ $('Transform Fields').item.json.Mercado }}"
+                        },
+                        {
+                            "fieldName": "Practice",
+                            "fieldValue": "={{ $('Transform Fields').item.json.Practice }}"
+                        }
+                    ]
+                }
+            },
+            "name": "Create SharePoint",
+            "type": "n8n-nodes-base.microsoftSharePoint",
+            "typeVersion": 1,
+            "position": [
+                1250,
+                400
+            ]
+        },
+        {
+            "parameters": {
+                "resource": "channelMessage",
+                "operation": "create",
+                "teamId": "={{ $vars.TEAMS_OFERTAS_TEAM_ID }}",
+                "channelId": "={{ $vars.TEAMS_OFERTAS_CHANNEL_ID }}",
+                "messageType": "text",
+                "message": "✅ JIRA Sync: {{ $('Transform Fields').item.json.JiraKey }} - {{ $('Transform Fields').item.json.TituloOferta }} (€{{ $('Transform Fields').item.json.ValorEUR }})"
+            },
+            "name": "Notify Teams",
+            "type": "n8n-nodes-base.microsoftTeams",
+            "typeVersion": 2,
+            "position": [
+                1450,
+                300
+            ]
+        }
+    ],
+    "connections": {
+        "JIRA Trigger": {
+            "main": [
+                [
+                    {
+                        "node": "Filter OFBRA Only",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Filter OFBRA Only": {
+            "main": [
+                [
+                    {
+                        "node": "Transform Fields",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Transform Fields": {
+            "main": [
+                [
+                    {
+                        "node": "Check If Exists",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Check If Exists": {
+            "main": [
+                [
+                    {
+                        "node": "Exists?",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Exists?": {
+            "main": [
+                [
+                    {
+                        "node": "Update SharePoint",
+                        "type": "main",
+                        "index": 0
+                    }
+                ],
+                [
+                    {
+                        "node": "Create SharePoint",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Update SharePoint": {
+            "main": [
+                [
+                    {
+                        "node": "Notify Teams",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Create SharePoint": {
+            "main": [
+                [
+                    {
+                        "node": "Notify Teams",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "settings": {
+        "executionOrder": "v1"
+    },
+    "staticData": null,
+    "tags": [
+        "ETL",
+        "JIRA",
+        "SharePoint",
+        "Real-time"
+    ],
+    "triggerCount": 1,
+    "variables": [
+        {
+            "key": "SHAREPOINT_SITE_ID",
+            "value": "YOUR_SITE_ID"
+        },
+        {
+            "key": "SHAREPOINT_OFERTAS_LIST_ID",
+            "value": "YOUR_LIST_ID"
+        },
+        {
+            "key": "TEAMS_OFERTAS_TEAM_ID",
+            "value": "YOUR_TEAM_ID"
+        },
+        {
+            "key": "TEAMS_OFERTAS_CHANNEL_ID",
+            "value": "YOUR_CHANNEL_ID"
+        }
+    ]
+}
